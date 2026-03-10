@@ -1,0 +1,13 @@
+# =========================
+# DEPENDENCIAS
+# =========================
+node_modules/
+# =========================
+# ARCHIVOS GENERADOS POR PARCEL
+# =========================
+dist/
+.parcel-cache/
+# =========================
+# ARCHIVOS DE POSTHTML
+# =========================
+.posthtmlrc

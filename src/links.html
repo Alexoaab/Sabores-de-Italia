@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fuentes y documentación del proyecto Sabores de Italia.">
+  <title>Fuentes | Sabores de Italia</title>
+</head>
+
+<body>
+<!-- Enlace para saltar bloques repetidos. Permite a usuarios de teclado evitar la navegación repetitiva. -->
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<!-- Es una directiva procesada por POSTHTML-INCLUDE, queermite dividir el HTML en partes reutilizables (header, footer, etc.),
+facilitando la modularización y evitando duplicación de código.-->
+<include src="src/partials/header.html"></include>
+
+<!-- Elemento vinculado al skip-link para accesibilidad -->
+<main id="contenido">
+<h1 class="visually-hidden">Sabores de Italia</h1>
+<section class="links">
+  <div class="container">
+    <!-- data-aos="fade-up" hace aparecer el elemento con un efecto de desvanecimiento
+    mientras se mueve ligeramente hacia arriba al hacer scroll -->
+    <header class="detalle-header" data-aos="fade-up">
+      <h2>Fuentes y documentación</h2>
+        <p>Referencias utilizadas para la elaboración del contenido del proyecto.</p>
+    </header>
+
+    <!-- CONTENIDO TEXTUAL -->
+    <!-- data-aos="fade-up" hace aparecer el elemento con un efecto de desvanecimiento ("fade") 
+    mientras se mueven desde abajo hacia arriba (up) al hacer scroll.
+    data-aos-delay="100" retrasa la animación 100 milisegundos para que los elementos aparezcan de forma escalonada. -->
+    <section class="detalle-seccion" data-aos="fade-up" data-aos-delay="100">
+      <h3>Fuentes gastronómicas</h3>
+        <ul>
+          <li>
+            Wikipedia – Pizza napolitana.<a href="https://es.wikipedia.org/wiki/Pizza_napolitana" target="_blank" rel="noopener">Wikipedia – Pizza Napolitana</a>
+          </li>
+
+          <li>
+            Wikipedia – Pasta Carbonara.<a href="https://es.wikipedia.org/wiki/Carbonara" target="_blank" rel="noopener">Wikipedia – Pasta Carbonara</a>
+          </li>
+
+          <li>
+            Wikipedia – Tiramisú.<a href="https://es.wikipedia.org/wiki/Tiramis%C3%BA" target="_blank" rel="noopener">Wikipedia – Tiramisú</a>
+          </li>
+
+          <li>
+            Wikipedia – Risotto.<a href="https://es.wikipedia.org/wiki/Risotto" target="_blank" rel="noopener">Wikipedia – Risotto</a>
+          </li>
+        </ul>
+    </section>
+    <!-- data-aos="fade-up" hace aparecer el elemento con un efecto de desvanecimiento ("fade") 
+    mientras se mueven desde abajo hacia arriba (up) al hacer scroll.
+    data-aos-delay="200" retrasa la animación 200 milisegundos para que los elementos aparezcan de forma escalonada. -->
+    <section class="detalle-seccion" data-aos="fade-up" data-aos-delay="200">
+      <h3>Imágenes</h3>
+        <p>
+          Las imágenes utilizadas en este proyecto han sido obtenidas de bancos de imágenes libres de derechos para uso académico.
+        </p>
+      <ul>
+        <li>
+          Pixabay –<a href="https://pixabay.com/" target="_blank" rel="noopener">Pixabay</a>
+        </li>
+
+        <li>
+          Freepik –<a href="https://www.freepik.com/" target="_blank" rel="noopener">Freepik</a>
+        </li>
+      </ul>
+
+        <p>
+          Algunas imágenes han sido generadas mediante herramientas de inteligencia artificial
+          con fines exclusivamente académicos:
+        </p>
+
+      <ul>
+        <li>Detalle 1 (Pizza Napolitana): imágenes de la masa y cocción.</li>
+        <li>Detalle 2 (Pasta Carbonara): imágenes del guanciale y la salsa.</li>
+        <li>Detalle 3 (Tiramisú): imágenes del café y la crema.</li>
+        <li>Detalle 4 (Risotto): imágenes del arroz y el caldo.</li>
+      </ul>
+    </section>
+    <!-- data-aos="fade-up" hace aparecer el elemento con un efecto de desvanecimiento ("fade") 
+    mientras se mueven desde abajo hacia arriba (up) al hacer scroll.
+    data-aos-delay="300" retrasa la animación 300 milisegundos para que los elementos aparezcan de forma escalonada. -->
+    <section class="detalle-seccion" data-aos="fade-up" data-aos-delay="300">
+      <h3>Uso de herramientas de IA</h3>
+        <p>
+          Se han utilizado herramientas de inteligencia artificial generativa
+          únicamente para la creación de algunas imágenes ilustrativas indicadas
+          anteriormente.
+        </p>
+
+        <p>
+          El desarrollo del código HTML, SCSS y JavaScript del proyecto ha sido
+          realizado manualmente por el autor, sin el uso de herramientas de IA
+          para la implementación técnica.
+        </p>
+    </section>
+
+  </div>
+</section>
+
+</main>
+<!-- Es una directiva procesada por POSTHTML-INCLUDE, queermite dividir el HTML en partes reutilizables (header, footer, etc.),
+facilitando la modularización y evitando duplicación de código.-->
+<include src="src/partials/footer.html"></include>
+<!-- Se carga el archivo JavaScript principal como módulo. type="module" permite usar import/export y organizar el código de forma modular. -->
+<script type="module" src="./js/main.ts"></script>
+
+</body>
+</html>

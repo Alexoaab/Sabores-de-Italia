@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Receta tradicional de Pasta Carbonara paso a paso.">
+  <title>Pasta Carbonara | Sabores de Italia</title>
+</head>
+
+<body>
+<!-- Enlace para saltar bloques repetidos. Permite a usuarios de teclado evitar la navegación repetitiva. -->
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<!-- Es una directiva procesada por POSTHTML-INCLUDE, queermite dividir el HTML en partes reutilizables (header, footer, etc.),
+facilitando la modularización y evitando duplicación de código.-->
+<include src="src/partials/header.html"></include>
+
+<!-- Elemento vinculado al skip-link para accesibilidad -->
+<main id="contenido">
+<h1 class="visually-hidden">Sabores de Italia</h1>
+<section>
+  <div class="container">
+
+    <!-- HEADER -->
+    <header class="detalle-header">
+      <h2>Pasta Carbonara</h2>
+        <p>La receta clásica originaria de Roma.</p>
+    </header>
+
+    <!-- role="img" indica que el div actúa como imagen.
+    aria-label proporciona descripción alternativa para lectores de pantalla.
+    data-aos="fade-up" hace aparecer el elemento con un efecto de desvanecimiento mientras se mueve ligeramente hacia arriba al hacer scroll -->
+    <a href="./img/carbonara.jpg" class="glightbox" data-gallery="det1"><div class="img-det2-principal" role="img" aria-label="Plato de pasta carbonara tradicional italiana" data-aos="fade-up"></div></a>
+
+    <!-- INFO -->
+    <div>
+      <ul class="info-list">
+        <li><strong>Tiempo:</strong> 30 minutos</li>
+        <li><strong>Dificultad:</strong> Fácil</li>
+        <li><strong>Raciones:</strong> 4 personas</li>
+      </ul>
+    </div>
+
+    <!-- INGREDIENTES -->
+    <!-- data-aos="fade-right" hace aparecer el elemento con un efecto de desvanecimiento
+    mientras se mueve desde la izquierda hacia su posición normal (right). -->
+    <section class="detalle-seccion" data-aos="fade-right">
+      <h3>
+        Ingredientes
+      <!-- Botón que permite mostrar/ocultar contenido dinámicamente con JavaScript -->
+      <button class="toggle-btn" type="button">Mostrar</button>
+      </h3>
+      <!-- Clase "oculto" controla visibilidad mediante JavaScript -->
+      <ul class="oculto">
+        <li>400 g de pasta (spaghetti)</li>
+        <li>150 g de guanciale</li>
+        <li>3 yemas de huevo</li>
+        <li>1 huevo entero</li>
+        <li>80 g de queso pecorino romano</li>
+        <li>Pimienta negra recién molida</li>
+        <li>Sal</li>
+      </ul>
+    </section>
+
+    <!-- PREPARACIÓN -->
+    <!-- data-aos="fade-right" hace aparecer el elemento con un efecto de desvanecimiento
+    mientras se mueve desde la izquierda hacia su posición normal (right). -->
+    <section class="detalle-seccion" data-aos="fade-right">
+      <h3>
+        Preparación
+      <!-- Botón que permite mostrar/ocultar contenido dinámicamente con JavaScript -->
+      <button class="toggle-btn" type="button">Mostrar</button>
+      </h3>
+      <!-- Clase "oculto" controla visibilidad mediante JavaScript -->
+      <ol class="oculto">
+        <li>Cocer la pasta en abundante agua con sal.</li>
+        <li>Dorar el guanciale en una sartén sin añadir aceite.</li>
+        <li>Mezclar las yemas, el huevo y el queso pecorino.</li>
+        <li>Escurrir la pasta y mezclar con el guanciale.</li>
+        <li>Retirar del fuego y añadir la mezcla de huevo.</li>
+        <li>Servir con abundante pimienta negra.</li>
+      </ol>
+    </section>
+
+    <!-- HISTORIA -->
+    <!-- data-aos="fade-right" hace aparecer el elemento con un efecto de desvanecimiento
+    mientras se mueve desde la izquierda hacia su posición normal (right). -->
+    <section class="detalle-seccion" data-aos="fade-right">
+      <h3>
+        Historia y tradición
+      <!-- Botón que permite mostrar/ocultar contenido dinámicamente con JavaScript -->
+      <button class="toggle-btn" type="button">Ocultar</button>
+      </h3>
+
+      <div class="presentacion-contenido">
+        <p>
+          La pasta carbonara es uno de los platos más emblemáticos de la cocina romana.
+          Su origen se remonta a mediados del siglo XX.
+        </p>
+
+        <p>
+          La receta tradicional se elabora únicamente con guanciale, huevo,
+          queso pecorino romano y pimienta negra, sin añadir nata.
+        </p>
+
+        <p>
+          A pesar de sus variaciones internacionales, la versión auténtica
+          italiana sigue siendo un referente de simplicidad y sabor.
+        </p>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="detalle-galeria">
+      <h3 class="visually-hidden">Galería del proceso</h3>
+      <div class="features">
+        <!-- data-aos="fade-up" hace aparecer el elemento con un efecto de desvanecimiento ("fade") 
+        mientras se mueven desde abajo hacia arriba (up) al hacer scroll.
+        data-aos-delay="100" retrasa la animación 100 milisegundos para que los elementos aparezcan de forma escalonada. -->
+        <article class="feature-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="detalle-img img-guanciale" role="img" aria-label="Guanciale cortado en tiras"></div>
+            <h3>El guanciale</h3>
+              <p>Dorado lentamente para extraer todo su sabor.</p>
+        </article>
+        <!-- data-aos="fade-up" hace aparecer el elemento con un efecto de desvanecimiento ("fade") 
+        mientras se mueven desde abajo hacia arriba (up) al hacer scroll.
+        data-aos-delay="200" retrasa la animación 200 milisegundos para que los elementos aparezcan de forma escalonada. -->
+        <article class="feature-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="detalle-img img-salsa" role="img" aria-label="Salsa cremosa de huevo y queso pecorino"></div>
+            <h3>La salsa</h3>
+              <p>Mezcla cremosa de huevo y pecorino romano.</p>
+        </article>
+        <!-- data-aos="fade-up" hace aparecer el elemento con un efecto de desvanecimiento ("fade") 
+        mientras se mueven desde abajo hacia arriba (up) al hacer scroll.
+        data-aos-delay="300" retrasa la animación 300 milisegundos para que los elementos aparezcan de forma escalonada. -->
+        <article class="feature-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="detalle-img img-carbonara-final" role="img" aria-label="Pasta carbonara servida"></div>
+            <h3>Presentación final</h3>
+              <p>Servida inmediatamente para mantener su textura cremosa.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- VIDEO -->
+    <!-- data-aos="fade-up" hace aparecer el elemento con un efecto de desvanecimiento
+    mientras se mueve ligeramente hacia arriba al hacer scroll -->
+    <section class="detalle-video" data-aos="fade-up">
+      <h3>Vídeo explicativo</h3>
+        <div class="video-wrapper" tabindex="0">
+          <iframe src="https://www.youtube.com/embed/8jFBHUYW7f4?cc_load_policy=1" title="Cómo hacer pasta carbonara" allowfullscreen></iframe>
+        </div>
+
+  <!-- Botón accesible -->
+  <button type="button" class="toggle-btn" aria-expanded="false" aria-controls="transcripcion">Mostrar transcripción</button>
+
+  <!-- Transcripción oculta por defecto -->
+  <section id="transcripcion"class="transcripcion oculto">
+    <h4>Transcripción del vídeo</h4>
+
+    <p>
+      Hola, hoy preparamos espaguetis a la carbonara, pero la receta auténtica, la que no lleva nata. Empiezo rayando el queso pecorino, que es el queso que se utiliza para hacer esta receta. Para dos personas necesito cien gramos de queso. De todas maneras, te he dejado todas las cantidades de esta receta al final del vídeo y abajo en la descripción. Otro ingrediente que lleva la carbonara es el guanciale. En este caso he comprado papada, pero si encuentras el guanciale, mucho mejor. Si no lo encuentras,
+      siempre puedes utilizar panceta o beicon. Vamos a hacer unos daditos y así tendremos todos los ingredientes preparados porque esta receta es rapidísima. Ya tenemos la papada cortadita. Ahora vamos a freír la papada y como ves no le he echado nada de aceite a la sartén. Dejaremos que se tueste por fuera
+      y por dentro seguirá tierna. Hay que ir moviendo constantemente para que no se queme y ahora que ya está bien doradita lo que voy a hacer es reservarla. Para hervir la pasta se calienta abundante agua y se le echa un puñadito de sal. Cuando hierva el agua se echa la pasta. En este caso estos espaguetis tienen que cocer durante ocho minutos. Mientras cuece la pasta vamos a poner las yemas en un bol y le añadimos pimienta.
+      Lo batimos y aquí le añadiremos el queso. Lo añado poco a poco para mezclarlo mejor. Como esta mezcla es muy espesa se le echa un poco de agua de cocción de los espaguetis. Como ves así va admitiendo más queso. Y ahora que ya lo tenemos todo integrado
+      lo reservamos. Ya han pasado los nueve minutos, voy a apagar este fuego y ahora vamos a pasar los espaguetis a la sartén donde tenemos el guanciale. Con el fuego bien bajito lo mantenemos caliente y lo movemos. Y ahora le vamos a añadir la crema de las yemas. Y vamos a mover
+      y nos tiene que quedar unos espaguetis supercremosos. Eso sí, que no se nos cuaje el huevo. Le añadimos un cacito de la cocción y ahora hay que remover enérgicamente hasta que nos queden bien cremositos. Mira, mira qué cremosidad. Pues momento de servir.
+      Un poquito más y terminamos con una pizquita de pimienta negra y un poquito más de queso. Pues momento de probar. Mmm Pues así es como se hacen los espaguetis a la carbonara. Te aseguro que han quedado riquísimos, así que te animo a que los prepares. Si te ha gustado el vídeo
+      no olvides darle al like. Nos vemos en el siguiente vídeo. GraciasHola, hoy preparamos espaguetis a la carbonara, pero la receta auténtica, la que no lleva nata. Empiezo rayando el queso pecorino, que es el queso que se utiliza para hacer esta receta. Para dos personas necesito cien gramos de queso. De todas maneras, te he dejado todas las cantidades de esta receta al final del vídeo y abajo en la descripción. Otro ingrediente que lleva la carbonara es el guanciale. En este caso he comprado papada, pero si encuentras el guanciale, mucho mejor. Si no lo encuentras,
+      siempre puedes utilizar panceta o beicon. Vamos a hacer unos daditos y así tendremos todos los ingredientes preparados porque esta receta es rapidísima. Ya tenemos la papada cortadita. Ahora vamos a freír la papada y como ves no le he echado nada de aceite a la sartén. Dejaremos que se tueste por fuera
+      y por dentro seguirá tierna. Hay que ir moviendo constantemente para que no se queme y ahora que ya está bien doradita lo que voy a hacer es reservarla. Para hervir la pasta se calienta abundante agua y se le echa un puñadito de sal. Cuando hierva el agua se echa la pasta. En este caso estos espaguetis tienen que cocer durante ocho minutos. Mientras cuece la pasta vamos a poner las yemas en un bol y le añadimos pimienta.
+      Lo batimos y aquí le añadiremos el queso. Lo añado poco a poco para mezclarlo mejor. Como esta mezcla es muy espesa se le echa un poco de agua de cocción de los espaguetis. Como ves así va admitiendo más queso. Y ahora que ya lo tenemos todo integrado
+      lo reservamos. Ya han pasado los nueve minutos, voy a apagar este fuego y ahora vamos a pasar los espaguetis a la sartén donde tenemos el guanciale. Con el fuego bien bajito lo mantenemos caliente y lo movemos. Y ahora le vamos a añadir la crema de las yemas. Y vamos a mover
+      y nos tiene que quedar unos espaguetis supercremosos. Eso sí, que no se nos cuaje el huevo. Le añadimos un cacito de la cocción y ahora hay que remover enérgicamente hasta que nos queden bien cremositos. Mira, mira qué cremosidad. Pues momento de servir.
+      Un poquito más y terminamos con una pizquita de pimienta negra y un poquito más de queso. Pues momento de probar. Mmm Pues así es como se hacen los espaguetis a la carbonara. Te aseguro que han quedado riquísimos, así que te animo a que los prepares. Si te ha gustado el vídeo
+      no olvides darle al like. Nos vemos en el siguiente vídeo. Gracias
+    </p>
+  </section>
+</section>
+
+    <!-- BOTÓN VOLVER -->
+    <a href="categoria.html" class="btn">Volver a recetas</a>
+
+  </div>
+</section>
+
+</main>
+<!-- Es una directiva procesada por POSTHTML-INCLUDE, queermite dividir el HTML en partes reutilizables (header, footer, etc.),
+facilitando la modularización y evitando duplicación de código.-->
+<include src="src/partials/footer.html"></include>
+
+<!-- Se carga el archivo JavaScript principal como módulo. type="module" permite usar import/export y organizar el código de forma modular. -->
+<script type="module" src="./js/main.ts"></script>
+
+</body>
+</html>

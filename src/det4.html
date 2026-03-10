@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Receta tradicional de Risotto paso a paso.">
+  <title>Risotto | Sabores de Italia</title>
+</head>
+
+<body>
+
+<!-- Enlace para saltar bloques repetidos. Permite a usuarios de teclado evitar la navegación repetitiva. -->
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<!-- Es una directiva procesada por POSTHTML-INCLUDE, queermite dividir el HTML en partes reutilizables (header, footer, etc.),
+facilitando la modularización y evitando duplicación de código.-->
+<include src="src/partials/header.html"></include>
+<!-- Elemento vinculado al skip-link para accesibilidad -->
+<main id="contenido">
+<h1 class="visually-hidden">Sabores de Italia</h1>
+<section>
+  <div class="container">
+
+    <!-- HEADER -->
+    <header class="detalle-header">
+      <h2>Risotto</h2>
+      <p>El arroz cremoso tradicional del norte de Italia.</p>
+    </header>
+
+    <!-- role="img" indica que el div actúa como imagen.
+    aria-label proporciona descripción alternativa para lectores de pantalla.
+    data-aos="fade-up" hace aparecer el elemento con un efecto de desvanecimiento mientras se mueve ligeramente hacia arriba al hacer scroll -->
+    <a href="./img/risotto.jpg" class="glightbox" data-gallery="det1"><div class="img-det4-principal" role="img" aria-label="Plato de risotto cremoso con queso parmesano" data-aos="fade-up"></div></a>
+
+    <!-- INFO -->
+    <ul class="info-list">
+      <li><strong>Tiempo:</strong> 35 minutos</li>
+      <li><strong>Dificultad:</strong> Media</li>
+      <li><strong>Raciones:</strong> 4 personas</li>
+    </ul>
+
+    <!-- INGREDIENTES -->
+    <!-- data-aos="fade-right" hace aparecer el elemento con un efecto de desvanecimiento
+    mientras se mueve desde la izquierda hacia su posición normal (right). -->
+    <section class="detalle-seccion" data-aos="fade-right">
+      <h3>
+        Ingredientes
+        <!-- Botón que permite mostrar/ocultar contenido dinámicamente con JavaScript -->
+        <button class="toggle-btn" type="button">Mostrar</button>
+      </h3>
+        <!-- Clase "oculto" controla visibilidad mediante JavaScript -->
+      <ul class="oculto">
+        <li>300 g de arroz arborio</li>
+        <li>1 litro de caldo de verduras</li>
+        <li>1 cebolla pequeña</li>
+        <li>100 ml de vino blanco</li>
+        <li>50 g de mantequilla</li>
+        <li>80 g de queso parmesano rallado</li>
+        <li>Sal y pimienta al gusto</li>
+      </ul>
+    </section>
+
+    <!-- PREPARACIÓN -->
+    <!-- data-aos="fade-right" hace aparecer el elemento con un efecto de desvanecimiento
+    mientras se mueve desde la izquierda hacia su posición normal (right). -->
+    <section class="detalle-seccion" data-aos="fade-right">
+      <h3>
+        Preparación
+        <!-- Botón que permite mostrar/ocultar contenido dinámicamente con JavaScript -->
+        <button class="toggle-btn" type="button">Mostrar</button>
+      </h3>
+      <!-- Clase "oculto" controla visibilidad mediante JavaScript -->
+      <ol class="oculto">
+        <li>Sofreír la cebolla picada en mantequilla hasta que esté transparente.</li>
+        <li>Añadir el arroz y remover durante 2 minutos para nacararlo.</li>
+        <li>Incorporar el vino blanco y dejar evaporar el alcohol.</li>
+        <li>Añadir el caldo caliente poco a poco sin dejar de remover.</li>
+        <li>Cocinar hasta que el arroz esté cremoso y al dente.</li>
+        <li>Retirar del fuego, añadir el parmesano y mezclar suavemente.</li>
+        <li>Servir inmediatamente.</li>
+      </ol>
+    </section>
+
+    <!-- HISTORIA -->
+    <!-- data-aos="fade-right" hace aparecer el elemento con un efecto de desvanecimiento
+    mientras se mueve desde la izquierda hacia su posición normal (right). -->
+    <section class="detalle-seccion" data-aos="fade-right">
+      <h3>
+        Historia y tradición
+        <!-- Botón que permite mostrar/ocultar contenido dinámicamente con JavaScript -->
+        <button class="toggle-btn" type="button">Mostrar</button>
+      </h3>
+
+      <div class="presentacion-contenido">
+        <p>
+          El risotto es una receta tradicional del norte de Italia,
+          especialmente popular en las regiones de Lombardía y Piamonte.
+        </p>
+
+        <p>
+          Su textura cremosa se consigue gracias al almidón natural
+          del arroz arborio, que se libera al removerlo lentamente.
+        </p>
+
+        <p>
+          Existen múltiples variantes, como el risotto alla milanese
+          con azafrán o el risotto de setas.
+        </p>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="detalle-galeria">
+      <h3 class="visually-hidden">Galería del proceso</h3>
+      <div class="features">
+        <!-- data-aos="fade-up" hace aparecer el elemento con un efecto de desvanecimiento ("fade") 
+        mientras se mueven desde abajo hacia arriba (up) al hacer scroll.
+        data-aos-delay="100" retrasa la animación 100 milisegundos para que los elementos aparezcan de forma escalonada. -->
+        <article class="feature-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="detalle-img img-arroz"
+               role="img"
+               aria-label="Arroz arborio utilizado para el risotto">
+          </div>
+          <h3>El arroz</h3>
+          <p>Arroz arborio rico en almidón para lograr su cremosidad característica.</p>
+        </article>
+        <!-- data-aos="fade-up" hace aparecer el elemento con un efecto de desvanecimiento ("fade") 
+        mientras se mueven desde abajo hacia arriba (up) al hacer scroll.
+        data-aos-delay="200" retrasa la animación 200 milisegundos para que los elementos aparezcan de forma escalonada. -->
+        <article class="feature-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="detalle-img img-caldo"
+               role="img"
+               aria-label="Añadiendo caldo caliente al arroz">
+          </div>
+          <h3>La cocción</h3>
+          <p>El caldo se añade gradualmente mientras se remueve constantemente.</p>
+        </article>
+        <!-- data-aos="fade-up" hace aparecer el elemento con un efecto de desvanecimiento ("fade") 
+        mientras se mueven desde abajo hacia arriba (up) al hacer scroll.
+        data-aos-delay="300" retrasa la animación 300 milisegundos para que los elementos aparezcan de forma escalonada. -->
+        <article class="feature-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="detalle-img img-risotto-final"
+               role="img"
+               aria-label="Risotto terminado con queso parmesano">
+          </div>
+          <h3>Resultado final</h3>
+          <p>Textura cremosa y acabado con parmesano recién rallado.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- VIDEO -->
+    <!-- data-aos="fade-up" hace aparecer el elemento con un efecto de desvanecimiento
+    mientras se mueve ligeramente hacia arriba al hacer scroll -->
+    <section class="detalle-video" data-aos="fade-up">
+      <h3>Vídeo explicativo</h3>
+        <div class="video-wrapper" tabindex="0">
+          <iframe src="https://www.youtube.com/embed/lNpqHQvrv5s?si=zdhbIv0HUYnUYeEI?cc_load_policy=1" title="Cómo hacer risotto" allowfullscreen></iframe>
+        </div>
+
+  <!-- Botón accesible -->
+  <button type="button" class="toggle-btn" aria-expanded="false" aria-controls="transcripcion">Mostrar transcripción</button>
+
+  <!-- Transcripción oculta por defecto -->
+  <section id="transcripcion"class="transcripcion oculto">
+    <h4>Transcripción del vídeo</h4>
+
+    <p>
+      El risotto es un platillo fabuloso, pero puede parecer complicado si no se siguen algunas reglas importantes. Así que vamos a enfocarnos en cada uno de los pasos para lograr un risotto absolutamente perfecto. El risotto es tradicionalmente hecho con arroz arborio, que es un tipo de grano corto de arroz. Tiene un alto contenido de almidón, que permite que sea más cremoso cuando se cuece. Puedes usar otro tipo de arroz o granos, como arroz de grano largo, farro o cebada, pero recomendamos el arborio. No hay una forma rápida
+      y fácil de conseguir la consistencia ideal, pero una buena regla a seguir es que por cada taza de arroz hay que usar de cuatro a seis tazas de caldo. Aquí usaremos caldo de pollo, pero puedes usar el que quieras o incluso agua si prefieres. A fuego alto, vamos a hervir el caldo, porque si agregas caldo frío a tu arroz, no se cocerá por completo ni tendrá la textura cremosa que queremos. Ahora elijamos nuestra olla. Asegúrate de usar una olla alta porque estarás agregando cada vez más caldo y hará que el arroz duplique su tamaño. Si la olla es muy pequeña,
+      se va a desbordar. Una vez que el caldo esté hirviendo, baja la flama o tenlo cerca. Lo importante es que el caldo se mantenga calientito. Ahora pon tu olla a fuego medio y agrega un poco de aceite. Una vez que se caliente, agrega tu allium de preferencia. Nosotros usaremos echalotes. Allium es el nombre del grupo al que también pertenecen las cebollas, el cebollín y el ajo. Entonces, vas a cocinarlos hasta que se transparenten. Y luego hay que agregar las setas y la mantequilla y cocinar hasta que se suavicen.
+      Esto va a tomar tiempo, así que ten paciencia. Y si no te gustan las setas, puedes omitir este paso y agregar directo el arroz. Una vez que se cocinen, agrega ajo, tomillo, sal y pimienta. Esto es para darle más sabor, pero puedes experimentar con diferentes especias, las que tú quieras. Es tiempo de agregar el arroz. Revuelve bien hasta mezclar todo. Queremos tostar el arroz, pero no quemarlo, así que solo serán uno o dos minutos. Después agrega un chorrito de vino blanco
+      para darle un poco de acidez. Si no quieres usar alcohol, puedes intercambiarlo por jugo de limón. Cuando el alcohol se haya evaporado, será momento de agregar el caldo poco a poco La paciencia es una virtud, especialmente con el risotto. (se ríe) Solo debes agregar caldo suficiente para cubrir el arroz y revolver constantemente hasta que lo absorba (pausa de tres segundos). Sigue echando caldo poco a poco hasta que el arroz esté al dente. Serán unos quince a veinte minutos.
+      Vas a saber que está listo cuando el arroz tenga un poco de firmeza y la textura sea cremosa. Si pasas la cuchara y el arroz poco a poco regresa a su lugar, está listo. Para un extra de cremosidad y sabor, agrega queso parmesano rallado y mezcla. Y ya, eso es todo. El risotto realmente no es complicado, siempre y cuando recuerdes los principios básicos. Tómate tu tiempo, sé paciente y sigue las reglas. Te prometemos que serás un maestro del risotto en poco tiempo
+      (se ríe). Me encanta. El arroz es perfecto en todas sus presentaciones. Y el risotto es como su versión fancy (se ríe)
+      (Música instrumental).
+    </p>
+  </section>
+</section>
+
+    <!-- BOTÓN VOLVER -->
+    <a href="categoria.html" class="btn">Volver a recetas</a>
+
+  </div>
+</section>
+
+</main>
+<!-- Es una directiva procesada por POSTHTML-INCLUDE, queermite dividir el HTML en partes reutilizables (header, footer, etc.),
+facilitando la modularización y evitando duplicación de código.-->
+<include src="src/partials/footer.html"></include>
+<!-- Se carga el archivo JavaScript principal como módulo. type="module" permite usar import/export y organizar el código de forma modular. -->
+<script type="module" src="./js/main.ts"></script>
+
+</body>
+</html>

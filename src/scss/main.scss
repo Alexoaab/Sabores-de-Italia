@@ -1,0 +1,924 @@
+@use "sass:color";
+
+/* =========================
+   VARIABLES
+========================= */
+// Color principal del sitio (usado en header, botones secundarios, títulos, etc.)
+$color-primario: #1e3a5f;
+// Color secundario (usado en botones principales, errores, elementos destacados)
+$color-secundario: #c0392b;
+// Color de fondo general de la página
+$color-fondo: #f4f6f8;
+// Color principal del texto
+$color-texto: #2c2c2c;
+// Color blanco base
+$color-blanco: #ffffff;
+// Color gris fuerte utilizado en el header
+$color-gris-fuerte: #737373;
+// Color gris suave utilizado en fondos alternativos o secciones diferenciadas
+$color-gris-suave: #e9ecef;
+// Color verde claro utilizado en mensaje exito envio mensaje
+$color-verde-claro: #E8F5E9;
+// Color verde fuerte utilizado en contraste mensaje exito envio mensaje
+$color-verde-fuerte: #1B5E20;
+// Color verde utilizado en contorno mensaje exito campos
+$color-verde: #228B22;
+// Ancho máximo del contenedor principal
+$max-width: 1200px;
+// Radio de borde común para tarjetas, imágenes y formularios
+$border-radius: 10px;
+// Sombra suave para tarjetas y bloques destacados
+$shadow-suave: 0 6px 20px rgba(0, 0, 0, 0.06);
+
+/* =========================
+   RESET
+========================= */
+// Se aplica box-sizing: border-box a todos los elementos
+// Esto hace que padding y border se incluyan dentro del ancho y alto total facilitando el control del layout y evitando desbordamientos.
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// Estilos del body
+body {
+  margin: 0; // Elimina el margen por defecto del navegador
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; // Se define una serie de fuentes del sistema para mejorar la compatibilidad
+  background: $color-fondo; // Color de fondo general del sitio
+  color: $color-texto; // Color principal del texto
+  line-height: 1.5; // Interlineado general del body
+}
+
+// Se establece altura completa para permitir layouts flexibles
+html, body {
+  height: 100%;
+}
+
+// Se convierte el body en contenedor flexible. Esto permite estructurar la página en columna
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+// Hace que el main ocupe todo el espacio disponible. Esto permite que el footer quede siempre abajo
+main {
+  flex: 1;
+}
+
+/* =========================
+   CONTENEDOR
+========================= */
+// Clase contenedora principal
+.container {
+  width: 90%; // El contenido ocupa el 90% del ancho disponible. Permite márgenes laterales en pantallas pequeñas
+  max-width: $max-width; // El contenido ocupa el 90% del ancho disponible. Permite márgenes laterales en pantallas pequeñas
+  margin: 0 auto; // Centra horizontalmente el contenedor
+  padding: 3rem 0; // Añade espacio vertical arriba y abajo
+}
+
+/* =========================
+   SKIP LINK
+========================= */
+// Enlace oculto visualmente por defecto. Permite a usuarios que navegan con teclado saltar directamente al contenido principal
+.skip-link {
+  // Se posiciona de forma absoluta
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  // Estilos visuales cuando aparece
+  background: $color-secundario; 
+  color: $color-blanco; 
+  padding: 0.6rem 1rem;
+  // Se asegura que aparezca por encima de otros elementos
+  z-index: 1000;
+  // Se elimina subrayado por defecto
+  text-decoration: none;
+}
+
+// Cuando hacemos focus aparece un poco separado del borde superior
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* =========================
+   HEADER
+========================= */
+// Estilo principal del encabezado
+.header {
+  background: $color-primario; // Fondo azul corporativo
+  color: $color-blanco; // Texto en blanco
+}
+
+// Ajuste del espaciado interno del contenedor del header
+.header .container {
+  padding: 1.5rem 0; // Espaciado vertical para separar visualmente el contenido
+}
+
+// Estilo del título principal
+.header h1 {
+  margin: 0; // Elimina margen por defecto del navegador
+  font-size: 2rem; // Tamaño destacado para jerarquía visual
+  font-weight: 600; //Grosor del texto
+}
+
+// Lista de navegación principal
+.nav-list {
+  list-style: none; // Elimina viñetas por defecto
+  display: flex; // Distribuye los elementos en línea horizontal
+  gap: 1.5rem; // Espaciado entre enlaces
+  margin-top: 1rem; // Separación respecto al logo
+  padding: 0; // Elimina padding por defecto
+}
+
+// Enlaces de navegación
+.nav-list a {
+  color: $color-blanco; // Texto blanco
+  text-decoration: none; // Se elimina subrayado por defecto
+  font-weight: 600; //Grosor del texto
+}
+
+// Navegación con ratón
+.nav-list a:hover {
+  text-decoration: none; // Sin línea al pasar el ratón
+}
+
+// Navegación con teclado */
+.nav-list a:focus-visible {
+  text-decoration: underline; // Con línea al hacer el foco
+}
+
+/* =========================
+   HERO 
+========================= */
+// Estilo del enlace del logo dentro del header
+.logo a {
+  color: $color-blanco; // Texto blanco
+  text-decoration: none; // Sin línea al pasar el ratón
+}
+
+// Sección principal destacada
+.hero {
+  background: $color-gris-fuerte; // Se aplica un degradado oscuro semitransparente
+  color: $color-blanco; // Texto blanco
+  text-align: center; // Centra el contenido horizontalmente
+  padding: 4rem 1rem; // Espaciado vertical y horizontal para separar visualmente el contenido
+}
+
+// Contenedor interno del hero
+.hero-content {
+  max-width: 850px; // Contenedor interno del hero
+  margin: 0 auto; // Centra el bloque dentro de la sección
+}
+// h1 oculto
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+// Título principal del hero
+.hero h2 {
+  font-size: 2.8rem; // Tamaño destacado para jerarquía visual
+  margin-bottom: 1.5rem; // Separación respecto al párrafo
+}
+
+// Texto del hero
+.hero p {
+  font-size: 1.25rem; // Tamaño del texto del párrafo
+  margin-bottom: 2rem; // Espacio antes del botón
+}
+
+/* =========================
+   SECCIÓN INTRO
+========================= */
+// Sección introductoria con fondo gris suave
+.intro {
+  background: $color-gris-suave;
+}
+
+// Encabezado de la sección introductoria
+.intro-header {
+  text-align: center; // Centra el texto horizontalmente
+  max-width: 750px; // Limita el ancho 
+  margin: 0 auto 3rem auto; // Centra el bloque y añade separación inferior
+}
+
+// Contenedor de características
+.features {
+  display: grid; // Se utiliza CSS grid para distribución flexible y responsive
+  gap: 2rem; // Espacio entre tarjetas
+}
+
+// Tarjetas individuales
+.feature-item {
+  background: $color-blanco; // Fondo blanco en la tarjeta
+  padding: 2rem; // Espaciado interno para separar el contenido de los bordes
+  border-radius: $border-radius; // Bordes redondeados
+  box-shadow: $shadow-suave; // Sombra ligera para dar sensación de profundidad
+  transition: all 0.3s ease; // Transición (movimiento y sombra)
+  display: flex; // Se utiliza flexbox para organizar el contenido interno
+  flex-direction: column; // Coloca los elementos en vertical
+}
+
+// Efecto interactivo al pasar el ratón
+.feature-item:hover {
+  // Eleva la tarjeta ligeramente hacia arriba para simular efecto de elevación
+  transform: translateY(-12px);
+  // Aumenta la sombra para reforzar la sensación de profundidad y efecto interactivo
+  box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+}
+
+// Títulos dentro de cada tarjeta
+.feature-item h3 {
+  margin-bottom: 1rem; // Espacio por debajo del título
+  color: $color-primario; // Color primario
+}
+
+/* =========================
+   BOTONES
+========================= */
+// Estilos base para todos los botones del proyecto
+.btn,
+.btn-secundario {
+  display: inline-block; // Permite aplicar padding y dimensiones como bloque
+  padding: 0.9rem 1.8rem; // Espaciado interno
+  border-radius: $border-radius; // Bordes redondeados
+  font-weight: 600; //Grosor del texto
+  font-size: 1rem; // Tamaño del texto de los botones
+  text-decoration: none; // Elimina subrayado
+  border: none; // Elimina bordes por defecto del navegador
+  cursor: pointer; // Indica interactividad
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  align-self: flex-start; // Evita que se estiren dentro de flex
+}
+
+// Botón principal
+.btn {
+  background: $color-secundario; // Fondo color-secundario
+  color: $color-blanco; // Texto en blanco
+}
+
+// Botón secundario
+.btn-secundario {
+  background: $color-primario; // Fondo color-secundario
+  color: $color-blanco; // Texto en blanco
+}
+
+// Hover botón rojo 
+.btn:hover {
+  // Oscurece ligeramente el color para dar feedback visual
+  background: color.adjust($color-secundario, $lightness: -10%);
+  // Pequeño efecto de elevación al interactuar
+  transform: translateY(-2px);
+  // Sín linea por debajo
+  text-decoration: none;
+}
+
+// Hover botón azul
+.btn-secundario:hover {
+  // Oscurece ligeramente el color para dar feedback visual
+  background: color.adjust($color-primario, $lightness: -10%);
+  // Pequeño efecto de elevación al interactuar
+  transform: translateY(-2px);
+  // Sín linea por debajo
+  text-decoration: none;
+}
+
+// Focus botón rojo
+.btn:focus-visible {
+  // Oscurece ligeramente el color para dar feedback visual
+  background: color.adjust($color-secundario, $lightness: -10%);
+  // Pequeño efecto de elevación al interactuar
+  transform: translateY(-2px);
+  // Con linea por debajo
+  text-decoration: underline;
+}
+
+// Focus botón azul
+.btn-secundario:focus-visible {
+  // Oscurece ligeramente el color para dar feedback visual
+  background: color.adjust($color-primario, $lightness: -10%);
+  // Pequeño efecto de elevación al interactuar
+  transform: translateY(-2px);
+  // Con linea por debajo
+  text-decoration: underline;
+}
+
+/* =========================
+   FOCO ACCESIBLE
+========================= */
+// Se define un estilo de foco visible para elementos interactivos para que los usuarios
+// que navegan con teclado deben poder identificar claramente qué elemento está activo en cada momento.
+button:focus,
+a:focus,
+input:focus,
+textarea:focus {
+  outline: 3px solid $color-secundario; // Se añade un contorno visible de 3px en color rojo corporativo
+  outline-offset: 3px; // Se separa ligeramente el contorno del elemento
+}
+
+/* =========================
+   TARJETAS
+========================= */
+// Contenedor que organiza las tarjetas en formato grid
+.card-grid {
+  display: grid; // Se utiliza CSS Grid para distribución responsive
+  gap: 2rem; // Espacio entre tarjetas
+  margin-top: 2rem; // Separación respecto al encabezado de sección
+}
+
+// Tarjeta individual
+.card {
+  background: $color-blanco; // Fondo blanco
+  border-radius: $border-radius; // Bordes redondeados
+  padding: 1.5rem; // Espaciado interno
+  box-shadow: $shadow-suave; // Sombra ligera para dar sensación de profundidad
+  transition: all 0.3s ease; // Transición (movimiento y sombra)
+  display: flex; // Se utiliza flexbox para organizar el contenido interno
+  flex-direction: column; // Coloca los elementos en vertical
+}
+
+// Permite que el texto ocupe el espacio disponible
+.card p {
+  flex-grow: 1; // Hace que el párrafo empuje el botón hacia abajo
+}
+
+// Efecto interactivo al pasar el ratón
+.card:hover {
+  // Eleva la tarjeta ligeramente hacia arriba para simular efecto de elevación
+  transform: translateY(-12px);
+  // Aumenta la sombra para reforzar la sensación de profundidad y efecto interactivo
+  box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+}
+
+// Contenedor visual de imagen
+.card-media {
+  width: 100%; // Ocupa todo el ancho de la tarjeta
+  height: 230px; // Altura fija
+  background-size: cover; // La imagen cubre todo el espacio disponible
+  background-position: center; // Centra la imagen
+  border-radius: $border-radius; // Bordes redondeados
+  margin-bottom: 1rem; // Separación respecto al texto
+}
+
+// Asignación de imágenes 
+.card-napolitana .card-media {
+  background-image: url("../img/napolitana.jpg");
+}
+.card-carbonara .card-media {
+  background-image: url("../img/carbonara.jpg");
+}
+.card-tiramisu .card-media {
+  background-image: url("../img/tiramisu.jpg");
+}
+.card-risotto .card-media {
+  background-image: url("../img/risotto.jpg");
+}
+
+.card h3 {
+  margin-bottom: 1rem; // Separación respecto al texto
+}
+
+/* =========================
+   FOOTER
+========================= */
+// Estilo principal del pie de página
+.footer {
+  background: $color-primario; // Fondo color-primario
+  color: $color-blanco; // Texto en blanco
+}
+
+// Contenedor interno del footer
+.footer .container {
+  // Espaciado vertical para separar el contenido de los bordes
+  padding: 1.5rem 0; 
+  // Centra el texto horizontalmente para una presentación equilibrada
+  text-align: center;
+}
+
+/* =========================
+   DETALLE RECETA
+========================= */
+// Encabezado principal de la página de detalle
+.detalle-header {
+  text-align: center; // Centra el título y el subtítulo
+  margin-bottom: 2rem; // Separación respecto a la imagen
+}
+
+// Clase base para imágenes principales de detalle
+.detalle-principal {
+  width: 100%; // La imagen ocupa todo el ancho disponible del contenedor
+  height: 450px; // La imagen ocupa todo el alto disponible del contenedor
+  background-size: cover; // La imagen cubre todo el contenedor
+  background-position: center; // Centrado de la imagen
+  border-radius: $border-radius; // Bordes redondeados
+  margin-bottom: 2rem; // Separación inferior
+}
+
+// Imagen específica receta 1
+.img-det1-principal {
+  @extend .detalle-principal;
+  background-image: url("../img/napolitana.jpg");
+}
+
+// Imagen específica receta 2
+.img-det2-principal {
+  @extend .detalle-principal;
+  background-image: url("../img/carbonara.jpg");
+}
+
+// Imagen específica receta 3
+.img-det3-principal {
+  @extend .detalle-principal;
+  background-image: url("../img/tiramisu.jpg");
+}
+
+// Imagen específica receta 4
+.img-det4-principal {
+  @extend .detalle-principal;
+  background-image: url("../img/risotto.jpg");
+}
+
+.glightbox {
+  display: block; // Hace que el enlace tenga tamaño real
+}
+
+.glightbox:focus-visible {
+  outline: 3px solid $color-secundario;
+  outline-offset: 4px;
+  border-radius: $border-radius; // Bordes redondeados
+}
+
+// Lista de información rápida (tiempo, dificultad, raciones)
+.info-list {
+  list-style: none; // Elimina viñetas
+  padding: 0; // Elimina padding por defecto
+  display: flex; // Se utiliza flexbox para organizar el contenido interno
+  flex-direction: column; // Coloca los elementos en vertical
+  gap: 2rem; // Espacio entre tarjetas
+  margin-bottom: 2rem; // Separación inferior
+  align-items: center; // Centra los elementos horizontalmente
+}
+
+// Elementos individuales de la lista informativa
+.info-list li {
+  background: $color-gris-suave; // Fondo gris-suave
+  padding: 0.8rem 1.2rem; // Espaciado interno
+  border-radius: $border-radius; // Bordes redondeados
+}
+
+// Secciones internas (Ingredientes, Preparación, Historia)
+.detalle-seccion {
+  margin-bottom: 2rem; // Separación inferior
+}
+
+// Clase que oculta elementos dinámicamente.
+// Se utiliza junto con JavaScript para mostrar u ocultar ingredientes, preparación e historia.
+.oculto {
+  display: none; // El elemento no se muestra en pantalla
+}
+
+// Botón que permite mostrar u ocultar contenido en las páginas de detalle
+.toggle-btn {
+  margin-left: 1rem; // Separación respecto al título
+  background: $color-secundario; // Fondo color-secundario
+  color: $color-blanco; // Texto color-blanco
+  border: none; // Se elimina el borde por defecto
+  padding: 0.3rem 0.8rem; // Espaciado interno
+  border-radius: $border-radius; // Bordes redondeados
+  cursor: pointer; // Indica interactividad
+  font-size: 0.8rem; // Tamaño del texto
+}
+
+// Efecto visual al pasar el ratón por el botón
+.toggle-btn:hover {
+    // Oscurece ligeramente el color para dar feedback visual
+  background: color.adjust($color-secundario, $lightness: -10%);
+  // Pequeño efecto de elevación al interactuar
+  transform: translateY(-2px);
+  // Con linea por debajo
+  text-decoration: none;
+}
+
+.toggle-btn:focus-visible {
+  // Oscurece ligeramente el color para dar feedback visual
+  background: color.adjust($color-secundario, $lightness: -10%);
+  // Pequeño efecto de elevación al interactuar
+  transform: translateY(-2px);
+  // Con linea por debajo
+  text-decoration: underline;
+}
+
+/* =========================
+   GALERÍA DETALLE 
+========================= */
+.visually-hidden {
+  position: absolute; // Saca el elemento del flujo normal del documento
+  width: 1px; // Reduce el ancho al mínimo posible
+  height: 1px; // Reduce la altura al mínimo posible
+  margin: -1px; // Evita que ocupe espacio visible en el layout
+  padding: 0; // Elimina cualquier espacio interno
+  overflow: hidden; // Oculta cualquier contenido que pudiera sobresalir
+  clip: rect(0, 0, 0, 0); // Recorta completamente el área visible del elemento
+  border: 0; // Elimina cualquier borde que pudiera mostrarse
+}
+
+// Contenedor general de la galería
+.detalle-galeria {
+  margin: 3rem 0; // Espaciado vertical superior e inferior
+}
+
+// Grid de tarjetas dentro de la galería
+.detalle-galeria .features {
+  display: grid; // Se utiliza CSS Grid para distribución responsive
+  gap: 2rem; // Espacio entre tarjetas
+}
+
+/* Texto flexible para igualar alturas */
+.feature-item p {
+  flex-grow: 1; // El párrafo ocupa todo el espacio vertical disponible dentro de la tarjeta
+}
+
+// Base común para imágenes de galería
+.detalle-img {
+  width: 100%; // La imagen ocupa todo el ancho disponible del contenedor
+  height: 260px; // La imagen ocupa todo el ancho disponible del contenedor
+  background-size: cover; // La imagen cubre todo el contenedor
+  background-position: center; // Centrado de la imagen
+  border-radius: $border-radius; // Bordes redondeados
+  margin-bottom: 2rem; // Separación inferior
+}
+
+/* Galería det1 */
+.img-masa {
+  background-image: url("../img/masa.png");
+}
+.img-coccion {
+  background-image: url("../img/cocion.png");
+}
+.img-resultado {
+  background-image: url("../img/napolitana.jpg");
+}
+
+/* Galería det2 */
+.img-guanciale {
+  background-image: url("../img/guanciale.png");
+}
+.img-salsa {
+  background-image: url("../img/salsa.png");
+}
+.img-carbonara-final {
+  background-image: url("../img/carbonara.jpg");
+}
+
+/* Galería det3 - Tiramisú */
+.img-cafe {
+  background-image: url("../img/cafe.png");
+}
+
+.img-mascarpone {
+  background-image: url("../img/mascarpone.png");
+}
+
+.img-tiramisu-final {
+  background-image: url("../img/tiramisu.jpg");
+}
+
+/* Galería det4 - Risotto */
+.img-arroz {
+  background-image: url("../img/arroz.png");
+}
+
+.img-caldo {
+  background-image: url("../img/caldo.png");
+}
+
+.img-risotto-final {
+  background-image: url("../img/risotto.jpg");
+}
+
+/* =========================
+   VIDEO DETALLE
+========================= */
+// Contenedor general de la sección de vídeo
+.detalle-video {
+  margin: 3rem 0; // Espaciado vertical para separarlo del resto del contenido
+}
+
+// Estilo del título del vídeo
+.detalle-video h3 {
+  margin-bottom: 2rem; // Separación respecto al vídeo
+  color: $color-primario; // Texto color-primario
+}
+
+// Contenedor que mantiene proporción 16:9 adaptable
+.video-wrapper {
+  position: relative; // Permite posicionar el iframe respecto a este contenedor
+  width: 100%; // Ocupa todo el ancho disponible
+  padding-bottom: 56.25%; // Mantiene proporción 16:9 
+  height: 0; // La altura real la genera el padding-bottom
+  border-radius: $border-radius; // Bordes redondeados 
+  overflow: hidden; // Evita que el iframe sobresalga del contenedor
+}
+
+.video-wrapper iframe {
+  position: absolute; // Se posiciona dentro del contenedor relativo
+  inset: 0; // Equivale a top:0; right:0; bottom:0; left:0;
+  width: 100%; // Ocupa todo el ancho del contenedor
+  height: 100%; // Ocupa toda la altura generada
+  border: 3px solid transparent; // Reserva espacio para posible borde de foco
+  border-radius: $border-radius; // Bordes redondeados 
+}
+
+.video-wrapper {
+  outline: none; // Elimina el borde azul por defecto del navegador
+}
+
+.video-wrapper:focus {
+  outline: none; // Evita doble foco
+  box-shadow: 0 0 0 3px $color-secundario; // Mismo grosor que el resto
+  border-radius: $border-radius;
+}
+
+/* =========================
+   FORMULARIO SOLICITUD
+========================= */
+
+// Sección general del formulario (fondo diferenciado del resto de la página)
+.formulario-receta {
+  background: $color-gris-suave; // Fondo color-gris-suave
+}
+
+// Contenedor principal del formulario
+.form-receta {
+  background: $color-blanco; // Fondo blanco para contraste
+  padding: 2rem; // Espaciado interno
+  border-radius: $border-radius; // Bordes redondeados 
+  box-shadow: $shadow-suave; // Sombra suave para efecto de tarjeta
+  margin-bottom: 2rem; // Separación inferior
+}
+
+.fondo-gris {
+  background: $color-gris-suave; // Fondo gris-suave
+}
+
+// Grid para organizar los campos
+.form-grid {
+  display: grid; // Se utiliza CSS Grid para distribución responsive
+  gap: 1.5rem; // Espacio entre campos
+  margin-bottom: 2rem; // Separación inferior
+}
+
+// Agrupa label + input en columna
+.form-group {
+  display: flex; // Se utiliza CSS Grid para distribución responsive
+  flex-direction: column; // Coloca los elementos en vertical
+}
+
+// Estilos para inputs y textarea
+.form-group input,
+.form-group textarea {
+  padding: 1rem; // Espaciado interno
+  border-radius: $border-radius; // Bordes redondeados 
+  border: 1px solid $color-texto; // Borde color-texto
+}
+
+// Estilo cuando el campo recibe foco
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none; // Se elimina el outline por defecto
+  border-color: $color-primario; // Se sustituye por cambio de color corporativo
+}
+
+// Asterisco de campo obligatorio
+.obligatorio {
+  color: $color-secundario; // Texto color-secundario
+  font-weight: 600; //Grosor del texto
+}
+
+// Texto informativo de campos obligatorios
+.campos-obligatorios {
+  color: $color-secundario; // Texto color-secundario
+  font-weight: 600; //Grosor del texto
+  margin-bottom: 2rem; // Separación inferior
+}
+
+// Separación del botón dentro del formulario
+.form-receta .btn {
+  margin-top: 2rem; // Separación superior
+  align-self: flex-start; // El boton se alinea a la izquierda
+}
+
+// Mensaje de éxito tras envío correcto
+.mensaje-exito {
+  margin-top: 1rem; // Separación superior
+  padding: 1rem; // Espaciado interno
+  background: $color-verde-claro; // Fondo claro mensaje exito
+  color: $color-verde-fuerte; // Texto oscuro para contraste
+  border-radius: $border-radius; // Bordes redondeados 
+}
+
+// Campo válido (borde verde)
+input.valido,
+textarea.valido {
+  border: 1.5px solid $color-verde; // Borde verde en caso del exito en el campo
+}
+
+// Campo inválido (borde rojo)
+input.invalido,
+textarea.invalido {
+  border: 1.5px solid $color-secundario; // Borde rojo en caso de campo inválido
+}
+
+.error-mensaje {
+  font-size: 0.8rem; // Tamaño de texto
+  color: $color-secundario; // Texto color-secundario
+  margin-top: 0.3rem; // Separación superior
+  display: block; // Hace que ocupe su propia línea
+}
+
+// Contador de caracteres
+#contador-comentarios {
+  font-size: 0.8rem; // Tamaño de texto
+  margin-top: 0.3rem; // Separación superior
+  display: block; // Hace que ocupe toda la línea y se coloque debajo del textarea
+  color: $color-texto; // Texto color-texto
+}
+
+// Estilo visual cuando el botón está desactivado
+.btn:disabled {
+  opacity: 0.5; // Se ve más tenue
+  cursor: not-allowed; // Cursor de prohibido
+  transform: none; // Se elimina efecto hover
+}
+
+/* =========================
+   LINKS
+========================= */
+// Enlaces dentro de la página de fuentes
+.links a {
+  color: $color-primario; // Texto color-primario
+  text-decoration: none; // Sin subrayado por defecto
+  font-weight: 600; // Grosor del texto
+  transition: all 0.3s ease; // Transición (movimiento y sombra)
+}
+
+// Interacción de enlaces
+.links a:hover {
+  text-decoration: none; // Sin línea al pasar el ratón
+}
+.links a:focus-visible {
+  text-decoration: underline; // Con línea al hacer el foco 
+}
+
+// Títulos de cada subsección
+.detalle-seccion h3 {
+  margin-bottom: 2rem; // Separación inferior
+  color: $color-primario; // Texto color-primario
+}
+
+// Listas dentro de las secciones
+.detalle-seccion ul,
+.detalle-seccion ol {
+  padding-left: 1.5rem; // Sangría estándar
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+// Se aplican estos estilos solo en pantallas pequeñas (móviles)
+@media (max-width: 767px) {
+  .container {
+    // Reduce a la mitad el espacio vertical
+    padding: 1.5rem 0;
+  }
+ .nav-list {
+  // La navegación pasa de horizontal a vertical en móvil
+  flex-direction: column;
+  // Reduce la separación a la mitad entre enlaces
+  gap: 0.75rem; 
+  }
+  .header .container {
+    // Logo y menú se colocan uno debajo del otro
+    display: flex;
+    flex-direction: column;
+    // Se alinean a la izquierda
+    align-items: flex-start;
+  }
+  .hero {
+    // Reduce el padding del hero a la mitad
+    padding: 2rem 1rem;
+  }
+  .img-det1-principal,
+  .img-det2-principal {
+    // Reduce la altura de la imagen principal
+    height: 300px; 
+  }
+  .detalle-img {
+    // Reduce la altura de las imágenes de galería
+    height: 200px; 
+  }
+}
+
+// Se aplican estos estilos en tablet y desktop
+@media (min-width: 768px) {
+  .card-grid {
+    // Las tarjetas se distribuyen en 2 columnas
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .info-list {
+    // Distribuye los elementos informativos con espacio entre ellos
+    justify-content: space-between;
+  }
+  .form-grid {
+    // En tablet y superior, los campos se organizan en dos columnas
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// Se aplican estos estilos para desktop
+@media (min-width: 1024px) {
+  .card-grid {
+    // Distribuye los elementos informativos con espacio entre ellos
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .header .container {
+    // Separa logo y navegación en extremos opuestos
+    display: flex;
+    justify-content: space-between;
+    // Centra verticalmente los elementos
+    align-items: center;
+  }
+   .nav-list {
+    // La navegación vuelve a disposición horizontal
+    flex-direction: row;  
+  }
+  .info-list {
+    // Los elementos informativos se colocan en fila
+    display: flex;
+    flex-direction: row;
+    // Se centran horizontalmente
+    justify-content: center;
+    // Se alinean verticalmente
+    align-items: center;
+    // Se alinean verticalmente
+    gap: 2rem;
+  }
+  .features {
+    // Las tarjetas de características se distribuyen en 3 columnas
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Se utiliza la media query prefers-reduced-motion.
+   Esta consulta detecta si el usuario ha configurado su sistema operativo para reducir las animaciones y movimientos,
+   por razones de accesibilidad o sensibilidad visual. */
+@media (prefers-reduced-motion: reduce) {
+
+  /* El selector universal (*) aplica la regla a todos los elementos del documento, garantizando que ninguna animación quede activa. */
+  * {
+
+    /* Se desactivan todas las animaciones CSS.
+       Esto evita efectos de aparición, desplazamientos o transformaciones que puedan generar mareo o incomodidad en algunos usuarios. */
+    animation: none;
+
+    /* Se eliminan también las transiciones CSS.
+       De esta forma se evita cualquier efecto de cambio progresivo en propiedades como color, tamaño o posición. */
+    transition: none;
+  }
+}
+
+/* =========================
+   SWIPER - COLOR CORPORATIVO
+========================= */
+
+/* Se sobrescribe la variable CSS interna de Swiper.
+   Swiper utiliza --swiper-theme-color para definir el color principal
+   de flechas, paginación y otros elementos interactivos. */
+:root {
+  --swiper-theme-color: #{$color-primario};
+}
+
+/* Se fuerza el color de las flechas de navegación (anterior y siguiente).
+   Se utiliza !important para garantizar que tenga prioridad sobre los estilos originales de Swiper. */
+.swiper-button-next,
+.swiper-button-prev {
+  color: $color-primario !important;
+}
+
+/* Se define el color base de los puntos de paginación.
+   Se aplica menor opacidad para que los puntos inactivos se distingan visualmente del punto activo. */
+.swiper-pagination-bullet {
+  background-color: $color-primario !important;
+  opacity: 0.4;
+}
+
+/* Se define el estilo del punto de paginación activo.
+   Se mantiene el color corporativo pero con opacidad total para indicar visualmente la diapositiva actual. */
+.swiper-pagination-bullet-active {
+  background-color: $color-primario !important;
+  opacity: 1;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Listado de recetas tradicionales italianas.">
+  <title>Recetas | Sabores de Italia</title>
+</head>
+
+<body>
+<!-- Enlace para saltar bloques repetidos. Permite a usuarios de teclado evitar la navegación repetitiva. -->
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<!-- Es una directiva procesada por POSTHTML-INCLUDE, queermite dividir el HTML en partes reutilizables (header, footer, etc.),
+facilitando la modularización y evitando duplicación de código.-->
+<include src="src/partials/header.html"></include>
+<!-- Elemento vinculado al skip-link para accesibilidad -->
+<main id="contenido">
+<h1 class="visually-hidden">Sabores de Italia</h1>
+  <section>
+    <div class="container">
+      <!-- data-aos="fade-up" hace aparecer el elemento con un efecto de desvanecimiento
+      mientras se mueve ligeramente hacia arriba al hacer scroll -->
+      <header data-aos="fade-up">
+        <h2>Recetas tradicionales</h2>
+        <p>
+          Explora algunos de los platos más representativos
+          de la cocina italiana.
+        </p>
+      </header>
+
+      <div class="card-grid">
+
+        <!-- PIZZA -->
+        <!-- data-aos="fade-up" aplica animación de aparición suave al hacer scroll.
+        data-aos-delay="100" retrasa la animación 100 milisegundos para efecto escalonado. -->
+        <article class="card card-napolitana" data-aos="fade-up" data-aos-delay="100">
+          <div class="card-media card-napolitana" role="img" aria-label="Pizza napolitana tradicional horneada en horno de leña"></div>
+          <h3>Pizza Napolitana</h3>
+          <p>
+            Masa artesanal horneada en horno de leña con tomate
+            y mozzarella fresca.
+          </p>
+          <a href="det1.html" class="btn-secundario">Ver receta</a>
+        </article>
+
+        <!-- CARBONARA -->
+        <!-- data-aos="fade-up" aplica animación de aparición suave al hacer scroll.
+        data-aos-delay="200" retrasa la animación 200 milisegundos para efecto escalonado. -->
+        <article class="card card-carbonara" data-aos="fade-up" data-aos-delay="200">
+          <div class="card-media card-carbonara" role="img" aria-label="Plato de pasta carbonara tradicional con huevo, queso pecorino y guanciale"></div>
+          <h3>Pasta Carbonara</h3>
+          <p>
+            Receta romana elaborada con huevo,
+            queso pecorino y guanciale.
+          </p>
+          <a href="det2.html" class="btn-secundario">Ver receta</a>
+        </article>
+
+        <!-- TIRAMISÚ -->
+        <!-- data-aos="fade-up" aplica animación de aparición suave al hacer scroll.
+        data-aos-delay="300" retrasa la animación 300 milisegundos para efecto escalonado. -->
+        <article class="card card-tiramisu" data-aos="fade-up" data-aos-delay="300">
+          <div class="card-media card-tiramisu" role="img" aria-label="Tiramisú tradicional italiano espolvoreado con cacao en polvo"></div>
+          <h3>Tiramisú</h3>
+          <p>
+            Postre clásico italiano elaborado con café,
+            mascarpone y cacao.
+          </p>
+          <a href="det3.html" class="btn-secundario">Ver receta</a>
+        </article>
+
+        <!-- RISOTTO -->
+        <!-- data-aos="fade-up" aplica animación de aparición suave al hacer scroll.
+        data-aos-delay="300" mantiene coherencia visual en la animación. -->
+        <article class="card card-risotto" data-aos="fade-up" data-aos-delay="400">
+          <div class="card-media card-risotto" role="img" aria-label="Plato de risotto cremoso con queso parmesano recién rallado"></div>
+          <h3>Risotto</h3>
+          <p>
+            Arroz cremoso típico del norte de Italia
+            con queso parmesano.
+          </p>
+          <a href="det4.html" class="btn-secundario">Ver receta</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+<!-- Es una directiva procesada por POSTHTML-INCLUDE, queermite dividir el HTML en partes reutilizables (header, footer, etc.),
+facilitando la modularización y evitando duplicación de código.-->
+<include src="src/partials/footer.html"></include>
+
+<!-- Se carga el archivo JavaScript principal como módulo. type="module" permite usar import/export y organizar el código de forma modular. -->
+<script type="module" src="./js/main.ts"></script>
+
+</body>
+</html>

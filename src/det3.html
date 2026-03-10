@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Receta tradicional de Tiramisú paso a paso.">
+  <title>Tiramisú | Sabores de Italia</title>
+</head>
+
+<body>
+
+<!-- Enlace para saltar bloques repetidos. Permite a usuarios de teclado evitar la navegación repetitiva. -->
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<!-- Es una directiva procesada por POSTHTML-INCLUDE, queermite dividir el HTML en partes reutilizables (header, footer, etc.),
+facilitando la modularización y evitando duplicación de código.-->
+<include src="src/partials/header.html"></include>
+<!-- Elemento vinculado al skip-link para accesibilidad -->
+<main id="contenido">
+<h1 class="visually-hidden">Sabores de Italia</h1>
+<section>
+  <div class="container">
+
+    <!-- HEADER -->
+    <header class="detalle-header">
+      <h2>Tiramisú</h2>
+      <p>El postre italiano más emblemático elaborado con café y mascarpone.</p>
+    </header>
+
+    <!-- role="img" indica que el div actúa como imagen.
+    aria-label proporciona descripción alternativa para lectores de pantalla.
+    data-aos="fade-up" hace aparecer el elemento con un efecto de desvanecimiento mientras se mueve ligeramente hacia arriba al hacer scroll -->
+    <a href="./img/tiramisu.jpg" class="glightbox" data-gallery="det1"><div class="img-det3-principal" role="img" aria-label="Tiramisú tradicional italiano espolvoreado con cacao" data-aos="fade-up"></div></a>
+
+    <!-- INFO -->
+    <ul class="info-list">
+      <li><strong>Tiempo:</strong> 40 minutos + reposo</li>
+      <li><strong>Dificultad:</strong> Fácil</li>
+      <li><strong>Raciones:</strong> 6 personas</li>
+    </ul>
+
+    <!-- INGREDIENTES -->
+    <!-- data-aos="fade-right" hace aparecer el elemento con un efecto de desvanecimiento
+    mientras se mueve desde la izquierda hacia su posición normal (right). -->
+    <section class="detalle-seccion" data-aos="fade-right">
+      <h3>
+        Ingredientes
+        <!-- Botón que permite mostrar/ocultar contenido dinámicamente con JavaScript -->
+        <button class="toggle-btn" type="button">Mostrar</button>
+      </h3>
+      <!-- Clase "oculto" controla visibilidad mediante JavaScript -->
+      <ul class="oculto">
+        <li>250 g de queso mascarpone</li>
+        <li>3 huevos</li>
+        <li>100 g de azúcar</li>
+        <li>200 ml de café espresso frío</li>
+        <li>200 g de bizcochos de soletilla</li>
+        <li>Cacao en polvo sin azúcar</li>
+      </ul>
+    </section>
+
+    <!-- PREPARACIÓN -->
+    <!-- data-aos="fade-right" hace aparecer el elemento con un efecto de desvanecimiento
+    mientras se mueve desde la izquierda hacia su posición normal (right). -->
+    <section class="detalle-seccion" data-aos="fade-right">
+      <h3>
+        Preparación
+        <!-- Botón que permite mostrar/ocultar contenido dinámicamente con JavaScript -->
+        <button class="toggle-btn" type="button">Mostrar</button>
+      </h3>
+      <!-- Clase "oculto" controla visibilidad mediante JavaScript -->
+      <ol class="oculto">
+        <li>Separar las claras de las yemas.</li>
+        <li>Batir las yemas con el azúcar hasta obtener una mezcla cremosa.</li>
+        <li>Incorporar el mascarpone y mezclar suavemente.</li>
+        <li>Montar las claras a punto de nieve e integrarlas con movimientos envolventes.</li>
+        <li>Sumergir ligeramente los bizcochos en el café frío.</li>
+        <li>Colocar una capa de bizcochos y cubrir con crema.</li>
+        <li>Repetir las capas y finalizar con crema.</li>
+        <li>Refrigerar al menos 4 horas.</li>
+        <li>Espolvorear cacao antes de servir.</li>
+      </ol>
+    </section>
+
+    <!-- HISTORIA -->
+    <!-- data-aos="fade-right" hace aparecer el elemento con un efecto de desvanecimiento
+    mientras se mueve desde la izquierda hacia su posición normal (right). -->
+    <section class="detalle-seccion" data-aos="fade-right">
+      <h3>
+        Historia y tradición
+        <!-- Botón que permite mostrar/ocultar contenido dinámicamente con JavaScript -->
+        <button class="toggle-btn" type="button">Mostrar</button>
+      </h3>
+
+      <div class="presentacion-contenido">
+        <p>
+          El tiramisú es un postre tradicional italiano cuyo origen se sitúa
+          en la región del Véneto durante el siglo XX.
+        </p>
+
+        <p>
+          Su nombre significa literalmente “levántame el ánimo”, en referencia
+          a la energía que aporta el café y el azúcar.
+        </p>
+
+        <p>
+          Aunque existen múltiples variantes, la receta clásica mantiene
+          ingredientes sencillos y una elaboración sin horno.
+        </p>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="detalle-galeria">
+      <h3 class="visually-hidden">Galería del proceso</h3>
+      <div class="features">
+        <!-- data-aos="fade-up" hace aparecer el elemento con un efecto de desvanecimiento ("fade") 
+        mientras se mueven desde abajo hacia arriba (up) al hacer scroll.
+        data-aos-delay="100" retrasa la animación 100 milisegundos para que los elementos aparezcan de forma escalonada. -->
+        <article class="feature-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="detalle-img img-cafe"
+               role="img"
+               aria-label="Preparación del café espresso">
+          </div>
+          <h3>El café</h3>
+          <p>Café espresso intenso que aporta profundidad y aroma.</p>
+        </article>
+        <!-- data-aos="fade-up" hace aparecer el elemento con un efecto de desvanecimiento ("fade") 
+        mientras se mueven desde abajo hacia arriba (up) al hacer scroll.
+        data-aos-delay="200" retrasa la animación 200 milisegundos para que los elementos aparezcan de forma escalonada. -->
+        <article class="feature-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="detalle-img img-mascarpone"
+               role="img"
+               aria-label="Crema de mascarpone batida">
+          </div>
+          <h3>La crema</h3>
+          <p>Mezcla suave y aireada de mascarpone y huevo.</p>
+        </article>
+        <!-- data-aos="fade-up" hace aparecer el elemento con un efecto de desvanecimiento ("fade") 
+        mientras se mueven desde abajo hacia arriba (up) al hacer scroll.
+        data-aos-delay="300" retrasa la animación 300 milisegundos para que los elementos aparezcan de forma escalonada. -->
+        <article class="feature-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="detalle-img img-tiramisu-final"
+               role="img"
+               aria-label="Tiramisú terminado con cacao">
+          </div>
+          <h3>Resultado final</h3>
+          <p>Capas equilibradas con cacao espolvoreado en la superficie.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- VIDEO -->
+    <!-- data-aos="fade-up" hace aparecer el elemento con un efecto de desvanecimiento
+    mientras se mueve ligeramente hacia arriba al hacer scroll -->
+    <section class="detalle-video" data-aos="fade-up">
+      <h3>Vídeo explicativo</h3>
+        <div class="video-wrapper" tabindex="0">
+          <iframe src="https://www.youtube.com/embed/nECvrh_3bWQ?si=B-x1COCokF2L8hK9?cc_load_policy=1" title="Cómo hacer tiramisú" allowfullscreen></iframe>
+        </div>
+
+  <!-- Botón accesible -->
+  <button type="button" class="toggle-btn" aria-expanded="false" aria-controls="transcripcion">Mostrar transcripción</button>
+
+  <!-- Transcripción oculta por defecto -->
+  <section id="transcripcion"class="transcripcion oculto">
+    <h4>Transcripción del vídeo</h4>
+
+    <p>
+      Vamos a preparar tiramisú. Los ingredientes que necesitamos son: seiscientos gramos de mascarpone, ciento veinte gramos de azúcar glas, seis yemas de huevo, seis claras de huevo, cien mililitros de licor de Amaretto o coñac o ron, doscientos mililitros de café templado, bizcochos para tiramisú, chocolate rallado y cacao en polvo. Comenzamos echando en el bol de la batidora las yemas con la mitad del azúcar glas.
+      Y lo vamos a batir todo bien hasta que espumen. Una vez se han quedado blancas y esponjosas, vamos a añadir el mascarpone. (pausa de cinco segundos) Y lo vamos a batir de nuevo hasta que nos quede una mezcla homogénea. Se queda una pasta bastante durita. Ahora limpiamos el bol y reservamos
+      la crema aparte. Lo lavamos y ahora vamos a montar las claras con el resto del azúcar glas. Las tenemos que dejar a punto de nieve durita, pero no hace falta que lleguen a convertirse en merengue. Simplemente, a punto de nieve. Añadimos una pizquita de sal para que monten mejor. Hecho esto, paramos la máquina
+      y lo vamos a mezclar con la crema que habíamos hecho anteriormente. Hacer esta mezcla nos puede resultar un poco más complicado, porque la crema de yemas es un poco más dura que la de claras, pero con un pelín de insistencia nos saldrá bien y bastante fácil. Solo hay que insistir y con una buena espátula, al final sale. Se nos tiene que quedar una crema con consistencia como de yogur. La vamos
+      a reservar y ahora nos vamos a hacer la mezcla del licor de Amaretto con el café para mojar los bizcochos Tenemos que tener un molde rectangular preparado y en un plato hondo vamos a mojar los bizcochos rápidamente, pues son unos bizcochos que absorben muchísimo líquido y si los dejamos más de unos segundos, se empaparán tanto que se romperán Los vamos colocando según la forma de nuestro molde y cuando lo tenemos cubierto,
+      echamos la mitad del relleno que habíamos reservado. Cuando lo tengamos bien extendidito, lo espolvoreamos con el chocolate rallado. Esto no es más que una tableta de chocolate negro rallada en la Thermomix. Repetimos la operación de los bizcochitos y cubrimos con el resto del relleno. Que no nos sobre nada, que así está más bueno. Por último, volvemos a espolvorear con más chocolate rallado.
+      Este truco es excelente, puesto que ahora después, al cubrirlo con el cacao en polvo, no se nos humedecerá al tenerlo en la nevera y estará siempre perfecto, aunque hayan pasado un par de días. Además de que queda mucho más rico. He buscado esta receta a conciencia para hacer el tiramisú lo más originario posible y además de que creo que lo he conseguido, os puedo asegurar que ha quedado delicioso
+    </p>
+  </section>
+</section>
+
+<!-- BOTÓN VOLVER -->
+    <a href="categoria.html" class="btn">Volver a recetas</a>
+
+  </div>
+</section>
+
+</main>
+<!-- Es una directiva procesada por POSTHTML-INCLUDE, queermite dividir el HTML en partes reutilizables (header, footer, etc.),
+facilitando la modularización y evitando duplicación de código.-->
+<include src="src/partials/footer.html"></include>
+<!-- Se carga el archivo JavaScript principal como módulo. type="module" permite usar import/export y organizar el código de forma modular. -->
+<script type="module" src="./js/main.ts"></script>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Solicita nuevas recetas italianas para que las publiquemos en Sabores de Italia.">
+  <title>Solicita una receta | Sabores de Italia</title>
+</head>
+
+<body>
+
+<!-- Enlace para saltar bloques repetidos. Permite a usuarios de teclado evitar la navegación repetitiva. -->
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<!-- Es una directiva procesada por POSTHTML-INCLUDE, queermite dividir el HTML en partes reutilizables (header, footer, etc.),
+facilitando la modularización y evitando duplicación de código.-->
+<include src="src/partials/header.html"></include>
+
+<!-- Elemento vinculado al skip-link para accesibilidad -->
+<main id="contenido" class="fondo-gris">
+<h1 class="visually-hidden">Sabores de Italia</h1>
+<section class="formulario-receta">
+  <div class="container">
+    <!-- data-aos="fade-up" hace aparecer el elemento con un efecto de desvanecimiento
+    mientras se mueve ligeramente hacia arriba al hacer scroll -->
+    <header class="detalle-header" data-aos="fade-up">
+      <h2>Solicita una receta italiana</h2>
+        <p>
+          En Sabores de Italia queremos ampliar nuestro recetario con propuestas de nuestra comunidad.  
+          Si hay algún plato italiano que te gustaría aprender a preparar en casa,
+          envíanos tu sugerencia y valoraremos incluirlo en próximas publicaciones.
+        </p>
+    </header>
+    <!-- data-aos="fade-up" hace aparecer el elemento con un efecto de desvanecimiento ("fade") 
+    mientras se mueven desde abajo hacia arriba (up) al hacer scroll.
+    data-aos-delay="100" retrasa la animación 100 milisegundos para que los elementos aparezcan de forma escalonada. -->
+    <div class="form-wrapper" data-aos="fade-up" data-aos-delay="100">
+      <form class="form-receta" id="form-solicitud">
+
+        <p class="campos-obligatorios">Los campos marcados con <span class="obligatorio">*</span> son obligatorios.</p>
+
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label for="nombre">Nombre <span class="obligatorio">*</span></label>
+            <input type="text" id="nombre" required>
+            <!-- aria-live="polite" permite que el mensaje de error se lea automáticamente cuando aparezca, sin interrumpir la navegación -->
+            <small id="error-nombre" class="error-mensaje" aria-live="polite"></small>
+          </div> 
+
+          <div class="form-group">
+            <label for="apellidos">Apellidos <span class="obligatorio">*</span></label>
+            <input type="text" id="apellidos" required>
+            <!-- aria-live="polite" permite que el mensaje de error se lea automáticamente cuando aparezca, sin interrumpir la navegación -->
+            <small id="error-apellidos" class="error-mensaje" aria-live="polite"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Correo electrónico <span class="obligatorio">*</span></label>
+            <input type="email" id="email" name="email" required aria-describedby="error-email"autocomplete="email">
+            <!-- aria-live="polite" permite que el mensaje de error se lea automáticamente cuando aparezca, sin interrumpir la navegación -->
+            <small id="error-email" class="error-mensaje" aria-live="polite"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="plato">Nombre del plato sugerido <span class="obligatorio">*</span></label>
+            <input type="text" id="plato" required>
+            <!-- aria-live="polite" permite que el mensaje de error se lea automáticamente cuando aparezca, sin interrumpir la navegación -->
+            <small id="error-plato" class="error-mensaje" aria-live="polite"></small>
+          </div>
+
+        </div>
+
+        <div class="form-group">
+          <label for="comentarios">Comentarios adicionales</label>
+          <textarea id="comentarios" rows="4" maxlength="300"></textarea>
+          <small id="contador-comentarios">0 / 300 caracteres</small>
+        </div>
+
+        <button type="submit" class="btn btn-secundario" id="btn-enviar" disabled>Enviar solicitud</button>
+        <!-- aria-live="polite" permite que el mensaje de error se lea automáticamente cuando aparezca, sin interrumpir la navegación -->
+        <div id="mensaje-exito" class="mensaje-exito oculto" aria-live="polite">
+          Gracias por tu sugerencia. La tendremos en cuenta.
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+</section>
+
+</main>
+<!-- Es una directiva procesada por POSTHTML-INCLUDE, queermite dividir el HTML en partes reutilizables (header, footer, etc.),
+facilitando la modularización y evitando duplicación de código.-->
+<include src="src/partials/footer.html"></include>
+<!-- Se carga el archivo JavaScript principal como módulo. type="module" permite usar import/export y organizar el código de forma modular. -->
+<script type="module" src="./js/main.ts"></script>
+
+</body>
+</html>

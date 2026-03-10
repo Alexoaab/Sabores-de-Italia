@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Receta tradicional de Pizza Napolitana paso a paso.">
+  <title>Pizza Napolitana | Sabores de Italia</title>
+</head>
+
+<body>
+<!-- Enlace para saltar bloques repetidos. Permite a usuarios de teclado evitar la navegación repetitiva. -->
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<!-- Es una directiva procesada por POSTHTML-INCLUDE, queermite dividir el HTML en partes reutilizables (header, footer, etc.),
+facilitando la modularización y evitando duplicación de código.-->
+<include src="src/partials/header.html"></include>
+
+<!-- Elemento vinculado al skip-link para accesibilidad -->
+<main id="contenido">
+<h1 class="visually-hidden">Sabores de Italia</h1>
+<section>
+  <div class="container">
+
+    <!-- HEADER -->
+    <header class="detalle-header">
+      <h2>Pizza Napolitana</h2>
+      <p>La receta tradicional originaria de Nápoles.</p>
+    </header>
+    
+    <!-- role="img" indica que el div actúa como imagen.
+    aria-label proporciona descripción alternativa para lectores de pantalla.
+    data-aos="fade-up" hace aparecer el elemento con un efecto de desvanecimiento mientras se mueve ligeramente hacia arriba al hacer scroll -->
+    <a href="./img/napolitana.jpg" class="glightbox" data-gallery="det1"><div class="img-det1-principal" role="img" aria-label="Pizza napolitana tradicional recién horneada" data-aos="fade-up"></div></a>
+
+    <!-- INFO -->
+    <div>
+      <ul class="info-list">
+        <li><strong>Tiempo:</strong> 90 minutos</li>
+        <li><strong>Dificultad:</strong> Media</li>
+        <li><strong>Raciones:</strong> 4 personas</li>
+      </ul>
+    </div>
+
+    <!-- INGREDIENTES -->
+    <!-- data-aos="fade-right" hace aparecer el elemento con un efecto de desvanecimiento
+    mientras se mueve desde la izquierda hacia su posición normal (right). -->
+    <section class="detalle-seccion" data-aos="fade-right">
+      <h3>
+        Ingredientes
+      <!-- Botón que permite mostrar/ocultar contenido dinámicamente con JavaScript -->
+      <button class="toggle-btn" type="button">Mostrar</button>
+      </h3>
+      <!-- Clase "oculto" controla visibilidad mediante JavaScript -->
+      <ul class="oculto">
+        <li>500 g de harina</li>
+        <li>325 ml de agua</li>
+        <li>10 g de sal</li>
+        <li>5 g de levadura fresca</li>
+        <li>Tomate natural triturado</li>
+        <li>Mozzarella fresca</li>
+        <li>Albahaca fresca</li>
+      </ul>
+    </section>
+
+    <!-- PREPARACIÓN -->
+    <!-- data-aos="fade-right" hace aparecer el elemento con un efecto de desvanecimiento
+    mientras se mueve desde la izquierda hacia su posición normal (right). -->
+    <section class="detalle-seccion" data-aos="fade-right">
+      <h3>
+        Preparación
+      <!-- Botón que permite mostrar/ocultar contenido dinámicamente con JavaScript -->
+      <button class="toggle-btn" type="button">Mostrar</button>
+      </h3>
+      <!-- Clase "oculto" controla visibilidad mediante JavaScript -->
+      <ol class="oculto">
+        <li>Mezclar harina, agua y levadura hasta obtener una masa homogénea.</li>
+        <li>Añadir la sal y amasar durante 10 minutos.</li>
+        <li>Dejar reposar 1 hora.</li>
+        <li>Extender la masa y añadir tomate y mozzarella.</li>
+        <li>Hornear a 250°C durante 10-12 minutos.</li>
+        <li>Decorar con albahaca fresca antes de servir.</li>
+      </ol>
+    </section>
+
+    <!-- HISTORIA -->
+    <!-- data-aos="fade-right" hace aparecer el elemento con un efecto de desvanecimiento
+    mientras se mueve desde la izquierda hacia su posición normal (right). -->
+    <section class="detalle-seccion" data-aos="fade-right">
+      <h3>
+        Historia y tradición
+      <!-- Botón que permite mostrar/ocultar contenido dinámicamente con JavaScript -->
+      <button class="toggle-btn" type="button">Mostrar</button>
+      </h3>
+
+    <div class="presentacion-contenido">
+      <p>
+        La pizza napolitana es uno de los símbolos más reconocidos de la gastronomía italiana.
+        Su origen se remonta al siglo XVIII en la ciudad de Nápoles.
+      </p>
+
+      <p>
+        La técnica de elaboración ha sido transmitida durante generaciones,
+        respetando ingredientes y métodos tradicionales.
+      </p>
+
+      <p>
+        Actualmente está considerada Patrimonio Cultural Inmaterial de la Humanidad,
+        consolidándose como referente mundial de la cocina italiana.
+      </p>
+    </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="detalle-galeria">
+      <h3 class="visually-hidden">Galería del proceso</h3>
+      <div class="features">
+        <!-- data-aos="fade-up" hace aparecer el elemento con un efecto de desvanecimiento ("fade") 
+        mientras se mueven desde abajo hacia arriba (up) al hacer scroll.
+        data-aos-delay="100" retrasa la animación 100 milisegundos para que los elementos aparezcan de forma escalonada. -->
+        <article class="feature-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="detalle-img img-masa" role="img" aria-label="Preparación artesanal de la masa"></div>
+            <h3>La masa</h3>
+              <p>Preparación tradicional con fermentación lenta.</p>
+        </article>
+        <!-- data-aos="fade-up" hace aparecer el elemento con un efecto de desvanecimiento ("fade") 
+        mientras se mueven desde abajo hacia arriba (up) al hacer scroll.
+        data-aos-delay="200" retrasa la animación 200 milisegundos para que los elementos aparezcan de forma escalonada. -->
+        <article class="feature-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="detalle-img img-coccion" role="img" aria-label="Horno de leña tradicional"></div>
+            <h3>Cocción</h3>
+              <p>Cocción rápida en horno de leña a alta temperatura.</p>
+        </article>
+        <!-- data-aos="fade-up" hace aparecer el elemento con un efecto de desvanecimiento ("fade") 
+        mientras se mueven desde abajo hacia arriba (up) al hacer scroll.
+        data-aos-delay="300" retrasa la animación 300 milisegundos para que los elementos aparezcan de forma escalonada. -->
+        <article class="feature-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="detalle-img img-resultado" role="img" aria-label="Pizza napolitana servida"></div>
+            <h3>Resultado final</h3>
+              <p>Presentación final con albahaca fresca.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- VIDEO -->
+    <!-- data-aos="fade-up" hace aparecer el elemento con un efecto de desvanecimiento
+    mientras se mueve ligeramente hacia arriba al hacer scroll -->
+<section class="detalle-video" data-aos="fade-up">
+      <h3>Vídeo explicativo</h3>
+        <div class="video-wrapper" tabindex="0">
+          <iframe src="https://www.youtube.com/embed/GksJud8Idc4?cc_load_policy=1" title="Cómo hacer pizza napolitana" allowfullscreen></iframe>
+        </div>
+
+  <!-- Botón accesible -->
+  <button type="button" class="toggle-btn" aria-expanded="false" aria-controls="transcripcion">Mostrar transcripción</button>
+
+  <!-- Transcripción oculta por defecto -->
+  <section id="transcripcion"class="transcripcion oculto">
+    <h4>Transcripción del vídeo</h4>
+
+    <p>
+      Amigos, esto es una pizza napolitana marinara, la número uno del reto treinta pizzas en treinta días. Y la acabo de hacer para este vídeo de YouTube. Con este vídeo y con esta pizza, inauguro el canal de YouTube con recetas largas haciendo las pizzas que hice en el reto de treinta pizzas en treinta días, que es algo que me reclamasteis muchos. Y lo que quiero que sepas es que aunque va a haber humor, como hay en mis vídeos en Instagram o en TikTok, aquí nos vamos a centrar más en los procesos y nos vamos a centrar más en explicar, pues, de una manera más detallada cómo se hacen todas estas cosas. Y lo importante de aquí es
+      hacer este tipo de masa en casa. Así que quédate al vídeo entero, haz todo eso que se suele hacer: suscríbete, dale a me gusta, comenta... Vamos allá. Pizza napolitana... marinara Lo primero que quiero que sepáis es el tipo de masa que vamos a hacer. Vamos a hacer la masa napolitana clásica. La napolitana clásica solo lleva harina, agua, sal y un poquito de levadura. No lleva nada más. No lleva aceite, no lleva un prefermento biga, no lleva un prefermento poolish. Solo harina, agua, sal y un pelín de levadura y muchas horas de fermentación. Esta es la napolitana clásica. Esto es lo que se llama el método directo. Directo quiere decir que mezclamos todos los ingredientes, ponemos a fermentar la masa y continúa su proceso El método indirecto es el que implica que hacemos un prefermento previamente, es decir, haríamos una biga o un poolish o masa madre el día anterior o dos días antes. Y una de las cosas más importantes que tenéis que tener en cuenta a la hora de hacer esta masa es el tipo de harina que vais a utilizar.
+      Una harina para pizza no es la típica harina que tú vas al súper y ves: «Harina para pizza». No, esa no es. ¿Por qué? Porque normalmente lleva levadura incorporada y no queremos que lleva levadura incorporada. Nosotros queremos ponerle nosotros la levadura. ¿Qué implica si nosotros usamos esa, esa harina? Que nosotros no podemos controlar la fermentación porque no sabemos cuánta lleva y normalmente lleva mucha. Nosotros necesitamos una harina para pizza de alguno de los molinos típicos, famosos, que venden harinas, pues, a los usuarios, a los-- a la gente de casa. La harina más típica, la más famosa, la que, digamos
+      tiene acceso casi todo el mundo, es Caputo. Ese tipo de harina es la que utilizaremos para esta masa, que podéis encontrar en las grandes superficies, en internet o en tiendas especializadas Así que con harina, agua, sal, un poquito de levadura, vuestras manos y un cuenco, nos ponemos manos a la obra a hacer la masa de esta pizza napolitana clásica Y empezamos con la harina. En este caso, cuatrocientos ochenta gramos de harina. Trescientos gramos de agua para hacer una hidratación de un sesenta y dos, sesenta y tres por ciento. Trescientos gramos de agua. Agua simplemente del grifo. La sal,
+      más o menos unos ocho o diez gramos de sal también va dentro. Y por último, la levadura. Mirad, este poquito de levadura, que es básicamente, pues un cero coma cinco, no llega ni a un gramo, es la mitad de un gramo de levadura fresca. Si fuese levadura seca, que también la podríais usar, porque siempre me preguntáis por eso, pues simplemente lo que tenéis que hacer es poner nada, apenas la puntita de una cucharilla, muy poquita, muy poquita, porque tened en cuenta que la fresca es el triple de la seca. O sea que si le ponemos esta poquita de fresca, pues de seca tiene que ser un tercio, mucho menos La sal
+      la puse por ahí, pero no pasa absolutamente nada si pongo por aquí también la levadura. Entonces, ahora simplemente lo que hago es deshacerla un poquito entre el agua. Ahí está. Mezclarlo todo y darle un mínimo amasado que ni siquiera va a ser considerado un amasado. Mirad, simplemente que se vayan mezclando los ingredientes. A mí me gusta hacerlo siempre a mano. Yo veo gente que lo hace con cuchara, este movimiento, pero a mí me gusta hacerlo siempre a mano. Entonces, una vez que más o menos ya está todo mezclado, ya veis que no lleva nada, lo que hago es estrujar, estrujar.
+      Y esto es muy importante para que con este movimiento, de alguna manera, ya se vaya desarrollando un poquito el gluten. También es importante que nos aseguremos que en el fondo del cuenco no queda harina suelta. Entonces, tenemos que raspar siempre bien por el fondo para que no quede nada Mirad, no me llevó absolutamente nada de tiempo hacer esto. Decís: «Uh, me pongo nervioso, me tensa que se me pegue la masa a la mano». No pasa nada, no os preocupéis. Hacedme caso, no le tengáis pánico a este momento porque se os va a despegar, que es
+      el típico momento en el cual entra el pánico. Lo que hacéis es ponerla encima de la mesa. Aunque tengáis la masa pegajosa, lo que vais a hacer es con las dos manos ir aplastándola y estirándola un poquito, aplastándola y estirándola un poquito, aplastándola y estirándola un poquito. ¿Veis? De esta manera estamos desarrollando ya un poquito el gluten. Es un trabajo que ni siquiera habría que hacer porque con el reposo en la nevera ya se amasaría, pero quiero que veáis cómo con este simple amasado ya vamos a desarrollar un poquito la masa y ya va a estar
+      ligeramente amasada Mirad, la mano ya está más limpia que antes. También la podemos arrastrar con el canto de la mano. Con una mano, con la mano izquierda aguanto la masa y con la derecha la estiro. Izquierda aguanto la masa, derecha estiro. Izquierda aguanto la masa, derecha estiro. Con los nudillos, con la derecha estiro. Y la voy girando y esto es lo que va haciendo que se vaya desarrollando el gluten, que se vaya amasando No voy a hacer absolutamente nada más. Simplemente mirad, la masa está rugosa, no está amasada, pero, pues ya no está
+      tan, tan pegajosa como estaba antes, sino que ya tiene, pues un poquito de desarrollo. Mi mano sigue teniendo restos de masa, pero ya se me ha ido lo que tenía al principio. Y de hecho también otra cosa que siempre sorprende es que casi no se pega a la mesa. ¿Por qué? Porque es una masa que no tiene mucha hidratación. Casi no se pega a las manos porque, porque ya la he desarrollado un poquito y porque es una masa de no muy alta hidratación La bola se va adentro. Tenemos que tapar la masa. Lo podéis hacer con un paño, pero es recomendable que lo hagáis con un gorro de ducha.
+      ¿Por qué? Porque un gorro de ducha, al ser elástico, se ajusta bien a los recipientes y además impide que entre el aire. Lo importante a la hora de tapar la masa es que no le entre el aire, porque si le entra el aire aquí, creará una especie de piel la masa y no queremos que cree piel. Con lo cual, yo siempre suelo usar un gorro de ducha, pero podríais usar, pues papel film o un paño Ahora lo que vamos a hacer es darle la primera fermentación, la fermentación en bloque, que se llama. ¿Por qué se le llama fermentación en bloque? Pues porque fermenta en un bloque, es decir, una sola parte, una sola masa grande. En este caso van a
+      salir de aquí tres panetos, tres bolas, pero imaginaos, en una pizzería, pues el bloque sería de mucho mayor tamaño porque saldrían doscientas bolas. Entonces, la primera fermentación en bloque la hacemos en nevera, porque nos va a permitir que se desarrolle el sabor, que se termine de amasar y que además nos permite controlar la masa De esta manera podemos olvidarnos de ella de hoy para mañana o de hoy en cuarenta y ocho horas. Entonces, si queréis hacer las pizzas el sábado al mediodía o por la noche, pues simplemente este paso tenéis que hacerlo el día anterior o el jueves o el viernes. Poquita levadura, muchas
+      horas de fermentación. Así que se va a la nevera hasta mañana. Allá vaAdentro, en cualquier estante. La dejamos en la nevera veinticuatro horas y pasadas veinticuatro horas ya veréis la pinta que tiene, lo amasadita que está y continuamos con el proceso. Pasaron dieciocho horas desde que puse la masa en la nevera y diréis vosotros: «¡Uy! Dieciocho no son veinticuatro». Efectivamente. Con esto lo que os quiero decir es que no tienen por qué ser veinticuatro horas exactas, sino que pueden ser dieciocho, pueden ser treinta y seis, pueden ser incluso cuarenta y ocho. No va a pasarse de fermentación. De hecho,
+      aún le va a faltar que fermente unas cuantas horas más a temperatura ambiente, que será lo que hagamos ahora. La división y la fermentación empieza. Coger la masa de la nevera, la masa va a estar fría, y dividirla en la mesa. Aquí la tenéis. Como veis, la masa está rugosa, pero, sin embargo, con las manos un poquito húmedas, pellizcamos un poquito desde abajo. Observad cómo esta parte está rugosa, pero si la estiramos con cuidado, vemos cómo tiene una membrana de gluten perfectamente desarrollada. Y diréis vosotros: «Guau, ¿y eso te pasa a ti y no nos pasa a los demás?»
+      No, esto le pasa a todo el mundo. ¿Por qué? Porque el reposo en la nevera hace que la masa se amase sola, cuando es una masa que no tiene una alta hidratación, como es el caso de la masa napolitana La ponemos sobre la mesa sin usar ni harina ni nada. ¿Por qué? Porque es una masa poco hidratada. Entonces, no se pega. ¿Veis? Si se os pega, si no está así de amasada, después de este reposo en nevera, eso quiere decir que vuestra harina es demasiado floja para el proceso que estamos llevando a cabo. Para dividirla, lo que se suele hacer en Nápoles es
+      estirarla así, como si fuera un churro, porque ahora la vamos a dividir en tres partes más o menos iguales. En-- concretamente, en Nápoles, de hecho, se va boleando al mismo tiempo que se va cortando. Se va boleando así y, una vez que se llega aquí, se corta, se secciona con la mano y listo. Y la masa ya está boleada Nosotros lo vamos a hacer de modo más principiante, que es el siguiente. Bueno, esta voy a aprovechar que ya la tengo dividida para pesarla. Debemos pesar bolas de unos doscientos sesenta gramos cada una de ellas, más o menos. Dos cincuenta, casi
+      a la primera ya acierto. Para dividirla debéis usar una herramienta como esta, que es una rasqueta. La podéis encontrar en cualquier tienda online. Vamos, es hoy en día facilísimo de encontrar una rasqueta Como esta está en dos cincuenta y me faltan diez gramos, lo que hago es cortárselos aquí. Lo secciono por un lado y voy separando. Secciono y separo, secciono y separo. Ya está. (coloca bola en tarja) ¿Y qué hago con este cachito? (bola de masa en la mesa) Como ya tengo la bola hecha, este cachito no se lo puedo poner aquí encima porque la bola, pues perdería su forma. Sin embargo, lo que hago es ponérsela en el lado por donde yo le hice
+      los cortes. ¿Dónde? Ahí, en este lugar. ¿Veis? Y así no molesto esta parte, la parte que ya está lisa Ahora esta, ya me queda dividirla, pues, en dos partes iguales. Esta como es un poquito más estrecha, yo creo que por ahí más o menos. Y me aseguro que la parte lisa siempre queda hacia arriba y la parte que, digamos, está rugosa queda hacia abajo. Entonces, ahora ya tengo las tres bolas (coloca bola en tarja) separadas Hay muchas maneras de hacer una bola. Os voy a enseñar una de ellas y es simplemente con la propia masa, tal cual, con la parte bonita hacia arriba y la parte rugosa hacia abajo. Simplemente,
+      mano derecha hacia arriba, mano izquierda hacia abajo. Mano derecha hacia arriba, mano izquierda hacia abajo. Con los cantos de las manos, vamos levantando con una, bajando con la otra. De esta manera vamos dándole una textura lisa y, al mismo tiempo, le vamos dando tensión por la parte de abajo Primera bola lista. Esta otra, que tiene menos forma, como veis, por cierto, no se pega la masa ni nada por el estilo. ¿Veis? Esta es la parte rugosa, la parte fea. Entonces lo que hacemos es darle la vuelta. Mirad la forma que tiene ahora, que tiene una forma, pues, eso,
+      rectangular y más estrecha por un lado y más ancha por el otro No pasa nada. Mano derecha en cuarenta y cinco grados, mano izquierda hacia abajo. ¿Veis? Con un toque ya le vamos dando un poco la forma más circular. Mano derecha hacia arriba, mano izquierda hacia abajo. Vamos arremetiendo la masa por debajo para que vaya pillando esa tensión, ¿veis? Y le vaya dando esa forma circular, ¿veis Aquí es importante, cuando hagáis esto, que no os quede, digamos, la cicatriz de por dónde habéis cortado la masa. Este-- en este caso, esta es la cicatriz de por dónde cortamos
+      la masa. Entonces, no nos interesa que esto quede a la vista, sino que tiene que quedar toda la bola bien redondita. No debe quedar nada a la vista. Para ello, lo que hacemos es seguir boleando. ¿Veis? La cicatriz está ahí. Seguimos boleando y, en este caso, lo arremeto por ahí para que no me quede a la vista. La cicatriz la acabé arremetiendo por dentro y todo está aquí dentro. Entonces, de esta manera tengo la bola perfectamente hecha Lo que voy a hacer es ponerlas en tápers o bien individuales o bien en un táper grande. Eso ya va al gusto, dependiendo de cómo queráis hacer las pizzas. Si
+      solo queréis hacer una pizza, pues en tápers individuales. Si vais a hacer las tres al mismo tiempo, pues lo ponéis en un táper grande Siempre me preguntáis por la harina de semolina, que es difícil de encontrar. Si no la encontráis, simplemente usáis harina de fritura o harina para fritos, que esa sí que la podéis encontrar en cualquier súper Lo que hacemos es poner una pequeñita capa por encima, muy pequeñita, como veis, ahí está, y la situamos encima. Listo. Nada más y nada menos. Otro toquecito de harina por encima. Lo tapamos
+      (música salsa)
+      Entonces, a partir de ahora empieza la segunda fermentación. La primera fermentación fue en la nevera en bloque. La segunda fermentación es-- empieza, pues, en este caso, en el táper. La segunda fermentación yo la suelo hacer, yo, insisto, yo la suelo hacer a temperatura ambiente. Y a partir de ahora deberíamos dejarle unas tres horas a temperatura ambiente, más o menos, de fermentación. Siempre y cuando esa temperatura ambiente sea de unos veinte, veintidós grados, aproximadamente. Si estáis en un clima tropical con treinta grados, pues evidentemente esas tres horas van a ser mucho menos. Todo depende
+      de la temperatura que tengáis en casa. Yo voy a dejar dos fermentar a temperatura ambiente y la otra, como me la quiero comer mañana, pues, ¿qué hago? La pongo en la nevera y la dejo en la nevera de hoy para mañana. Y cuando estén listas, seguimos Pasaron cuatro horas y estas dos masas ya están listas para poder prepararse. Como os digo, el tiempo puede variar en función de la temperatura que tengáis en vuestras casas. Cuanta más temperatura, menos tiempo le va a llevar y viceversa. Por eso es muy importante que el uso de la nevera esté presente. Es decir, si no queréis que se os dispare, pues la dejáis en la nevera otro ratito y así vais compensando.
+      Lo importante es el estado que presenta la masa. La masa tiene que crecer de tamaño, tiene que estar, pues mullida, tiene que haber aumentado de tamaño. Por la parte baja tiene que tener agujeritos. Los agujeritos..Típicos de la fermentación. Cuando vayáis a hacer ahora la preparación de la pizza, es importante que ya tengáis la mise en place preparada y el horno precalentado. Esta la vamos a hacer en el horno de gas, en un horno que a lo mejor no todos tenéis en casa, pero también vendrá un vídeo en el cual haremos esta misma pizza en el horno de casa. O sea,
+      que lo importante es que esté todo dispuesto para que una vez que nos pongamos manos a la obra con la masa, no perdamos tiempo, sino que montemos la pizza y de ahí se vaya directamente al horno. Una de ellas la voy a preparar y voy a hacer la pizza napolitana marinara, la clásica marinara, que es una pizza súper humilde, no lleva ni siquiera queso, lleva passata de tomate, ajo, albahaca, aceite de oliva virgen extra, orégano y sal. Primero cogemos nuestra masa. Lo primero que hacemos es coger una buena capa
+      de harina de semolina o harina de fritura. Con una rasqueta plástica, a poder ser, pues lo ideal sería que fuerais separando la masa de las paredes. Si no tenéis la rasqueta, no pasa nada. Metéis la mano siempre asegurándoos que tenga semolina alrededor, pues podréis separarla con facilidad. Tened en cuenta que la masa, ¿veis?, cogió un poco la forma ovalada. No pasa nada. Ahora, al volcarla en la mesa conseguiremos que recupere la forma redonda. Ya está separada. La aparto y pongo otra capa de semolina en la mesa. Entonces, ahora cojo la masa
+      y, pum, la vuelco. La parte fea y esta es la parte bonita. Entonces, lo primero que hago es recuperar, digamos, la forma redonda. Y ahora lo que hago es rebozarla. La rebozo bien, de manera que ya se va empezando a estirar un poquito. ¿Veis? Ya le estoy ganando un poquito de tamaño. ¿Veis? Esta es la fea. Esta es la bonita. La primera fase sobre la propia semolina. ¿Veis? Lo típico en Nápoles es que estos dos dedos se cruzan y los otros se pegan, porque así, de esta manera, ya tienes la forma, digamos, redonda de las manos. No es necesario tampoco hacerlo así. Básicamente, tú
+      puedes ir empezando a aplastar como tú quieras y tienes que ir aplastándolo y repartiendo el gas. Es importante que no arrastréis, no arrastréis de esta manera, sino que aplastéis. Y los dedos tienen que estar siempre planos. ¿Para qué? Para que la superficie que vamos a plastando sea siempre uniforme Porque si vuestros dedos no están planos, pues aquí haréis más presión que aquí, de manera que acabará estando un poquito más delgada en unas zonas y más gruesa en otras. La cojo con estos tres dedos y le doy la vuelta. Y vuelvo a aplastar, siempre
+      con la mano recta, ¿veis? Y le doy otra pasada. Con la mano derecha me voy al lado izquierdo y voy rectificando el cornicione. Con la mano izquierda me voy al lado derecho y voy ajustando el cornicone, haciéndolo cada vez más fino. Listo. Con estos tres dedos de nuevo le vuelvo a dar la vuelta. Ahora lo que voy a hacer es con esta mano, la voy a poner en perpendicular y con estos tres dedos pongo la masa encima de mi mano. Y ahora aparto toda la harina, vuelvo a poner la masa.
+      Entonces ahora, pues, hay varios métodos para estirar la masa. Podríamos utilizar el de el volante, es decir, vamos cogiendo por el borde sin tocar el borde y dejando que la gravedad vaya haciendo su efecto. Y de esta manera, pues veis, se va estirando. También podemos cogerla con las manos y estirarla con los puños, de esta manera. ¿Veis? Ahí está Para evitar que se nos pegue, la masa tiene que estar en su punto de fermentación. Si la masa está sobrefermentada, es muy posible también que se pueda pegar a la pala Directamente vamos
+      a montar la pizza y es con la passata de tomate. En este caso, como es la marinara, debe llevar tomate en abundancia porque no va a llevar queso. Entonces, no queremos que la masa, digamos, que nos sufle, que se nos hinche como un globo. Por lo tanto, le vamos a poner bastante tomate, más de lo que llevaría una margarita normal. Un toquecito de sal, orégano, orégano en abundancia. Y el ajo lo vamos a cortar como hacen los napolitanos, con una especie de rasqueta o paleta. (daba con la madera de la rasqueta contra la madera) Pues, en
+      el momento y con el ajo fresco. Tradicionalmente, se ponía en el centro el ajo. ¿Para qué? Para que quien no le gustase el ajo, pues no lo comiese. Pero como a mí me encanta el ajo y me gusta mucho, pues lo voy a esparcir y lo voy a poner como se suele hacer ahora la marinara, que es alrededor de toda la pizza. Me flipa el ajo. Bien de albahaca. La albahaca repartida por toda la superficie. Y por último, ¿qué hacemos? Ponerle un chorro de aceite de oliva. Se le pone de último, ¿por qué? Porque así humedecemos los ingredientes y evitamos que se nos quemen en el horno. Un buen chorro de aceite de
+      oliva. Esto es Preparamos nuestra pala, le ponemos un poquito de harina de semolina en la parte de arriba. Ahora la introduzco por debajo (frenazo con la pala) y, sin miedo, la estiro y la estiro hasta que la tengo subida. ¿Veis? Una vez que la subo, le doy el estirado final, que es el que se hace en la pala. No se suele hacer el estirado final en la mesa, sino que se hace en la pala, de esta manera. La masa está muy delicada, con lo cual, con estos tres dedos hay que hacerlo muy despacio, con los mismos con los que le dimos la vuelta y listo,
+      dándole la forma circular Ahora nos vamos directamente al horno. Horno caliente, en este caso a cuatrocientos cincuenta grados. Introducimos la pala, basculamos hacia atrás. De esta manera. Allá va. Movimiento seco y rápido. Y, por otro lado, tengo preparado el palino. El palino es este, es esta pala más pequeñita que me va a permitir darle la vuelta dentro del horno. Como veis, ya está empezando a levantar. Es una pizza marinara que le lleva muy poquito tiempo. Ahí está.
+      Siempre dejándola en el mismo sitio. Un par de giros más. Ahí está. Y esto está listo. Lo crujiente que está. (crujiente) Por la base. Y esta pizza la vamos a abrir con tijeras, que mucha gente dice: «Pero ¿por qué con tijeras?» Bueno, pues, porque así se observa la estructura interior. Ver cómo es este corniccone, porque ya veis que es una auténtica
+      maravilla. Mirad qué corniccone tan ligero, tan suave. La pizza napolitana es aquella que puedes doblar y que es blandita, que es mórbida, que es jugosa y tierna
+    </p>
+  </section>
+</section>
+
+    <!-- BOTÓN VOLVER -->
+    <a href="categoria.html" class="btn">Volver a recetas</a>
+  </div>
+</section>
+</main>
+<!-- Es una directiva procesada por POSTHTML-INCLUDE, queermite dividir el HTML en partes reutilizables (header, footer, etc.),
+facilitando la modularización y evitando duplicación de código.-->
+<include src="src/partials/footer.html"></include>
+
+<!-- Se carga el archivo JavaScript principal como módulo. type="module" permite usar import/export y organizar el código de forma modular. -->
+<script type="module" src="./js/main.ts"></script>
+
+</body>
+</html>

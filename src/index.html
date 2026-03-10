@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sabores de Italia - Descubre recetas tradicionales italianas.">
+  <title>Sabores de Italia | Recetas tradicionales italianas</title>
+</head>
+
+<body>
+
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<!-- Es una directiva procesada por POSTHTML-INCLUDE, queermite dividir el HTML en partes reutilizables (header, footer, etc.),
+facilitando la modularización y evitando duplicación de código.-->
+<include src="src/partials/header.html"></include>
+
+<main id="contenido">
+  <h1 class="visually-hidden">Sabores de Italia</h1>
+  <!-- data-aos es un atributo utilizado por la librería externa AOS que detecta estos atributos
+   y aplica animaciones al hacer scroll.-->
+  <!-- HERO -->
+  <!-- Cuando el elemento entra en el viewport (al hacer scroll): Se mueve ligeramente desde abajo hacia arriba (up). -->
+  <section class="hero" data-aos="fade-up">
+    <div class="container hero-content">
+      <h2>Descubre la auténtica gastronomía italiana</h2>
+      <p>
+        Italia es reconocida mundialmente por su tradición culinaria.
+        Desde la clásica pizza napolitana hasta la cremosa pasta carbonara,
+        cada receta refleja siglos de historia, cultura y pasión por la cocina.
+      </p>
+      <a href="categoria.html" class="btn">Explorar recetas</a>
+    </div>
+  </section>
+  
+  <!-- INTRO -->
+  <section class="intro">
+    <div class="container">
+      <!-- Cuando el elemento entra en el viewport (al hacer scroll): Se mueve ligeramente desde abajo hacia arriba (up). -->
+      <header class="intro-header" data-aos="fade-up">
+        <h2>Nuestra propuesta gastronómica</h2>
+        <p>
+          Una selección cuidada de recetas tradicionales italianas,
+          desarrolladas con enfoque en autenticidad, calidad y contexto cultural.
+        </p>
+      </header>
+
+      <div class="features">
+        <!-- Cuando el elemento entra en el viewport (al hacer scroll): Se mueve ligeramente desde abajo hacia arriba (up). 
+        Retrasar la animación 100 milisegundos antes de que empiece. -->
+        <article class="feature-item" data-aos="fade-up" data-aos-delay="100">
+          <h3>Recetas tradicionales</h3>
+          <p>Elaboraciones auténticas que respetan las técnicas originales.</p>
+        </article>
+        <!-- Cuando el elemento entra en el viewport (al hacer scroll): Se mueve ligeramente desde abajo hacia arriba (up). 
+        Retrasar la animación 200 milisegundos antes de que empiece. -->
+        <article class="feature-item" data-aos="fade-up" data-aos-delay="200">
+          <h3>Ingredientes de calidad</h3>
+          <p>Productos frescos y materias primas seleccionadas.</p>
+        </article>
+        <!-- Cuando el elemento entra en el viewport (al hacer scroll): Se mueve ligeramente desde abajo hacia arriba (up). 
+        Retrasar la animación 300 milisegundos antes de que empiece. -->
+        <article class="feature-item" data-aos="fade-up" data-aos-delay="300">
+          <h3>Historia y cultura</h3>
+          <p>Cada receta contextualizada dentro de su tradición histórica.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÚLTIMAS RECETAS (CARRUSEL SWIPER) -->
+  <section>
+    <div class="container">
+      <!-- Cuando el elemento entra en el viewport (al hacer scroll): Se mueve ligeramente desde abajo hacia arriba (up). -->
+      <header data-aos="fade-up">
+        <h2>Últimas recetas publicadas</h2>
+        <p>
+          Descubre las incorporaciones más recientes a nuestro recetario italiano.
+        </p>
+      </header>
+
+      <!-- .swiper, .swiper-wrapper y .swiper-slide son clases requeridas por la librería externa SWIPER
+      Swiper transforma esta estructura HTML en un carrusel interactivo.
+      -->
+      <!-- Cuando el elemento entra en el viewport (al hacer scroll): Se mueve ligeramente desde abajo hacia arriba (up). 
+      Retrasar la animación 100 milisegundos antes de que empiece. -->
+      <div class="swiper" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper-wrapper">
+
+          <!-- PIZZA -->
+          <div class="swiper-slide">
+            <article class="card card-napolitana">
+              <div class="card-media card-napolitana" role="img" aria-label="Pizza napolitana tradicional horneada en horno de leña"></div>
+              <h3>Pizza Napolitana</h3>
+              <p>Masa artesanal horneada en horno de leña.</p>
+              <a href="det1.html" class="btn-secundario">Ver detalle</a>
+            </article>
+          </div>
+
+          <!-- CARBONARA -->
+          <div class="swiper-slide">
+            <article class="card card-carbonara">
+              <div class="card-media card-carbonara" role="img" aria-label="Plato de pasta carbonara tradicional con huevo, queso pecorino y guanciale"></div>
+              <h3>Pasta Carbonara</h3>
+              <p>Clásico romano con huevo y pecorino.</p>
+              <a href="det2.html" class="btn-secundario">Ver detalle</a>
+            </article>
+          </div>
+
+          <!-- TIRAMISÚ -->
+          <div class="swiper-slide">
+            <article class="card card-tiramisu">
+              <div class="card-media card-tiramisu" role="img" aria-label="Tiramisú tradicional italiano espolvoreado con cacao en polvo"></div>
+              <h3>Tiramisú</h3>
+              <p>Postre tradicional con café y mascarpone.</p>
+              <a href="det3.html" class="btn-secundario">Ver detalle</a>
+            </article>
+          </div>
+
+          <!-- RISOTTO -->
+          <div class="swiper-slide">
+            <article class="card card-risotto">
+              <div class="card-media card-risotto" role="img" aria-label="Plato de risotto cremoso con queso parmesano recién rallado"></div>
+              <h3>Risotto</h3>
+              <p>Arroz cremoso preparado lentamente con caldo.</p>
+              <a href="det4.html" class="btn-secundario">Ver detalle</a>
+            </article>
+          </div>
+
+        </div>
+
+        <!-- Navegación -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+
+        <!-- Paginación -->
+        <div class="swiper-pagination"></div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+<!-- Es una directiva procesada por POSTHTML-INCLUDE, queermite dividir el HTML en partes reutilizables (header, footer, etc.),
+facilitando la modularización y evitando duplicación de código.-->
+<include src="src/partials/footer.html"></include>
+
+<!-- type="module" permite usar import/export. main.ts está escrito en TypeScript. -->
+<script type="module" src="./js/main.ts"></script>
+
+</body>
+</html>
