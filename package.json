@@ -20,6 +20,7 @@
     "build": "npm-run-all clean parcel:build"
   },
   "devDependencies": {
+    "@parcel/transformer-posthtml": "^2.16.4",
     "@parcel/transformer-sass": "^2.16.4",
     "@types/aos": "^3.0.7",
     "autoprefixer": "^10.4.27",
