@@ -34,7 +34,33 @@ facilitando la modularización y evitando duplicación de código.-->
         <!-- data-aos="fade-up" aplica animación de aparición suave al hacer scroll.
         data-aos-delay="100" retrasa la animación 100 milisegundos para efecto escalonado. -->
         <article class="card card-napolitana" data-aos="fade-up" data-aos-delay="100">
-          <div class="card-media card-napolitana" role="img" aria-label="Pizza napolitana tradicional horneada en horno de leña"></div>
+          <picture class="card-media">
+          <source
+            type="image/avif"
+            srcset="
+              ./img/napolitana.jpg?as=avif&width=320 320w,
+              ./img/napolitana.jpg?as=avif&width=640 640w,
+              ./img/napolitana.jpg?as=avif&width=960 960w"
+            sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 25vw">
+          <source
+            type="image/webp"
+            srcset="
+              ./img/napolitana.jpg?as=webp&width=320 320w,
+              ./img/napolitana.jpg?as=webp&width=640 640w,
+              ./img/napolitana.jpg?as=webp&width=960 960w"
+            sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 25vw">
+          <img
+            src="./img/napolitana.jpg?width=640"
+            srcset="
+              ./img/napolitana.jpg?width=320 320w,
+              ./img/napolitana.jpg?width=640 640w,
+              ./img/napolitana.jpg?width=960 960w"
+            sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 25vw"
+            alt="Pizza napolitana tradicional horneada en horno de leña"
+            width="640"
+            height="640"
+            loading="lazy">
+          </picture>
           <h3>Pizza Napolitana</h3>
           <p>
             Masa artesanal horneada en horno de leña con tomate
@@ -47,7 +73,33 @@ facilitando la modularización y evitando duplicación de código.-->
         <!-- data-aos="fade-up" aplica animación de aparición suave al hacer scroll.
         data-aos-delay="200" retrasa la animación 200 milisegundos para efecto escalonado. -->
         <article class="card card-carbonara" data-aos="fade-up" data-aos-delay="200">
-          <div class="card-media card-carbonara" role="img" aria-label="Plato de pasta carbonara tradicional con huevo, queso pecorino y guanciale"></div>
+          <picture class="card-media">
+          <source
+            type="image/avif"
+            srcset="
+              ./img/carbonara.jpg?as=avif&width=320 320w,
+              ./img/carbonara.jpg?as=avif&width=640 640w,
+              ./img/carbonara.jpg?as=avif&width=960 960w"
+            sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 25vw">
+          <source
+            type="image/webp"
+            srcset="
+              ./img/carbonara.jpg?as=webp&width=320 320w,
+              ./img/carbonara.jpg?as=webp&width=640 640w,
+              ./img/carbonara.jpg?as=webp&width=960 960w"
+            sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 25vw">
+          <img
+            src="./img/carbonara.jpg?width=640"
+            srcset="
+              ./img/carbonara.jpg?width=320 320w,
+              ./img/carbonara.jpg?width=640 640w,
+              ./img/carbonara.jpg?width=960 960w"
+            sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 25vw"
+          alt="Plato de pasta carbonara tradicional con huevo, queso pecorino y guanciale"
+          width="640"
+          height="640"
+          loading="lazy">
+          </picture>
           <h3>Pasta Carbonara</h3>
           <p>
             Receta romana elaborada con huevo,
@@ -60,7 +112,33 @@ facilitando la modularización y evitando duplicación de código.-->
         <!-- data-aos="fade-up" aplica animación de aparición suave al hacer scroll.
         data-aos-delay="300" retrasa la animación 300 milisegundos para efecto escalonado. -->
         <article class="card card-tiramisu" data-aos="fade-up" data-aos-delay="300">
-          <div class="card-media card-tiramisu" role="img" aria-label="Tiramisú tradicional italiano espolvoreado con cacao en polvo"></div>
+          <picture class="card-media">
+          <source
+            type="image/avif"
+            srcset="
+              ./img/tiramisu.jpg?as=avif&width=320 320w,
+              ./img/tiramisu.jpg?as=avif&width=640 640w,
+              ./img/tiramisu.jpg?as=avif&width=960 960w"
+            sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 25vw">
+          <source
+            type="image/webp"
+            srcset="
+              ./img/tiramisu.jpg?as=webp&width=320 320w,
+              ./img/tiramisu.jpg?as=webp&width=640 640w,
+              ./img/tiramisu.jpg?as=webp&width=960 960w"
+            sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 25vw">
+          <img
+            src="./img/tiramisu.jpg?width=640"
+            srcset="
+              ./img/tiramisu.jpg?width=320 320w,
+              ./img/tiramisu.jpg?width=640 640w,
+              ./img/tiramisu.jpg?width=960 960w"
+            sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 25vw"
+            alt="Tiramisú tradicional italiano espolvoreado con cacao en polvo"
+            width="640"
+            height="640"
+            loading="lazy">
+          </picture>
           <h3>Tiramisú</h3>
           <p>
             Postre clásico italiano elaborado con café,
@@ -73,7 +151,33 @@ facilitando la modularización y evitando duplicación de código.-->
         <!-- data-aos="fade-up" aplica animación de aparición suave al hacer scroll.
         data-aos-delay="300" mantiene coherencia visual en la animación. -->
         <article class="card card-risotto" data-aos="fade-up" data-aos-delay="400">
-          <div class="card-media card-risotto" role="img" aria-label="Plato de risotto cremoso con queso parmesano recién rallado"></div>
+          <picture class="card-media">
+          <source
+            type="image/avif"
+            srcset="
+              ./img/risotto.jpg?as=avif&width=320 320w,
+              ./img/risotto.jpg?as=avif&width=640 640w,
+              ./img/risotto.jpg?as=avif&width=960 960w"
+            sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 25vw">
+          <source
+            type="image/webp"
+            srcset="
+              ./img/risotto.jpg?as=webp&width=320 320w,
+              ./img/risotto.jpg?as=webp&width=640 640w,
+              ./img/risotto.jpg?as=webp&width=960 960w"
+            sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 25vw">
+          <img
+            src="./img/risotto.jpg?width=640"
+            srcset="
+              ./img/risotto.jpg?width=320 320w,
+              ./img/risotto.jpg?width=640 640w,
+              ./img/risotto.jpg?width=960 960w"
+            sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 25vw"
+            alt="Plato de risotto cremoso con queso parmesano recién rallado"
+            width="640"
+            height="640"
+            loading="lazy">
+          </picture>
           <h3>Risotto</h3>
           <p>
             Arroz cremoso típico del norte de Italia

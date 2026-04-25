@@ -8,13 +8,13 @@
 </head>
 
 <body>
-
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
 <!-- Es una directiva procesada por POSTHTML-INCLUDE, queermite dividir el HTML en partes reutilizables (header, footer, etc.),
 facilitando la modularización y evitando duplicación de código.-->
 <include src="src/partials/header.html"></include>
 
 <main id="contenido">
+  
   <h1 class="visually-hidden">Sabores de Italia</h1>
   <!-- data-aos es un atributo utilizado por la librería externa AOS que detecta estos atributos
    y aplica animaciones al hacer scroll.-->
@@ -30,6 +30,7 @@ facilitando la modularización y evitando duplicación de código.-->
       </p>
       <a href="categoria.html" class="btn">Explorar recetas</a>
     </div>
+    
   </section>
   
   <!-- INTRO -->
@@ -45,25 +46,93 @@ facilitando la modularización y evitando duplicación de código.-->
       </header>
 
       <div class="features">
-        <!-- Cuando el elemento entra en el viewport (al hacer scroll): Se mueve ligeramente desde abajo hacia arriba (up). 
-        Retrasar la animación 100 milisegundos antes de que empiece. -->
-        <article class="feature-item" data-aos="fade-up" data-aos-delay="100">
-          <h3>Recetas tradicionales</h3>
-          <p>Elaboraciones auténticas que respetan las técnicas originales.</p>
-        </article>
-        <!-- Cuando el elemento entra en el viewport (al hacer scroll): Se mueve ligeramente desde abajo hacia arriba (up). 
-        Retrasar la animación 200 milisegundos antes de que empiece. -->
-        <article class="feature-item" data-aos="fade-up" data-aos-delay="200">
-          <h3>Ingredientes de calidad</h3>
-          <p>Productos frescos y materias primas seleccionadas.</p>
-        </article>
-        <!-- Cuando el elemento entra en el viewport (al hacer scroll): Se mueve ligeramente desde abajo hacia arriba (up). 
-        Retrasar la animación 300 milisegundos antes de que empiece. -->
-        <article class="feature-item" data-aos="fade-up" data-aos-delay="300">
-          <h3>Historia y cultura</h3>
-          <p>Cada receta contextualizada dentro de su tradición histórica.</p>
-        </article>
-      </div>
+  <article class="feature-item" data-aos="fade-up" data-aos-delay="100">
+    <picture class="feature-media feature-media--tradicional">
+      <source
+        type="image/avif"
+        srcset="
+          ./img/napolitana.jpg?as=avif&width=320 320w,
+          ./img/napolitana.jpg?as=avif&width=640 640w"
+        sizes="(max-width: 767px) 100vw, 33vw">
+      <source
+        type="image/webp"
+        srcset="
+          ./img/napolitana.jpg?as=webp&width=320 320w,
+          ./img/napolitana.jpg?as=webp&width=640 640w"
+        sizes="(max-width: 767px) 100vw, 33vw">
+      <img
+        src="./img/napolitana.jpg?width=640"
+        srcset="
+          ./img/napolitana.jpg?width=320 320w,
+          ./img/napolitana.jpg?width=640 640w"
+        sizes="(max-width: 767px) 100vw, 33vw"
+        alt="Pizza tradicional italiana recién horneada"
+        width="640"
+        height="400"
+        loading="lazy">
+    </picture>
+    <h3>Recetas tradicionales</h3>
+    <p>Elaboraciones auténticas que respetan las técnicas originales.</p>
+  </article>
+
+  <article class="feature-item" data-aos="fade-up" data-aos-delay="200">
+    <picture class="feature-media feature-media--ingredientes">
+      <source
+        type="image/avif"
+        srcset="
+          ./img/salsa.png?as=avif&width=320 320w,
+          ./img/salsa.png?as=avif&width=640 640w"
+        sizes="(max-width: 767px) 100vw, 33vw">
+      <source
+        type="image/webp"
+        srcset="
+          ./img/salsa.png?as=webp&width=320 320w,
+          ./img/salsa.png?as=webp&width=640 640w"
+        sizes="(max-width: 767px) 100vw, 33vw">
+      <img
+        src="./img/salsa.png?width=640"
+        srcset="
+          ./img/salsa.png?width=320 320w,
+          ./img/salsa.png?width=640 640w"
+        sizes="(max-width: 767px) 100vw, 33vw"
+        alt="Ingredientes frescos utilizados en la cocina italiana"
+        width="640"
+        height="400"
+        loading="lazy">
+    </picture>
+    <h3>Ingredientes de calidad</h3>
+    <p>Productos frescos y materias primas seleccionadas.</p>
+  </article>
+
+  <article class="feature-item" data-aos="fade-up" data-aos-delay="300">
+    <picture class="feature-media feature-media--historia">
+      <source
+        type="image/avif"
+        srcset="
+          ./img/tiramisu.jpg?as=avif&width=320 320w,
+          ./img/tiramisu.jpg?as=avif&width=640 640w"
+        sizes="(max-width: 767px) 100vw, 33vw">
+      <source
+        type="image/webp"
+        srcset="
+          ./img/tiramisu.jpg?as=webp&width=320 320w,
+          ./img/tiramisu.jpg?as=webp&width=640 640w"
+        sizes="(max-width: 767px) 100vw, 33vw">
+      <img
+        src="./img/tiramisu.jpg?width=640"
+        srcset="
+          ./img/tiramisu.jpg?width=320 320w,
+          ./img/tiramisu.jpg?width=640 640w"
+        sizes="(max-width: 767px) 100vw, 33vw"
+        alt="Postre italiano representativo de su tradición gastronómica"
+        width="640"
+        height="400"
+        loading="lazy">
+    </picture>
+    <h3>Historia y cultura</h3>
+    <p>Cada receta contextualizada dentro de su tradición histórica.</p>
+  </article>
+</div>
     </div>
   </section>
 
@@ -89,7 +158,33 @@ facilitando la modularización y evitando duplicación de código.-->
           <!-- PIZZA -->
           <div class="swiper-slide">
             <article class="card card-napolitana">
-              <div class="card-media card-napolitana" role="img" aria-label="Pizza napolitana tradicional horneada en horno de leña"></div>
+              <picture class="card-media">
+                <source
+                  type="image/avif"
+                  srcset="
+                    ./img/napolitana.jpg?as=avif&width=320 320w,
+                    ./img/napolitana.jpg?as=avif&width=640 640w,
+                    ./img/napolitana.jpg?as=avif&width=960 960w"
+                  sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 25vw">
+                <source
+                  type="image/webp"
+                  srcset="
+                    ./img/napolitana.jpg?as=webp&width=320 320w,
+                    ./img/napolitana.jpg?as=webp&width=640 640w,
+                    ./img/napolitana.jpg?as=webp&width=960 960w"
+                  sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 25vw">
+                <img
+                  src="./img/napolitana.jpg?width=640"
+                  srcset="
+                    ./img/napolitana.jpg?width=320 320w,
+                    ./img/napolitana.jpg?width=640 640w,
+                    ./img/napolitana.jpg?width=960 960w"
+                  sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 25vw"
+                  alt="Pizza napolitana tradicional horneada en horno de leña"
+                  width="640"
+                  height="640"
+                  loading="lazy">
+                </picture>
               <h3>Pizza Napolitana</h3>
               <p>Masa artesanal horneada en horno de leña.</p>
               <a href="det1.html" class="btn-secundario">Ver detalle</a>
@@ -99,7 +194,33 @@ facilitando la modularización y evitando duplicación de código.-->
           <!-- CARBONARA -->
           <div class="swiper-slide">
             <article class="card card-carbonara">
-              <div class="card-media card-carbonara" role="img" aria-label="Plato de pasta carbonara tradicional con huevo, queso pecorino y guanciale"></div>
+              <picture class="card-media">
+              <source
+                type="image/avif"
+                srcset="
+                  ./img/carbonara.jpg?as=avif&width=320 320w,
+                  ./img/carbonara.jpg?as=avif&width=640 640w,
+                  ./img/carbonara.jpg?as=avif&width=960 960w"
+                sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 25vw">
+              <source
+                type="image/webp"
+                srcset="
+                  ./img/carbonara.jpg?as=webp&width=320 320w,
+                  ./img/carbonara.jpg?as=webp&width=640 640w,
+                  ./img/carbonara.jpg?as=webp&width=960 960w"
+                sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 25vw">
+              <img
+                src="./img/carbonara.jpg?width=640"
+                srcset="
+                  ./img/carbonara.jpg?width=320 320w,
+                  ./img/carbonara.jpg?width=640 640w,
+                  ./img/carbonara.jpg?width=960 960w"
+                sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 25vw"
+                alt="Plato de pasta carbonara tradicional con huevo, queso pecorino y guanciale"
+                width="640"
+                height="640"
+                loading="lazy">
+              </picture>
               <h3>Pasta Carbonara</h3>
               <p>Clásico romano con huevo y pecorino.</p>
               <a href="det2.html" class="btn-secundario">Ver detalle</a>
@@ -109,7 +230,33 @@ facilitando la modularización y evitando duplicación de código.-->
           <!-- TIRAMISÚ -->
           <div class="swiper-slide">
             <article class="card card-tiramisu">
-              <div class="card-media card-tiramisu" role="img" aria-label="Tiramisú tradicional italiano espolvoreado con cacao en polvo"></div>
+              <picture class="card-media">
+                <source
+                  type="image/avif"
+                  srcset="
+                    ./img/tiramisu.jpg?as=avif&width=320 320w,
+                    ./img/tiramisu.jpg?as=avif&width=640 640w,
+                    ./img/tiramisu.jpg?as=avif&width=960 960w"
+                  sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 25vw">
+                <source
+                  type="image/webp"
+                  srcset="
+                    ./img/tiramisu.jpg?as=webp&width=320 320w,
+                    ./img/tiramisu.jpg?as=webp&width=640 640w,
+                    ./img/tiramisu.jpg?as=webp&width=960 960w"
+                  sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 25vw">
+                <img
+                  src="./img/tiramisu.jpg?width=640"
+                  srcset="
+                    ./img/tiramisu.jpg?width=320 320w,
+                    ./img/tiramisu.jpg?width=640 640w,
+                    ./img/tiramisu.jpg?width=960 960w"
+                  sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 25vw"
+                  alt="Tiramisú tradicional italiano espolvoreado con cacao en polvo"
+                  width="640"
+                  height="640"
+                  loading="lazy">
+                </picture>
               <h3>Tiramisú</h3>
               <p>Postre tradicional con café y mascarpone.</p>
               <a href="det3.html" class="btn-secundario">Ver detalle</a>
@@ -119,7 +266,33 @@ facilitando la modularización y evitando duplicación de código.-->
           <!-- RISOTTO -->
           <div class="swiper-slide">
             <article class="card card-risotto">
-              <div class="card-media card-risotto" role="img" aria-label="Plato de risotto cremoso con queso parmesano recién rallado"></div>
+              <picture class="card-media">
+                <source
+                  type="image/avif"
+                  srcset="
+                    ./img/risotto.jpg?as=avif&width=320 320w,
+                    ./img/risotto.jpg?as=avif&width=640 640w,
+                    ./img/risotto.jpg?as=avif&width=960 960w"
+                  sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 25vw">
+                <source
+                  type="image/webp"
+                  srcset="
+                    ./img/risotto.jpg?as=webp&width=320 320w,
+                    ./img/risotto.jpg?as=webp&width=640 640w,
+                    ./img/risotto.jpg?as=webp&width=960 960w"
+                  sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 25vw">
+                <img
+                  src="./img/risotto.jpg?width=640"
+                  srcset="
+                    ./img/risotto.jpg?width=320 320w,
+                    ./img/risotto.jpg?width=640 640w,
+                    ./img/risotto.jpg?width=960 960w"
+                  sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 25vw"
+                  alt="Plato de risotto cremoso con queso parmesano recién rallado"
+                  width="640"
+                  height="640"
+                  loading="lazy">
+                </picture>
               <h3>Risotto</h3>
               <p>Arroz cremoso preparado lentamente con caldo.</p>
               <a href="det4.html" class="btn-secundario">Ver detalle</a>

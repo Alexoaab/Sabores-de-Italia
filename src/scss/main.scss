@@ -191,6 +191,100 @@ main {
   margin-bottom: 2rem; // Espacio antes del botón
 }
 
+.hero-flag {
+  width: 140px; // Define el ancho total del contenedor de la bandera en el hero
+  margin: 2rem auto 0; // Añade separación superior y centra horizontalmente el bloque
+}
+
+.hero-flag__svg {
+  display: block; // Hace que el SVG se comporte como un bloque y evite espacios extra en línea
+  width: 100%; // Hace que el SVG ocupe todo el ancho del contenedor .hero-flag
+  height: auto; // Mantiene la proporción original del SVG al escalar
+  animation: flagFloat 3s ease-in-out infinite; // Aplica una animación continua y suave llamada flagFloat
+}
+
+.hero-flag__green {
+  fill: #009246; // Aplica el color verde de la bandera italiana
+}
+
+.hero-flag__white {
+  fill: #ffffff; // Aplica el color blanco de la bandera italiana
+}
+
+.hero-flag__red {
+  fill: #ce2b37; // Aplica el color rojo de la bandera italiana
+}
+
+.logo-link {
+  display: inline-flex; // Coloca bandera y texto en línea usando flexbox
+  align-items: center; // Centra verticalmente los elementos internos
+  gap: 0.75rem; // Añade separación horizontal entre la bandera y el texto
+  color: $color-blanco; // Aplica color blanco al texto del enlace
+  text-decoration: none; // Elimina el subrayado por defecto del enlace
+}
+
+.logo-text {
+  font-size: 2rem; // Define el tamaño del texto del logotipo
+  font-weight: 600; // Aplica un grosor seminegrita para reforzar la jerarquía visual
+  line-height: 1; // Reduce la altura de línea para compactar visualmente el bloque
+}
+
+.logo-flag {
+  display: inline-flex; // Permite al contenedor de la bandera alinearse en línea con el texto
+  align-items: center; // Centra verticalmente el SVG dentro de su contenedor
+  width: 46px; // Define el ancho de la bandera dentro del logo
+  flex-shrink: 0; // Evita que la bandera se encoja si falta espacio
+}
+
+.logo-flag__svg {
+  display: block; // Hace que el SVG se comporte como bloque y evite espacios no deseados
+  width: 100%; // Hace que el SVG ocupe todo el ancho del contenedor .logo-flag
+  height: auto; // Mantiene la proporción original del SVG
+}
+
+.logo-flag__green {
+  fill: #009246; // Aplica el verde de la bandera a la franja correspondiente
+}
+
+.logo-flag__white {
+  fill: #ffffff; // Aplica el blanco de la bandera a la franja correspondiente
+}
+
+.logo-flag__red {
+  fill: #ce2b37; // Aplica el rojo de la bandera a la franja correspondiente
+}
+
+.flag-wave {
+  transform-origin: left center; // Fija el origen de la transformación en el lado izquierdo y centrado verticalmente
+  animation: flagFabric 1.8s ease-in-out infinite; // Aplica la animación de ondeado de forma continua
+}
+
+.flag-wave--2 {
+  animation-delay: 0.15s; // Retrasa ligeramente la animación de la segunda franja para crear efecto de ola
+}
+
+.flag-wave--3 {
+  animation-delay: 0.3s; // Retrasa aún más la tercera franja para reforzar el movimiento progresivo
+}
+
+@keyframes flagFabric {
+  0% {
+    transform: translateX(0) skewY(0deg) scaleX(1); // Estado inicial sin desplazamiento ni deformación
+  }
+  25% {
+    transform: translateX(1px) skewY(-3deg) scaleX(1.03); // Desplaza y deforma ligeramente la franja hacia un lado
+  }
+  50% {
+    transform: translateX(-1px) skewY(2deg) scaleX(0.98); // Invierte el desplazamiento y modifica la forma para simular ondulación
+  }
+  75% {
+    transform: translateX(1px) skewY(-2deg) scaleX(1.02); // Repite una oscilación suave antes de volver al estado inicial
+  }
+  100% {
+    transform: translateX(0) skewY(0deg) scaleX(1); // Recupera la posición original cerrando el ciclo de animación
+  }
+}
+
 /* =========================
    SECCIÓN INTRO
 ========================= */
@@ -237,6 +331,42 @@ main {
   color: $color-primario; // Color primario
 }
 
+.feature-media {
+  display: block; // Hace que el contenedor de la imagen se comporte como un elemento de bloque y ocupe toda la línea disponible
+  width: 100%; // Indica que el contenedor ocupará todo el ancho disponible dentro de su tarjeta o bloque padre
+  aspect-ratio: 16 / 9; // Fija una proporción horizontal constante para todas las imágenes, evitando que cada una tenga una altura distinta
+  margin-bottom: 1.25rem; // Añade una separación inferior entre la imagen y el contenido que aparece debajo, como el título o el texto
+  overflow: hidden; // Oculta cualquier parte de la imagen que sobresalga del contenedor tras aplicar el recorte o el ajuste con object-fit
+  clip-path: polygon( // Aplica un recorte no rectangular al contenedor de la imagen usando una forma poligonal definida por varios puntos
+    8% 0%, // Primer punto del polígono, situado cerca de la esquina superior izquierda
+    34% 3%, // Segundo punto, ligeramente desplazado hacia abajo para comenzar a crear una ondulación en el borde superior
+    50% 0%, // Punto central superior, que vuelve a elevar la forma
+    66% 3%, // Punto simétrico respecto al anterior, manteniendo la ondulación del borde superior
+    92% 0%, // Punto próximo a la esquina superior derecha
+    100% 12%, // Inicio del borde derecho, ya descendiendo
+    97% 34%, // Punto intermedio del lateral derecho con ligera entrada
+    100% 50%, // Punto central del lado derecho
+    97% 66%, // Nuevo entrante suave en el lateral derecho
+    100% 88%, // Punto próximo a la esquina inferior derecha
+    92% 100%, // Punto en el borde inferior derecho
+    66% 97%, // Punto inferior con ligera ondulación hacia arriba
+    50% 100%, // Punto central inferior
+    34% 97%, // Punto simétrico en la parte inferior
+    8% 100%, // Punto en la zona inferior izquierda
+    0% 88%, // Comienzo del lateral izquierdo inferior
+    3% 66%, // Punto intermedio del lateral izquierdo con ligera salida
+    0% 50%, // Punto central del lado izquierdo
+    3% 34%, // Segundo saliente suave en el lateral izquierdo
+    0% 12% // Último punto antes de cerrar el polígono en la zona superior izquierda
+  );
+}
+
+.feature-media img {
+  display: block; // Hace que la imagen no deje espacios extra propios de los elementos en línea
+  width: 100%; // Hace que la imagen ocupe todo el ancho del contenedor recortado
+  height: 100%; // Hace que la imagen también ocupe toda la altura del contenedor
+  object-fit: cover; // Escala la imagen para que cubra completamente el área disponible, aunque sea necesario recortar parte de ella
+}
 /* =========================
    BOTONES
 ========================= */
@@ -356,26 +486,19 @@ textarea:focus {
 
 // Contenedor visual de imagen
 .card-media {
-  width: 100%; // Ocupa todo el ancho de la tarjeta
-  height: 230px; // Altura fija
-  background-size: cover; // La imagen cubre todo el espacio disponible
-  background-position: center; // Centra la imagen
-  border-radius: $border-radius; // Bordes redondeados
-  margin-bottom: 1rem; // Separación respecto al texto
+  display: block; // Hace que el contenedor de la imagen se comporte como un elemento de bloque y ocupe su propia línea
+  width: 100%; // Indica que el contenedor debe ocupar todo el ancho disponible dentro de la tarjeta
+  aspect-ratio: 1 / 1; // Fija una proporción cuadrada constante para todas las imágenes de las tarjetas
+  overflow: hidden; // Oculta cualquier parte de la imagen que sobresalga del contenedor
+  border-radius: $border-radius; // Aplica esquinas redondeadas al contenedor usando la variable común definida en el proyecto
+  margin-bottom: 1rem; // Añade una separación inferior entre la imagen y el contenido que aparece debajo
 }
 
-// Asignación de imágenes 
-.card-napolitana .card-media {
-  background-image: url("../img/napolitana.jpg");
-}
-.card-carbonara .card-media {
-  background-image: url("../img/carbonara.jpg");
-}
-.card-tiramisu .card-media {
-  background-image: url("../img/tiramisu.jpg");
-}
-.card-risotto .card-media {
-  background-image: url("../img/risotto.jpg");
+.card-media img {
+  display: block; // Hace que la imagen se comporte como un bloque y evita espacios extra típicos de los elementos en línea
+  width: 100%; // Hace que la imagen ocupe todo el ancho del contenedor
+  height: 100%; // Hace que la imagen ocupe también toda la altura del contenedor
+  object-fit: cover; // Ajusta la imagen para que cubra completamente el área disponible sin deformarse, aunque pueda recortarse parcialmente
 }
 
 .card h3 {
@@ -418,28 +541,20 @@ textarea:focus {
   margin-bottom: 2rem; // Separación inferior
 }
 
-// Imagen específica receta 1
-.img-det1-principal {
-  @extend .detalle-principal;
-  background-image: url("../img/napolitana.jpg");
+.detalle-principal-media {
+  display: block; // Hace que el contenedor de la imagen principal se comporte como un elemento de bloque
+  width: 100%; // Indica que el contenedor ocupará todo el ancho disponible dentro de la página de detalle
+  height: 420px; // Fija una altura constante para la imagen principal, garantizando una presentación visual estable
+  overflow: hidden; // Oculta cualquier parte de la imagen que sobresalga del área visible del contenedor
+  border-radius: $border-radius; // Aplica esquinas redondeadas al contenedor utilizando la variable común definida en el proyecto
+  margin-bottom: 2rem; // Añade una separación inferior respecto al contenido que aparece debajo de la imagen
 }
 
-// Imagen específica receta 2
-.img-det2-principal {
-  @extend .detalle-principal;
-  background-image: url("../img/carbonara.jpg");
-}
-
-// Imagen específica receta 3
-.img-det3-principal {
-  @extend .detalle-principal;
-  background-image: url("../img/tiramisu.jpg");
-}
-
-// Imagen específica receta 4
-.img-det4-principal {
-  @extend .detalle-principal;
-  background-image: url("../img/risotto.jpg");
+.detalle-principal-media img {
+  display: block; // Hace que la imagen se comporte como un bloque y evita espacios sobrantes
+  width: 100%; // Hace que la imagen ocupe todo el ancho del contenedor
+  height: 100%; // Hace que la imagen ocupe toda la altura definida en el contenedor
+  object-fit: cover; // Ajusta la imagen para que cubra completamente el área visible sin deformarse, aunque parte de la imagen pueda recortarse
 }
 
 .glightbox {
@@ -544,60 +659,17 @@ textarea:focus {
 
 // Base común para imágenes de galería
 .detalle-img {
-  width: 100%; // La imagen ocupa todo el ancho disponible del contenedor
-  height: 260px; // La imagen ocupa todo el ancho disponible del contenedor
-  background-size: cover; // La imagen cubre todo el contenedor
-  background-position: center; // Centrado de la imagen
-  border-radius: $border-radius; // Bordes redondeados
-  margin-bottom: 2rem; // Separación inferior
+  width: 100%; // Hace que el contenedor de la imagen secundaria ocupe todo el ancho disponible dentro de su tarjeta o bloque
+  overflow: hidden; // Oculta cualquier parte de la imagen que sobresalga del contenedor
+  aspect-ratio: 1 / 1; // Fija una proporción cuadrada para mantener una presentación homogénea en todas las imágenes secundarias
+  border-radius: $border-radius; // Aplica esquinas redondeadas al contenedor usando la variable común del proyecto
+  margin-bottom: 2rem; // Añade una separación inferior respecto al contenido que aparece a continuación
 }
 
-/* Galería det1 */
-.img-masa {
-  background-image: url("../img/masa.png");
-}
-.img-coccion {
-  background-image: url("../img/cocion.png");
-}
-.img-resultado {
-  background-image: url("../img/napolitana.jpg");
-}
-
-/* Galería det2 */
-.img-guanciale {
-  background-image: url("../img/guanciale.png");
-}
-.img-salsa {
-  background-image: url("../img/salsa.png");
-}
-.img-carbonara-final {
-  background-image: url("../img/carbonara.jpg");
-}
-
-/* Galería det3 - Tiramisú */
-.img-cafe {
-  background-image: url("../img/cafe.png");
-}
-
-.img-mascarpone {
-  background-image: url("../img/mascarpone.png");
-}
-
-.img-tiramisu-final {
-  background-image: url("../img/tiramisu.jpg");
-}
-
-/* Galería det4 - Risotto */
-.img-arroz {
-  background-image: url("../img/arroz.png");
-}
-
-.img-caldo {
-  background-image: url("../img/caldo.png");
-}
-
-.img-risotto-final {
-  background-image: url("../img/risotto.jpg");
+.detalle-img img {
+  display: block; // Hace que la imagen se comporte como un bloque y evita espacios sobrantes propios de elementos en línea
+  width: 100%; // Hace que la imagen ocupe todo el ancho del contenedor
+  height: auto; // Mantiene la proporción natural de la imagen al escalarla en anchura
 }
 
 /* =========================
@@ -786,139 +858,102 @@ textarea.invalido {
   padding-left: 1.5rem; // Sangría estándar
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+// =========================
+// RESPONSIVE
+// =========================
+
 // Se aplican estos estilos solo en pantallas pequeñas (móviles)
 @media (max-width: 767px) {
   .container {
-    // Reduce a la mitad el espacio vertical
     padding: 1.5rem 0;
   }
- .nav-list {
-  // La navegación pasa de horizontal a vertical en móvil
-  flex-direction: column;
-  // Reduce la separación a la mitad entre enlaces
-  gap: 0.75rem; 
+
+  .nav-list {
+    flex-direction: column;
+    gap: 0.75rem;
   }
+
   .header .container {
-    // Logo y menú se colocan uno debajo del otro
     display: flex;
     flex-direction: column;
-    // Se alinean a la izquierda
     align-items: flex-start;
   }
+
   .hero {
-    // Reduce el padding del hero a la mitad
     padding: 2rem 1rem;
   }
-  .img-det1-principal,
-  .img-det2-principal {
-    // Reduce la altura de la imagen principal
-    height: 300px; 
+
+  .detalle-principal-media {
+    height: 300px;
   }
+
   .detalle-img {
-    // Reduce la altura de las imágenes de galería
-    height: 200px; 
+    aspect-ratio: auto;
+    height: auto;
+  }
+
+  .detalle-img img {
+    width: 100%;
+    height: auto;
+    object-fit: initial;
   }
 }
 
-// Se aplican estos estilos en tablet y desktop
-@media (min-width: 768px) {
+// Se aplican estos estilos solo en tablet
+@media (min-width: 768px) and (max-width: 1023px) {
   .card-grid {
-    // Las tarjetas se distribuyen en 2 columnas
     grid-template-columns: repeat(2, 1fr);
   }
+
   .info-list {
-    // Distribuye los elementos informativos con espacio entre ellos
     justify-content: space-between;
   }
+
   .form-grid {
-    // En tablet y superior, los campos se organizan en dos columnas
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .detalle-principal-media {
+    height: 360px;
+  }
+
+  .detalle-img {
+    aspect-ratio: auto;
+    height: auto;
+  }
+
+  .detalle-img img {
+    width: 100%;
+    height: auto;
+    object-fit: initial;
   }
 }
 
-// Se aplican estos estilos para desktop
+// Se aplican estos estilos en desktop
 @media (min-width: 1024px) {
   .card-grid {
-    // Distribuye los elementos informativos con espacio entre ellos
     grid-template-columns: repeat(4, 1fr);
   }
+
   .header .container {
-    // Separa logo y navegación en extremos opuestos
     display: flex;
     justify-content: space-between;
-    // Centra verticalmente los elementos
     align-items: center;
   }
-   .nav-list {
-    // La navegación vuelve a disposición horizontal
-    flex-direction: row;  
+
+  .nav-list {
+    flex-direction: row;
   }
+
   .info-list {
-    // Los elementos informativos se colocan en fila
     display: flex;
     flex-direction: row;
-    // Se centran horizontalmente
     justify-content: center;
-    // Se alinean verticalmente
     align-items: center;
-    // Se alinean verticalmente
     gap: 2rem;
   }
+
   .features {
-    // Las tarjetas de características se distribuyen en 3 columnas
     grid-template-columns: repeat(3, 1fr);
   }
-}
-
-/* Se utiliza la media query prefers-reduced-motion.
-   Esta consulta detecta si el usuario ha configurado su sistema operativo para reducir las animaciones y movimientos,
-   por razones de accesibilidad o sensibilidad visual. */
-@media (prefers-reduced-motion: reduce) {
-
-  /* El selector universal (*) aplica la regla a todos los elementos del documento, garantizando que ninguna animación quede activa. */
-  * {
-
-    /* Se desactivan todas las animaciones CSS.
-       Esto evita efectos de aparición, desplazamientos o transformaciones que puedan generar mareo o incomodidad en algunos usuarios. */
-    animation: none;
-
-    /* Se eliminan también las transiciones CSS.
-       De esta forma se evita cualquier efecto de cambio progresivo en propiedades como color, tamaño o posición. */
-    transition: none;
-  }
-}
-
-/* =========================
-   SWIPER - COLOR CORPORATIVO
-========================= */
-
-/* Se sobrescribe la variable CSS interna de Swiper.
-   Swiper utiliza --swiper-theme-color para definir el color principal
-   de flechas, paginación y otros elementos interactivos. */
-:root {
-  --swiper-theme-color: #{$color-primario};
-}
-
-/* Se fuerza el color de las flechas de navegación (anterior y siguiente).
-   Se utiliza !important para garantizar que tenga prioridad sobre los estilos originales de Swiper. */
-.swiper-button-next,
-.swiper-button-prev {
-  color: $color-primario !important;
-}
-
-/* Se define el color base de los puntos de paginación.
-   Se aplica menor opacidad para que los puntos inactivos se distingan visualmente del punto activo. */
-.swiper-pagination-bullet {
-  background-color: $color-primario !important;
-  opacity: 0.4;
-}
-
-/* Se define el estilo del punto de paginación activo.
-   Se mantiene el color corporativo pero con opacidad total para indicar visualmente la diapositiva actual. */
-.swiper-pagination-bullet-active {
-  background-color: $color-primario !important;
-  opacity: 1;
 }
