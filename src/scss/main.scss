@@ -151,7 +151,7 @@ main {
 }
 
 .hero-flag__svg {
-  animation: flagFloat 3s ease-in-out infinite;
+  animation: flagFloat 4s ease-in-out infinite;
 }
 
 .hero-flag__green,
@@ -191,7 +191,7 @@ main {
 
 .flag-wave {
   transform-origin: left center;
-  animation: flagFabric 1.8s ease-in-out infinite;
+  animation: flagFabric 2.4s ease-in-out infinite;
 }
 
 .flag-wave--2 {
@@ -203,15 +203,31 @@ main {
 }
 
 @keyframes flagFabric {
-  0% { transform: translateX(0) skewY(0deg) scaleX(1); }
-  25% { transform: translateX(1px) skewY(-3deg) scaleX(1.03); }
-  50% { transform: translateX(-1px) skewY(2deg) scaleX(0.98); }
-  75% { transform: translateX(1px) skewY(-2deg) scaleX(1.02); }
-  100% { transform: translateX(0) skewY(0deg) scaleX(1); }
+  0% {
+    transform: translateX(0) skewY(0deg) scaleX(1);
+  }
+
+  25% {
+    transform: translateX(1px) skewY(-3deg) scaleX(1.03);
+  }
+
+  50% {
+    transform: translateX(-1px) skewY(2deg) scaleX(0.98);
+  }
+
+  75% {
+    transform: translateX(1px) skewY(-2deg) scaleX(1.02);
+  }
+
+  100% {
+    transform: translateX(0) skewY(0deg) scaleX(1);
+  }
 }
 
 .intro {
   background: $color-gris-suave;
+  content-visibility: auto;
+  contain-intrinsic-size: 800px;
 }
 
 .intro-header {
@@ -238,7 +254,7 @@ main {
 .card {
   display: flex;
   flex-direction: column;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .feature-item {
@@ -550,7 +566,7 @@ textarea.invalido {
   color: $color-primario;
   text-decoration: none;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .detalle-seccion ul,
@@ -653,5 +669,18 @@ textarea.invalido {
 
   .features {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-flag__svg,
+  .flag-wave,
+  .feature-item,
+  .card,
+  .btn,
+  .btn-secundario,
+  .toggle-btn {
+    animation: none;
+    transition: none;
   }
 }
