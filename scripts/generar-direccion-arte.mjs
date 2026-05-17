@@ -38,39 +38,67 @@ for (const imagen of imagenesPrincipales) {
   const desktopAvif = path.join(destino, `${imagen.outputBase}-desktop.avif`);
   const mobileAvif = path.join(destino, `${imagen.outputBase}-mobile.avif`);
 
-  // Variante desktop
   await sharp(rutaEntrada)
-    .resize(1200, 675, {
+    .resize(1024, 576, {
       fit: "cover",
       position: "centre"
     })
-    .jpeg({ quality: 80 })
+    .jpeg({
+      quality: 76,
+      mozjpeg: true
+    })
     .toFile(desktopJpg);
 
-  // Variante mobile
   await sharp(rutaEntrada)
-    .resize(800, 1000, {
+    .resize(640, 800, {
       fit: "cover",
       position: "centre"
     })
-    .jpeg({ quality: 80 })
+    .jpeg({
+      quality: 76,
+      mozjpeg: true
+    })
     .toFile(mobileJpg);
 
-  // Conversión desktop a WebP y AVIF
-  await sharp(desktopJpg)
-    .webp({ quality: 80 })
+  await sharp(rutaEntrada)
+    .resize(1024, 576, {
+      fit: "cover",
+      position: "centre"
+    })
+    .webp({
+      quality: 66
+    })
     .toFile(desktopWebp);
 
-  await sharp(desktopJpg)
-    .avif({ quality: 80 })
+  await sharp(rutaEntrada)
+    .resize(1024, 576, {
+      fit: "cover",
+      position: "centre"
+    })
+    .avif({
+      quality: 52
+    })
     .toFile(desktopAvif);
 
-  // Conversión mobile a WebP y AVIF
-  await sharp(mobileJpg)
-    .webp({ quality: 80 })
+  await sharp(rutaEntrada)
+    .resize(640, 800, {
+      fit: "cover",
+      position: "centre"
+    })
+    .webp({
+      quality: 66
+    })
     .toFile(mobileWebp);
 
-  await sharp(mobileJpg)
-    .avif({ quality: 80 })
+  await sharp(rutaEntrada)
+    .resize(640, 800, {
+      fit: "cover",
+      position: "centre"
+    })
+    .avif({
+      quality: 52
+    })
     .toFile(mobileAvif);
+
+  console.log(`Procesada correctamente: ${imagen.input}`);
 }

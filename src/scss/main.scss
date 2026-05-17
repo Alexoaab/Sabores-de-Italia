@@ -446,6 +446,12 @@ textarea:focus {
   font-size: 0.8rem;
 }
 
+.detalle-galeria,
+.detalle-video {
+  content-visibility: auto;
+  contain-intrinsic-size: 800px;
+}
+
 .detalle-img {
   width: 100%;
   overflow: hidden;
@@ -457,7 +463,8 @@ textarea:focus {
 .detalle-img img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
 }
 
 .video-wrapper {
@@ -482,6 +489,32 @@ textarea:focus {
 .video-wrapper:focus {
   box-shadow: 0 0 0 3px $color-secundario;
   border-radius: $border-radius;
+}
+
+.transcripcion {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: $color-blanco;
+  border-radius: $border-radius;
+  box-shadow: $shadow-suave;
+}
+
+.transcripcion h4 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: $color-primario;
+}
+
+.transcripcion p:last-child {
+  margin-bottom: 0;
+}
+
+.transcripcion--cargando {
+  opacity: 0.8;
+}
+
+.transcripcion--error {
+  border: 1px solid $color-secundario;
 }
 
 .formulario-receta,

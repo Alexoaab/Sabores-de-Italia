@@ -25,21 +25,38 @@ await fs.mkdir(destino, { recursive: true });
 for (const nombre of imagenes) {
   const ext = path.extname(nombre);
   const base = path.basename(nombre, ext);
+  const rutaEntrada = path.join(origen, nombre);
 
-  await sharp(`${origen}/${nombre}`)
-    .resize(1200, 1200, {
+  await sharp(rutaEntrada)
+    .resize(640, 640, {
       fit: "cover",
       position: "centre"
     })
-    .toFile(`${destino}/${nombre}`);
+    .jpeg({
+      quality: 72,
+      mozjpeg: true
+    })
+    .toFile(path.join(destino, nombre));
 
-  await sharp(`${destino}/${nombre}`)
-    .webp({ quality: 80 })
-    .toFile(`${destino}/${base}.webp`);
+  await sharp(rutaEntrada)
+    .resize(640, 640, {
+      fit: "cover",
+      position: "centre"
+    })
+    .webp({
+      quality: 62
+    })
+    .toFile(path.join(destino, `${base}.webp`));
 
-  await sharp(`${destino}/${nombre}`)
-    .avif({ quality: 80 })
-    .toFile(`${destino}/${base}.avif`);
+  await sharp(rutaEntrada)
+    .resize(640, 640, {
+      fit: "cover",
+      position: "centre"
+    })
+    .avif({
+      quality: 48
+    })
+    .toFile(path.join(destino, `${base}.avif`));
 
   console.log(`Procesada correctamente: ${nombre}`);
 }
