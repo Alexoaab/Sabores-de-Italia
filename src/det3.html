@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="./img/favicon.png">
 </head>
 
-<body>
+<body data-page="detalle">
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
   <include src="src/partials/header.html"></include>
@@ -25,42 +25,15 @@
 
         <a href="./img/tiramisu-principal-desktop.jpg" class="glightbox" data-gallery="det3">
           <picture class="detalle-principal-media" data-aos="fade-up">
-            <source
-              media="(max-width: 767px)"
-              type="image/avif"
-              srcset="
-                ./img/tiramisu-principal-mobile.jpg?as=avif&width=400 400w,
-                ./img/tiramisu-principal-mobile.jpg?as=avif&width=640 640w"
-              sizes="100vw">
+            <source media="(max-width: 767px)" type="image/avif" srcset="./img/tiramisu-principal-mobile.avif 640w" sizes="100vw">
+            <source media="(max-width: 767px)" type="image/webp" srcset="./img/tiramisu-principal-mobile.webp 640w" sizes="100vw">
+            <source media="(max-width: 767px)" srcset="./img/tiramisu-principal-mobile.jpg 640w" sizes="100vw">
 
-            <source
-              media="(max-width: 767px)"
-              type="image/webp"
-              srcset="
-                ./img/tiramisu-principal-mobile.jpg?as=webp&width=400 400w,
-                ./img/tiramisu-principal-mobile.jpg?as=webp&width=640 640w"
-              sizes="100vw">
-
-            <source
-              type="image/avif"
-              srcset="
-                ./img/tiramisu-principal-desktop.jpg?as=avif&width=768 768w,
-                ./img/tiramisu-principal-desktop.jpg?as=avif&width=1024 1024w"
-              sizes="(max-width: 1199px) 100vw, 1024px">
-
-            <source
-              type="image/webp"
-              srcset="
-                ./img/tiramisu-principal-desktop.jpg?as=webp&width=768 768w,
-                ./img/tiramisu-principal-desktop.jpg?as=webp&width=1024 1024w"
-              sizes="(max-width: 1199px) 100vw, 1024px">
+            <source type="image/avif" srcset="./img/tiramisu-principal-desktop.avif 1024w" sizes="(max-width: 1200px) 100vw, 1024px">
+            <source type="image/webp" srcset="./img/tiramisu-principal-desktop.webp 1024w" sizes="(max-width: 1200px) 100vw, 1024px">
 
             <img
-              src="./img/tiramisu-principal-desktop.jpg?width=1024"
-              srcset="
-                ./img/tiramisu-principal-desktop.jpg?width=768 768w,
-                ./img/tiramisu-principal-desktop.jpg?width=1024 1024w"
-              sizes="(max-width: 1199px) 100vw, 1024px"
+              src="./img/tiramisu-principal-desktop.jpg"
               alt="Tiramisú tradicional italiano espolvoreado con cacao"
               width="1024"
               height="576"
@@ -76,10 +49,7 @@
         </ul>
 
         <section class="detalle-seccion" data-aos="fade-right">
-          <h3>
-            Ingredientes
-            <button class="toggle-btn" type="button">Mostrar</button>
-          </h3>
+          <h3>Ingredientes <button class="toggle-btn" type="button">Mostrar</button></h3>
           <ul class="oculto">
             <li>250 g de queso mascarpone</li>
             <li>3 huevos</li>
@@ -91,10 +61,7 @@
         </section>
 
         <section class="detalle-seccion" data-aos="fade-right">
-          <h3>
-            Preparación
-            <button class="toggle-btn" type="button">Mostrar</button>
-          </h3>
+          <h3>Preparación <button class="toggle-btn" type="button">Mostrar</button></h3>
           <ol class="oculto">
             <li>Separar las claras de las yemas.</li>
             <li>Batir las yemas con el azúcar hasta obtener una mezcla cremosa.</li>
@@ -109,55 +76,22 @@
         </section>
 
         <section class="detalle-seccion" data-aos="fade-right">
-          <h3>
-            Historia y tradición
-            <button class="toggle-btn" type="button">Mostrar</button>
-          </h3>
+          <h3>Historia y tradición <button class="toggle-btn" type="button">Mostrar</button></h3>
           <div class="presentacion-contenido oculto">
-            <p>
-              El tiramisú es uno de los postres italianos más populares y su origen suele situarse en el norte de Italia durante el siglo XX.
-            </p>
-            <p>
-              Su preparación combina ingredientes sencillos, como mascarpone, café, huevos, azúcar y bizcochos, sin necesidad de horneado.
-            </p>
-            <p>
-              Su éxito internacional se debe al equilibrio entre textura cremosa, aroma de café y presentación final con cacao espolvoreado.
-            </p>
+            <p>El tiramisú es un postre tradicional italiano cuyo origen se sitúa en la región del Véneto durante el siglo XX.</p>
+            <p>Su nombre significa literalmente “levántame el ánimo”, en referencia a la energía que aporta el café y el azúcar.</p>
+            <p>Aunque existen múltiples variantes, la receta clásica mantiene ingredientes sencillos y una elaboración sin horno.</p>
           </div>
         </section>
 
         <section class="detalle-galeria">
           <h3 class="visually-hidden">Galería del proceso</h3>
-
           <div class="features">
             <article class="feature-item" data-aos="fade-up" data-aos-delay="100">
               <picture class="detalle-img feature-media">
-                <source
-                  type="image/avif"
-                  srcset="
-                    ./img/cafe.png?as=avif&width=320 320w,
-                    ./img/cafe.png?as=avif&width=480 480w,
-                    ./img/cafe.png?as=avif&width=640 640w"
-                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw">
-                <source
-                  type="image/webp"
-                  srcset="
-                    ./img/cafe.png?as=webp&width=320 320w,
-                    ./img/cafe.png?as=webp&width=480 480w,
-                    ./img/cafe.png?as=webp&width=640 640w"
-                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw">
-                <img
-                  src="./img/cafe.png?width=480"
-                  srcset="
-                    ./img/cafe.png?width=320 320w,
-                    ./img/cafe.png?width=480 480w,
-                    ./img/cafe.png?width=640 640w"
-                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
-                  alt="Café espresso recién preparado"
-                  width="480"
-                  height="480"
-                  loading="lazy"
-                  decoding="async">
+                <source type="image/avif" srcset="./img/cafe.avif 640w" sizes="(max-width: 767px) 100vw, 33vw">
+                <source type="image/webp" srcset="./img/cafe.webp 640w" sizes="(max-width: 767px) 100vw, 33vw">
+                <img src="./img/cafe.png" alt="Café espresso recién preparado" width="640" height="640" loading="lazy" decoding="async">
               </picture>
               <h3>El café</h3>
               <p>Café espresso intenso que aporta profundidad y aroma.</p>
@@ -165,32 +99,9 @@
 
             <article class="feature-item" data-aos="fade-up" data-aos-delay="200">
               <picture class="detalle-img feature-media">
-                <source
-                  type="image/avif"
-                  srcset="
-                    ./img/mascarpone.png?as=avif&width=320 320w,
-                    ./img/mascarpone.png?as=avif&width=480 480w,
-                    ./img/mascarpone.png?as=avif&width=640 640w"
-                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw">
-                <source
-                  type="image/webp"
-                  srcset="
-                    ./img/mascarpone.png?as=webp&width=320 320w,
-                    ./img/mascarpone.png?as=webp&width=480 480w,
-                    ./img/mascarpone.png?as=webp&width=640 640w"
-                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw">
-                <img
-                  src="./img/mascarpone.png?width=480"
-                  srcset="
-                    ./img/mascarpone.png?width=320 320w,
-                    ./img/mascarpone.png?width=480 480w,
-                    ./img/mascarpone.png?width=640 640w"
-                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
-                  alt="Crema de mascarpone lista para mezclar"
-                  width="480"
-                  height="480"
-                  loading="lazy"
-                  decoding="async">
+                <source type="image/avif" srcset="./img/mascarpone.avif 640w" sizes="(max-width: 767px) 100vw, 33vw">
+                <source type="image/webp" srcset="./img/mascarpone.webp 640w" sizes="(max-width: 767px) 100vw, 33vw">
+                <img src="./img/mascarpone.png" alt="Crema de mascarpone lista para mezclar" width="640" height="640" loading="lazy" decoding="async">
               </picture>
               <h3>La crema</h3>
               <p>Mezcla suave y aireada de mascarpone y huevo.</p>
@@ -198,32 +109,9 @@
 
             <article class="feature-item" data-aos="fade-up" data-aos-delay="300">
               <picture class="detalle-img feature-media">
-                <source
-                  type="image/avif"
-                  srcset="
-                    ./img/tiramisu.jpg?as=avif&width=320 320w,
-                    ./img/tiramisu.jpg?as=avif&width=480 480w,
-                    ./img/tiramisu.jpg?as=avif&width=640 640w"
-                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw">
-                <source
-                  type="image/webp"
-                  srcset="
-                    ./img/tiramisu.jpg?as=webp&width=320 320w,
-                    ./img/tiramisu.jpg?as=webp&width=480 480w,
-                    ./img/tiramisu.jpg?as=webp&width=640 640w"
-                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw">
-                <img
-                  src="./img/tiramisu.jpg?width=480"
-                  srcset="
-                    ./img/tiramisu.jpg?width=320 320w,
-                    ./img/tiramisu.jpg?width=480 480w,
-                    ./img/tiramisu.jpg?width=640 640w"
-                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
-                  alt="Tiramisú terminado y listo para servir"
-                  width="480"
-                  height="480"
-                  loading="lazy"
-                  decoding="async">
+                <source type="image/avif" srcset="./img/tiramisu.avif 640w" sizes="(max-width: 767px) 100vw, 33vw">
+                <source type="image/webp" srcset="./img/tiramisu.webp 640w" sizes="(max-width: 767px) 100vw, 33vw">
+                <img src="./img/tiramisu.jpg" alt="Tiramisú terminado y listo para servir" width="640" height="640" loading="lazy" decoding="async">
               </picture>
               <h3>Resultado final</h3>
               <p>Capas equilibradas con cacao espolvoreado en la superficie.</p>
@@ -236,23 +124,22 @@
 
           <div class="video-wrapper" tabindex="0">
             <iframe
-              src="https://www.youtube-nocookie.com/embed/nECvrh_3bWQ?cc_load_policy=1"
+              src="https://www.youtube.com/embed/nECvrh_3bWQ?cc_load_policy=1"
               title="Cómo hacer tiramisú"
               loading="lazy"
-              allowfullscreen>
-            </iframe>
+              allowfullscreen></iframe>
           </div>
 
           <button
             type="button"
-            class="toggle-btn toggle-btn--transcripcion"
+            class="toggle-btn"
             aria-expanded="false"
-            aria-controls="transcripcion"
+            aria-controls="transcripcion-det3"
             data-transcription-key="det3">
             Mostrar transcripción
           </button>
 
-          <section id="transcripcion" class="transcripcion oculto" aria-live="polite"></section>
+          <section id="transcripcion-det3" class="transcripcion oculto"></section>
         </section>
 
         <a href="categoria.html" class="btn">Volver a recetas</a>
@@ -261,7 +148,6 @@
   </main>
 
   <include src="src/partials/footer.html"></include>
-
   <script type="module" src="./js/main.ts"></script>
 </body>
 </html>

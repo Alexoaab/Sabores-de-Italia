@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="./img/favicon.png">
 </head>
 
-<body>
+<body data-page="detalle">
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
   <include src="src/partials/header.html"></include>
@@ -25,42 +25,15 @@
 
         <a href="./img/carbonara-principal-desktop.jpg" class="glightbox" data-gallery="det2">
           <picture class="detalle-principal-media" data-aos="fade-up">
-            <source
-              media="(max-width: 767px)"
-              type="image/avif"
-              srcset="
-                ./img/carbonara-principal-mobile.jpg?as=avif&width=400 400w,
-                ./img/carbonara-principal-mobile.jpg?as=avif&width=640 640w"
-              sizes="100vw">
+            <source media="(max-width: 767px)" type="image/avif" srcset="./img/carbonara-principal-mobile.avif 640w" sizes="100vw">
+            <source media="(max-width: 767px)" type="image/webp" srcset="./img/carbonara-principal-mobile.webp 640w" sizes="100vw">
+            <source media="(max-width: 767px)" srcset="./img/carbonara-principal-mobile.jpg 640w" sizes="100vw">
 
-            <source
-              media="(max-width: 767px)"
-              type="image/webp"
-              srcset="
-                ./img/carbonara-principal-mobile.jpg?as=webp&width=400 400w,
-                ./img/carbonara-principal-mobile.jpg?as=webp&width=640 640w"
-              sizes="100vw">
-
-            <source
-              type="image/avif"
-              srcset="
-                ./img/carbonara-principal-desktop.jpg?as=avif&width=768 768w,
-                ./img/carbonara-principal-desktop.jpg?as=avif&width=1024 1024w"
-              sizes="(max-width: 1199px) 100vw, 1024px">
-
-            <source
-              type="image/webp"
-              srcset="
-                ./img/carbonara-principal-desktop.jpg?as=webp&width=768 768w,
-                ./img/carbonara-principal-desktop.jpg?as=webp&width=1024 1024w"
-              sizes="(max-width: 1199px) 100vw, 1024px">
+            <source type="image/avif" srcset="./img/carbonara-principal-desktop.avif 1024w" sizes="(max-width: 1200px) 100vw, 1024px">
+            <source type="image/webp" srcset="./img/carbonara-principal-desktop.webp 1024w" sizes="(max-width: 1200px) 100vw, 1024px">
 
             <img
-              src="./img/carbonara-principal-desktop.jpg?width=1024"
-              srcset="
-                ./img/carbonara-principal-desktop.jpg?width=768 768w,
-                ./img/carbonara-principal-desktop.jpg?width=1024 1024w"
-              sizes="(max-width: 1199px) 100vw, 1024px"
+              src="./img/carbonara-principal-desktop.jpg"
               alt="Plato de pasta carbonara tradicional italiana"
               width="1024"
               height="576"
@@ -76,10 +49,7 @@
         </ul>
 
         <section class="detalle-seccion" data-aos="fade-right">
-          <h3>
-            Ingredientes
-            <button class="toggle-btn" type="button">Mostrar</button>
-          </h3>
+          <h3>Ingredientes <button class="toggle-btn" type="button">Mostrar</button></h3>
           <ul class="oculto">
             <li>400 g de pasta (spaghetti)</li>
             <li>150 g de guanciale</li>
@@ -92,10 +62,7 @@
         </section>
 
         <section class="detalle-seccion" data-aos="fade-right">
-          <h3>
-            Preparación
-            <button class="toggle-btn" type="button">Mostrar</button>
-          </h3>
+          <h3>Preparación <button class="toggle-btn" type="button">Mostrar</button></h3>
           <ol class="oculto">
             <li>Cocer la pasta en abundante agua con sal.</li>
             <li>Dorar el guanciale en una sartén sin añadir aceite.</li>
@@ -107,55 +74,22 @@
         </section>
 
         <section class="detalle-seccion" data-aos="fade-right">
-          <h3>
-            Historia y tradición
-            <button class="toggle-btn" type="button">Mostrar</button>
-          </h3>
+          <h3>Historia y tradición <button class="toggle-btn" type="button">Mostrar</button></h3>
           <div class="presentacion-contenido oculto">
-            <p>
-              La pasta carbonara es uno de los platos más emblemáticos de la cocina romana y se ha convertido en un referente internacional de la gastronomía italiana.
-            </p>
-            <p>
-              La receta tradicional se caracteriza por la combinación de pasta, huevo, queso pecorino romano, pimienta negra y guanciale, sin incorporar nata.
-            </p>
-            <p>
-              Su prestigio se debe tanto a la sencillez de sus ingredientes como a la precisión técnica necesaria para conseguir una salsa cremosa y equilibrada.
-            </p>
+            <p>La pasta carbonara es uno de los platos más emblemáticos de la cocina romana. Su origen se remonta a mediados del siglo XX.</p>
+            <p>La receta tradicional se elabora únicamente con guanciale, huevo, queso pecorino romano y pimienta negra, sin añadir nata.</p>
+            <p>A pesar de sus variaciones internacionales, la versión auténtica italiana sigue siendo un referente de simplicidad y sabor.</p>
           </div>
         </section>
 
         <section class="detalle-galeria">
           <h3 class="visually-hidden">Galería del proceso</h3>
-
           <div class="features">
             <article class="feature-item" data-aos="fade-up" data-aos-delay="100">
               <picture class="detalle-img feature-media">
-                <source
-                  type="image/avif"
-                  srcset="
-                    ./img/guanciale.png?as=avif&width=320 320w,
-                    ./img/guanciale.png?as=avif&width=480 480w,
-                    ./img/guanciale.png?as=avif&width=640 640w"
-                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw">
-                <source
-                  type="image/webp"
-                  srcset="
-                    ./img/guanciale.png?as=webp&width=320 320w,
-                    ./img/guanciale.png?as=webp&width=480 480w,
-                    ./img/guanciale.png?as=webp&width=640 640w"
-                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw">
-                <img
-                  src="./img/guanciale.png?width=480"
-                  srcset="
-                    ./img/guanciale.png?width=320 320w,
-                    ./img/guanciale.png?width=480 480w,
-                    ./img/guanciale.png?width=640 640w"
-                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
-                  alt="Guanciale cortado en tiras"
-                  width="480"
-                  height="480"
-                  loading="lazy"
-                  decoding="async">
+                <source type="image/avif" srcset="./img/guanciale.avif 640w" sizes="(max-width: 767px) 100vw, 33vw">
+                <source type="image/webp" srcset="./img/guanciale.webp 640w" sizes="(max-width: 767px) 100vw, 33vw">
+                <img src="./img/guanciale.png" alt="Guanciale cortado en tiras" width="640" height="640" loading="lazy" decoding="async">
               </picture>
               <h3>El guanciale</h3>
               <p>Dorado lentamente para extraer todo su sabor.</p>
@@ -163,32 +97,9 @@
 
             <article class="feature-item" data-aos="fade-up" data-aos-delay="200">
               <picture class="detalle-img feature-media">
-                <source
-                  type="image/avif"
-                  srcset="
-                    ./img/salsa.png?as=avif&width=320 320w,
-                    ./img/salsa.png?as=avif&width=480 480w,
-                    ./img/salsa.png?as=avif&width=640 640w"
-                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw">
-                <source
-                  type="image/webp"
-                  srcset="
-                    ./img/salsa.png?as=webp&width=320 320w,
-                    ./img/salsa.png?as=webp&width=480 480w,
-                    ./img/salsa.png?as=webp&width=640 640w"
-                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw">
-                <img
-                  src="./img/salsa.png?width=480"
-                  srcset="
-                    ./img/salsa.png?width=320 320w,
-                    ./img/salsa.png?width=480 480w,
-                    ./img/salsa.png?width=640 640w"
-                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
-                  alt="Salsa cremosa de huevo y queso pecorino"
-                  width="480"
-                  height="480"
-                  loading="lazy"
-                  decoding="async">
+                <source type="image/avif" srcset="./img/salsa.avif 640w" sizes="(max-width: 767px) 100vw, 33vw">
+                <source type="image/webp" srcset="./img/salsa.webp 640w" sizes="(max-width: 767px) 100vw, 33vw">
+                <img src="./img/salsa.png" alt="Salsa cremosa de huevo y queso pecorino" width="640" height="640" loading="lazy" decoding="async">
               </picture>
               <h3>La salsa</h3>
               <p>Mezcla cremosa de huevo y pecorino romano.</p>
@@ -196,32 +107,9 @@
 
             <article class="feature-item" data-aos="fade-up" data-aos-delay="300">
               <picture class="detalle-img feature-media">
-                <source
-                  type="image/avif"
-                  srcset="
-                    ./img/carbonara.jpg?as=avif&width=320 320w,
-                    ./img/carbonara.jpg?as=avif&width=480 480w,
-                    ./img/carbonara.jpg?as=avif&width=640 640w"
-                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw">
-                <source
-                  type="image/webp"
-                  srcset="
-                    ./img/carbonara.jpg?as=webp&width=320 320w,
-                    ./img/carbonara.jpg?as=webp&width=480 480w,
-                    ./img/carbonara.jpg?as=webp&width=640 640w"
-                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw">
-                <img
-                  src="./img/carbonara.jpg?width=480"
-                  srcset="
-                    ./img/carbonara.jpg?width=320 320w,
-                    ./img/carbonara.jpg?width=480 480w,
-                    ./img/carbonara.jpg?width=640 640w"
-                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
-                  alt="Pasta carbonara servida"
-                  width="480"
-                  height="480"
-                  loading="lazy"
-                  decoding="async">
+                <source type="image/avif" srcset="./img/carbonara.avif 640w" sizes="(max-width: 767px) 100vw, 33vw">
+                <source type="image/webp" srcset="./img/carbonara.webp 640w" sizes="(max-width: 767px) 100vw, 33vw">
+                <img src="./img/carbonara.jpg" alt="Pasta carbonara servida" width="640" height="640" loading="lazy" decoding="async">
               </picture>
               <h3>Resultado final</h3>
               <p>Servida inmediatamente para mantener su textura cremosa.</p>
@@ -234,23 +122,22 @@
 
           <div class="video-wrapper" tabindex="0">
             <iframe
-              src="https://www.youtube-nocookie.com/embed/8jFBHUYW7f4?cc_load_policy=1"
+              src="https://www.youtube.com/embed/8jFBHUYW7f4?cc_load_policy=1"
               title="Cómo hacer pasta carbonara"
               loading="lazy"
-              allowfullscreen>
-            </iframe>
+              allowfullscreen></iframe>
           </div>
 
           <button
             type="button"
-            class="toggle-btn toggle-btn--transcripcion"
+            class="toggle-btn"
             aria-expanded="false"
-            aria-controls="transcripcion"
+            aria-controls="transcripcion-det2"
             data-transcription-key="det2">
             Mostrar transcripción
           </button>
 
-          <section id="transcripcion" class="transcripcion oculto" aria-live="polite"></section>
+          <section id="transcripcion-det2" class="transcripcion oculto"></section>
         </section>
 
         <a href="categoria.html" class="btn">Volver a recetas</a>
@@ -259,7 +146,6 @@
   </main>
 
   <include src="src/partials/footer.html"></include>
-
   <script type="module" src="./js/main.ts"></script>
 </body>
 </html>

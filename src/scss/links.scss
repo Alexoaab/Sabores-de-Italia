@@ -1,0 +1,94 @@
+$color-primario: #1e3a5f;
+$color-gris-suave: #e9ecef;
+$color-texto: #2c2c2c;
+
+.links-page {
+  background: $color-gris-suave;
+  padding-bottom: 3rem;
+}
+
+.links-header {
+  text-align: center;
+  margin: 0 0 3rem;
+}
+
+.links-header h2 {
+  margin-bottom: 1rem;
+}
+
+.links-header p {
+  margin: 0 auto;
+  max-width: 900px;
+  line-height: 1.6;
+}
+
+.links-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.75rem;
+}
+
+.links-block {
+  width: 100%;
+}
+
+.links-block h3 {
+  margin: 0 0 1.5rem;
+  color: $color-primario;
+}
+
+.links-block p {
+  margin: 0 0 1.25rem;
+  line-height: 1.7;
+  color: $color-texto;
+}
+
+.links-block p:last-child {
+  margin-bottom: 0;
+}
+
+.links-list {
+  margin: 0 0 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.links-list:last-child {
+  margin-bottom: 0;
+}
+
+.links-list li {
+  line-height: 1.8;
+}
+
+.links-list li + li {
+  margin-top: 0.35rem;
+}
+
+.links-list a {
+  color: $color-primario;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.links-list a:hover,
+.links-list a:focus-visible {
+  text-decoration: underline;
+}
+
+@media (max-width: 767px) {
+  .links-page {
+    padding-bottom: 2rem;
+  }
+
+  .links-header {
+    margin-bottom: 2rem;
+  }
+
+  .links-content {
+    gap: 2rem;
+  }
+
+  .links-list {
+    padding-left: 1.25rem;
+  }
+}

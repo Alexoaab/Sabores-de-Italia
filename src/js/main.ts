@@ -1,31 +1,10 @@
 import "../scss/main.scss";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Swiper from "swiper";
-import { Navigation, Pagination } from "swiper/modules";
-import "swiper/swiper-bundle.css";
 import GLightbox from "glightbox";
 import "glightbox/dist/css/glightbox.css";
 
-type TranscriptionKey = "det1" | "det2" | "det3" | "det4";
-
-const transcriptionLoaders: Record<TranscriptionKey, () => Promise<string>> = {
-  det1: async () => (await import("./transcripciones/det1")).default,
-  det2: async () => (await import("./transcripciones/det2")).default,
-  det3: async () => (await import("./transcripciones/det3")).default,
-  det4: async () => (await import("./transcripciones/det4")).default
-};
-
-document.addEventListener("DOMContentLoaded", () => {
-  inicializarAOS();
-  inicializarLightbox();
-  inicializarSwiper();
-  inicializarBotonesSeccion();
-  inicializarBotonesTranscripcion();
-  inicializarFormulario();
-});
-
-function inicializarAOS(): void {
+function initAOS(): void {
   if (!document.querySelector("[data-aos]")) return;
 
   AOS.init({
@@ -34,7 +13,7 @@ function inicializarAOS(): void {
   });
 }
 
-function inicializarLightbox(): void {
+function initLightbox(): void {
   if (!document.querySelector(".glightbox")) return;
 
   GLightbox({
@@ -42,8 +21,16 @@ function inicializarLightbox(): void {
   });
 }
 
-function inicializarSwiper(): void {
-  if (!document.querySelector(".swiper")) return;
+async function initHome(): Promise<void> {
+  const swiperContainer = document.querySelector(".swiper");
+  if (!swiperContainer) return;
+
+  const [{ default: Swiper }, { Navigation, Pagination }] = await Promise.all([
+    import("swiper"),
+    import("swiper/modules")
+  ]);
+
+  await import("swiper/swiper-bundle.css");
 
   new Swiper(".swiper", {
     modules: [Navigation, Pagination],
@@ -64,12 +51,12 @@ function inicializarSwiper(): void {
   });
 }
 
-function inicializarBotonesSeccion(): void {
-  const botones = document.querySelectorAll<HTMLButtonElement>(
+function initDetalleSecciones(): void {
+  const botonesSeccion = document.querySelectorAll<HTMLButtonElement>(
     ".detalle-seccion .toggle-btn"
   );
 
-  botones.forEach((boton) => {
+  botonesSeccion.forEach((boton) => {
     const seccion = boton.closest<HTMLElement>(".detalle-seccion");
     const contenido = seccion?.querySelector<HTMLElement>(
       "ul, ol, .presentacion-contenido"
@@ -77,7 +64,7 @@ function inicializarBotonesSeccion(): void {
 
     if (!contenido) return;
 
-    const actualizarTexto = (): void => {
+    const actualizarTexto = () => {
       boton.textContent = contenido.classList.contains("oculto")
         ? "Mostrar"
         : "Ocultar";
@@ -92,23 +79,47 @@ function inicializarBotonesSeccion(): void {
   });
 }
 
-function inicializarBotonesTranscripcion(): void {
-  const botones = document.querySelectorAll<HTMLButtonElement>(
+async function cargarTranscripcion(key: string): Promise<string> {
+  if (key === "det1") {
+    const modulo = await import("./transcripciones/det1");
+    return modulo.default;
+  }
+
+  if (key === "det2") {
+    const modulo = await import("./transcripciones/det2");
+    return modulo.default;
+  }
+
+  if (key === "det3") {
+    const modulo = await import("./transcripciones/det3");
+    return modulo.default;
+  }
+
+  if (key === "det4") {
+    const modulo = await import("./transcripciones/det4");
+    return modulo.default;
+  }
+
+  throw new Error("Clave de transcripción no válida.");
+}
+
+function initDetalleTranscripciones(): void {
+  const botonesTranscripcion = document.querySelectorAll<HTMLButtonElement>(
     '.detalle-video .toggle-btn[aria-controls][data-transcription-key]'
   );
 
-  botones.forEach((boton) => {
+  botonesTranscripcion.forEach((boton) => {
     const id = boton.getAttribute("aria-controls");
-    const key = boton.dataset.transcriptionKey as TranscriptionKey | undefined;
+    const key = boton.dataset.transcriptionKey;
 
-    if (!id || !key || !(key in transcriptionLoaders)) return;
+    if (!id || !key) return;
 
     const contenedor = document.getElementById(id);
     if (!contenedor) return;
 
     let cargada = false;
 
-    const actualizarEstado = (): void => {
+    const actualizarEstado = () => {
       const expandido = !contenedor.classList.contains("oculto");
       boton.setAttribute("aria-expanded", String(expandido));
       boton.textContent = expandido
@@ -122,9 +133,35 @@ function inicializarBotonesTranscripcion(): void {
       const estaOculto = contenedor.classList.contains("oculto");
 
       if (estaOculto && !cargada) {
-        await cargarTranscripcion(key, contenedor);
-        cargada = !contenedor.classList.contains("transcripcion--error");
-        actualizarEstado();
+        contenedor.classList.remove("oculto");
+        contenedor.classList.add("transcripcion--cargando");
+        contenedor.classList.remove("transcripcion--error");
+        contenedor.innerHTML = "<p>Cargando transcripción...</p>";
+
+        try {
+          const texto = await cargarTranscripcion(key);
+
+          const bloques = texto
+            .split("\n\n")
+            .map((bloque) => bloque.trim())
+            .filter((bloque) => bloque !== "");
+
+          contenedor.innerHTML = `
+            <h4>Transcripción del vídeo</h4>
+            ${bloques.map((bloque) => `<p>${bloque}</p>`).join("")}
+          `;
+
+          cargada = true;
+        } catch (error) {
+          contenedor.innerHTML =
+            "<p>No se ha podido cargar la transcripción en este momento.</p>";
+          contenedor.classList.add("transcripcion--error");
+          console.error("Error al cargar la transcripción:", error);
+        } finally {
+          contenedor.classList.remove("transcripcion--cargando");
+          actualizarEstado();
+        }
+
         return;
       }
 
@@ -134,38 +171,14 @@ function inicializarBotonesTranscripcion(): void {
   });
 }
 
-async function cargarTranscripcion(
-  key: TranscriptionKey,
-  contenedor: HTMLElement
-): Promise<void> {
-  contenedor.classList.remove("oculto");
-  contenedor.classList.add("transcripcion--cargando");
-  contenedor.classList.remove("transcripcion--error");
-  contenedor.innerHTML = "<p>Cargando transcripción...</p>";
-
-  try {
-    const texto = await transcriptionLoaders[key]();
-    const bloques = texto
-      .split("\n\n")
-      .map((bloque) => bloque.trim())
-      .filter((bloque) => bloque !== "");
-
-    contenedor.innerHTML = `
-      <h4>Transcripción del vídeo</h4>
-      ${bloques.map((bloque) => `<p>${bloque}</p>`).join("")}
-    `;
-  } catch (error) {
-    contenedor.innerHTML =
-      "<p>No se ha podido cargar la transcripción en este momento.</p>";
-    contenedor.classList.add("transcripcion--error");
-    console.error("Error al cargar la transcripción:", error);
-  } finally {
-    contenedor.classList.remove("transcripcion--cargando");
-  }
+function initDetalle(): void {
+  initDetalleSecciones();
+  initDetalleTranscripciones();
 }
 
-function inicializarFormulario(): void {
+function initFormulario(): void {
   const formSolicitud = document.querySelector<HTMLFormElement>("#form-solicitud");
+
   if (!formSolicitud) return;
 
   const nombre = document.querySelector<HTMLInputElement>("#nombre");
@@ -191,23 +204,23 @@ function inicializarFormulario(): void {
   }
 
   const campos: HTMLInputElement[] = [nombre, apellidos, email, plato];
-  const soloLetras = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
-  const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  const soloLetras: RegExp = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
+  const emailValido: RegExp = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
   comentarios.addEventListener("input", () => {
     contador.textContent = `${comentarios.value.length} / 300 caracteres`;
   });
 
-  const mostrarError = (campo: HTMLInputElement, mensaje: string): void => {
+  function mostrarError(campo: HTMLInputElement, mensaje: string): void {
     campo.classList.add("invalido");
     const errorElemento = document.getElementById(`error-${campo.id}`);
 
     if (errorElemento instanceof HTMLElement) {
       errorElemento.textContent = mensaje;
     }
-  };
+  }
 
-  const limpiarErrores = (): void => {
+  function limpiarErrores(): void {
     document.querySelectorAll<HTMLElement>(".error-mensaje").forEach((el) => {
       el.textContent = "";
     });
@@ -215,9 +228,9 @@ function inicializarFormulario(): void {
     campos.forEach((campo) => {
       campo.classList.remove("valido", "invalido");
     });
-  };
+  }
 
-  const validarFormulario = (): void => {
+  function validarFormulario(): void {
     let valido = true;
     limpiarErrores();
 
@@ -249,7 +262,7 @@ function inicializarFormulario(): void {
     });
 
     boton.disabled = !valido;
-  };
+  }
 
   campos.forEach((campo) => {
     campo.addEventListener("input", validarFormulario);
@@ -268,3 +281,22 @@ function inicializarFormulario(): void {
     contador.textContent = "0 / 300 caracteres";
   });
 }
+
+document.addEventListener("DOMContentLoaded", async () => {
+  initAOS();
+  initLightbox();
+
+  const page = document.body.dataset.page;
+
+  if (page === "home") {
+    await initHome();
+  }
+
+  if (page === "detalle") {
+    initDetalle();
+  }
+
+  if (page === "formulario") {
+    initFormulario();
+  }
+});

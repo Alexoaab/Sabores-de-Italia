@@ -1,0 +1,196 @@
+$color-primario: #1e3a5f;
+$color-secundario: #c0392b;
+$color-gris-suave: #e9ecef;
+$color-blanco: #ffffff;
+$color-texto: #2c2c2c;
+$color-verde-claro: #e8f5e9;
+$color-verde-fuerte: #1b5e20;
+$color-verde: #228b22;
+$border-radius: 10px;
+$shadow-suave: 0 6px 20px rgba(0, 0, 0, 0.06);
+
+.fondo-gris,
+.formulario-receta {
+  background: $color-gris-suave;
+}
+
+.formulario-receta {
+  padding-bottom: 3rem;
+}
+
+.formulario-header {
+  width: 100%;
+  margin: 0 0 2rem;
+  text-align: center;
+}
+
+.formulario-header h2 {
+  margin-bottom: 1.25rem;
+}
+
+.formulario-header p {
+  width: 100%;
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.form-receta {
+  width: 100%;
+  margin: 0;
+  padding: 2.25rem;
+  background: $color-blanco;
+  border-radius: 14px;
+  box-shadow: $shadow-suave;
+}
+
+.campos-obligatorios {
+  margin: 0 0 1.5rem;
+  color: $color-secundario;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.obligatorio {
+  color: $color-secundario;
+  font-weight: 700;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group--full {
+  grid-column: auto;
+}
+
+.form-group label {
+  margin-bottom: 0.45rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(44, 44, 44, 0.45);
+  border-radius: $border-radius;
+  font: inherit;
+  color: $color-texto;
+  background: $color-blanco;
+}
+
+.form-group textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: $color-primario;
+}
+
+.error-mensaje {
+  display: block;
+  min-height: 1rem;
+  margin-top: 0.2rem;
+  color: $color-secundario;
+  font-size: 0.82rem;
+}
+
+#contador-comentarios {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+  color: $color-texto;
+}
+
+.form-receta .btn-secundario {
+  margin-top: 1rem;
+}
+
+.mensaje-exito {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: $color-verde-claro;
+  color: $color-verde-fuerte;
+  border-radius: $border-radius;
+}
+
+input.valido,
+textarea.valido {
+  border: 1.5px solid $color-verde;
+}
+
+input.invalido,
+textarea.invalido {
+  border: 1.5px solid $color-secundario;
+}
+
+.btn-secundario:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 1.5rem;
+    row-gap: 1rem;
+  }
+
+  .form-group--full {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .form-group--full {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .formulario-header {
+    margin-bottom: 1.75rem;
+  }
+
+  .formulario-header p {
+    font-size: 1rem;
+  }
+
+  .form-receta {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  .campos-obligatorios {
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+  }
+
+  .form-grid {
+    gap: 0.9rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 0.85rem 0.95rem;
+  }
+}
