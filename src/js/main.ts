@@ -109,6 +109,15 @@ document.addEventListener("DOMContentLoaded", () => {
           if (key === "det1") {
             const modulo = await import("./transcripciones/det1");
             texto = modulo.default;
+          } else if (key === "det2") {
+            const modulo = await import("./transcripciones/det2");
+            texto = modulo.default;
+          } else if (key === "det3") {
+            const modulo = await import("./transcripciones/det3");
+            texto = modulo.default;
+          } else if (key === "det4") {
+            const modulo = await import("./transcripciones/det4");
+            texto = modulo.default;
           } else {
             throw new Error("Clave de transcripción no válida.");
           }
@@ -155,7 +164,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const boton = document.querySelector<HTMLButtonElement>("#btn-enviar");
   const mensajeExito = document.querySelector<HTMLElement>("#mensaje-exito");
 
-  if (!nombre || !apellidos || !email || !plato || !comentarios || !contador || !boton || !mensajeExito) {
+  if (
+    !nombre ||
+    !apellidos ||
+    !email ||
+    !plato ||
+    !comentarios ||
+    !contador ||
+    !boton ||
+    !mensajeExito
+  ) {
     return;
   }
 

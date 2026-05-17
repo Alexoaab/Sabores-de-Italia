@@ -9,309 +9,257 @@
 </head>
 
 <body>
-<!-- Enlace para saltar bloques repetidos. Permite a usuarios de teclado evitar la navegación repetitiva. -->
-<a class="skip-link" href="#contenido">Saltar al contenido</a>
-<!-- Es una directiva procesada por POSTHTML-INCLUDE, queermite dividir el HTML en partes reutilizables (header, footer, etc.),
-facilitando la modularización y evitando duplicación de código.-->
-<include src="src/partials/header.html"></include>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-<!-- Elemento vinculado al skip-link para accesibilidad -->
-<main id="contenido">
-<h1 class="visually-hidden">Sabores de Italia</h1>
-<section>
-  <div class="container">
+  <include src="src/partials/header.html"></include>
 
-    <!-- HEADER -->
-    <header class="detalle-header">
-      <h2>Pasta Carbonara</h2>
-        <p>La receta clásica originaria de Roma.</p>
-    </header>
+  <main id="contenido">
+    <h1 class="visually-hidden">Sabores de Italia</h1>
 
-    <!-- role="img" indica que el div actúa como imagen.
-    aria-label proporciona descripción alternativa para lectores de pantalla.
-    data-aos="fade-up" hace aparecer el elemento con un efecto de desvanecimiento mientras se mueve ligeramente hacia arriba al hacer scroll -->
-    <a href="./img/carbonara-principal-desktop.jpg" class="glightbox" data-gallery="det2">
-      <picture class="detalle-principal-media" data-aos="fade-up">
-        <source
-          media="(max-width: 767px)"
-          type="image/avif"
-          srcset="
-            ./img/carbonara-principal-mobile.jpg?as=avif&width=480 480w,
-            ./img/carbonara-principal-mobile.jpg?as=avif&width=800 800w"
-          sizes="100vw">
+    <section>
+      <div class="container">
+        <header class="detalle-header">
+          <h2>Pasta Carbonara</h2>
+          <p>La receta clásica originaria de Roma.</p>
+        </header>
 
-        <source
-          media="(max-width: 767px)"
-          type="image/webp"
-          srcset="
-            ./img/carbonara-principal-mobile.jpg?as=webp&width=480 480w,
-            ./img/carbonara-principal-mobile.jpg?as=webp&width=800 800w"
-          sizes="100vw">
+        <a href="./img/carbonara-principal-desktop.jpg" class="glightbox" data-gallery="det2">
+          <picture class="detalle-principal-media" data-aos="fade-up">
+            <source
+              media="(max-width: 767px)"
+              type="image/avif"
+              srcset="
+                ./img/carbonara-principal-mobile.jpg?as=avif&width=400 400w,
+                ./img/carbonara-principal-mobile.jpg?as=avif&width=640 640w"
+              sizes="100vw">
 
-        <source
-          type="image/avif"
-          srcset="
-            ./img/carbonara-principal-desktop.jpg?as=avif&width=768 768w,
-            ./img/carbonara-principal-desktop.jpg?as=avif&width=1200 1200w"
-          sizes="(max-width: 1199px) 100vw, 1200px">
+            <source
+              media="(max-width: 767px)"
+              type="image/webp"
+              srcset="
+                ./img/carbonara-principal-mobile.jpg?as=webp&width=400 400w,
+                ./img/carbonara-principal-mobile.jpg?as=webp&width=640 640w"
+              sizes="100vw">
 
-        <source
-          type="image/webp"
-          srcset="
-            ./img/carbonara-principal-desktop.jpg?as=webp&width=768 768w,
-            ./img/carbonara-principal-desktop.jpg?as=webp&width=1200 1200w"
-          sizes="(max-width: 1199px) 100vw, 1200px">
-
-        <img
-          src="./img/carbonara-principal-desktop.jpg?width=1200"
-          srcset="
-            ./img/carbonara-principal-desktop.jpg?width=768 768w,
-            ./img/carbonara-principal-desktop.jpg?width=1200 1200w"
-          sizes="(max-width: 1199px) 100vw, 1200px"
-          alt="Plato de pasta carbonara tradicional italiana"
-          width="1200"
-          height="675"
-          loading="lazy">
-      </picture>
-    </a>
-
-    <!-- INFO -->
-    <div>
-      <ul class="info-list">
-        <li><strong>Tiempo:</strong> 30 minutos</li>
-        <li><strong>Dificultad:</strong> Fácil</li>
-        <li><strong>Raciones:</strong> 4 personas</li>
-      </ul>
-    </div>
-
-    <!-- INGREDIENTES -->
-    <!-- data-aos="fade-right" hace aparecer el elemento con un efecto de desvanecimiento
-    mientras se mueve desde la izquierda hacia su posición normal (right). -->
-    <section class="detalle-seccion" data-aos="fade-right">
-      <h3>
-        Ingredientes
-      <!-- Botón que permite mostrar/ocultar contenido dinámicamente con JavaScript -->
-      <button class="toggle-btn" type="button">Mostrar</button>
-      </h3>
-      <!-- Clase "oculto" controla visibilidad mediante JavaScript -->
-      <ul class="oculto">
-        <li>400 g de pasta (spaghetti)</li>
-        <li>150 g de guanciale</li>
-        <li>3 yemas de huevo</li>
-        <li>1 huevo entero</li>
-        <li>80 g de queso pecorino romano</li>
-        <li>Pimienta negra recién molida</li>
-        <li>Sal</li>
-      </ul>
-    </section>
-
-    <!-- PREPARACIÓN -->
-    <!-- data-aos="fade-right" hace aparecer el elemento con un efecto de desvanecimiento
-    mientras se mueve desde la izquierda hacia su posición normal (right). -->
-    <section class="detalle-seccion" data-aos="fade-right">
-      <h3>
-        Preparación
-      <!-- Botón que permite mostrar/ocultar contenido dinámicamente con JavaScript -->
-      <button class="toggle-btn" type="button">Mostrar</button>
-      </h3>
-      <!-- Clase "oculto" controla visibilidad mediante JavaScript -->
-      <ol class="oculto">
-        <li>Cocer la pasta en abundante agua con sal.</li>
-        <li>Dorar el guanciale en una sartén sin añadir aceite.</li>
-        <li>Mezclar las yemas, el huevo y el queso pecorino.</li>
-        <li>Escurrir la pasta y mezclar con el guanciale.</li>
-        <li>Retirar del fuego y añadir la mezcla de huevo.</li>
-        <li>Servir con abundante pimienta negra.</li>
-      </ol>
-    </section>
-
-    <!-- HISTORIA -->
-    <!-- data-aos="fade-right" hace aparecer el elemento con un efecto de desvanecimiento
-    mientras se mueve desde la izquierda hacia su posición normal (right). -->
-    <section class="detalle-seccion" data-aos="fade-right">
-      <h3>
-        Historia y tradición
-      <!-- Botón que permite mostrar/ocultar contenido dinámicamente con JavaScript -->
-      <button class="toggle-btn" type="button">Ocultar</button>
-      </h3>
-
-      <div class="presentacion-contenido">
-        <p>
-          La pasta carbonara es uno de los platos más emblemáticos de la cocina romana.
-          Su origen se remonta a mediados del siglo XX.
-        </p>
-
-        <p>
-          La receta tradicional se elabora únicamente con guanciale, huevo,
-          queso pecorino romano y pimienta negra, sin añadir nata.
-        </p>
-
-        <p>
-          A pesar de sus variaciones internacionales, la versión auténtica
-          italiana sigue siendo un referente de simplicidad y sabor.
-        </p>
-      </div>
-    </section>
-
-    <!-- GALERÍA -->
-    <section class="detalle-galeria">
-      <h3 class="visually-hidden">Galería del proceso</h3>
-      <div class="features">
-        <!-- data-aos="fade-up" hace aparecer el elemento con un efecto de desvanecimiento ("fade") 
-        mientras se mueven desde abajo hacia arriba (up) al hacer scroll.
-        data-aos-delay="100" retrasa la animación 100 milisegundos para que los elementos aparezcan de forma escalonada. -->
-        <article class="feature-item" data-aos="fade-up" data-aos-delay="100">
-          <picture class="detalle-img feature-media">
             <source
               type="image/avif"
               srcset="
-                ./img/guanciale.png?as=avif&width=480 480w,
-                ./img/guanciale.png?as=avif&width=800 800w,
-                ./img/guanciale.png?as=avif&width=1200 1200w"
-              sizes="(max-width: 767px) 100vw, 50vw">
+                ./img/carbonara-principal-desktop.jpg?as=avif&width=768 768w,
+                ./img/carbonara-principal-desktop.jpg?as=avif&width=1024 1024w"
+              sizes="(max-width: 1199px) 100vw, 1024px">
+
             <source
               type="image/webp"
               srcset="
-                ./img/guanciale.png?as=webp&width=480 480w,
-                ./img/guanciale.png?as=webp&width=800 800w,
-                ./img/guanciale.png?as=webp&width=1200 1200w"
-              sizes="(max-width: 767px) 100vw, 50vw">
-            <img
-              src="./img/guanciale.png?width=800"
-              srcset="
-                ./img/guanciale.png?width=480 480w,
-                ./img/guanciale.png?width=800 800w,
-                ./img/guanciale.png?width=1200 1200w"
-              sizes="(max-width: 767px) 100vw, 50vw"
-              alt="Guanciale cortado en tiras"
-              width="800"
-              height="600"
-              loading="lazy">
-            </picture>
-            <h3>El guanciale</h3>
-              <p>Dorado lentamente para extraer todo su sabor.</p>
-        </article>
-        <!-- data-aos="fade-up" hace aparecer el elemento con un efecto de desvanecimiento ("fade") 
-        mientras se mueven desde abajo hacia arriba (up) al hacer scroll.
-        data-aos-delay="200" retrasa la animación 200 milisegundos para que los elementos aparezcan de forma escalonada. -->
-        <article class="feature-item" data-aos="fade-up" data-aos-delay="200">
-        <picture class="detalle-img feature-media">
-          <source
-            type="image/avif"
-            srcset="
-              ./img/salsa.png?as=avif&width=480 480w,
-              ./img/salsa.png?as=avif&width=800 800w,
-              ./img/salsa.png?as=avif&width=1200 1200w"
-            sizes="(max-width: 767px) 100vw, 50vw">
-          <source
-            type="image/webp"
-            srcset="
-              ./img/salsa.png?as=webp&width=480 480w,
-              ./img/salsa.png?as=webp&width=800 800w,
-              ./img/salsa.png?as=webp&width=1200 1200w"
-            sizes="(max-width: 767px) 100vw, 50vw">
-          <img
-            src="./img/salsa.png?width=800"
-            srcset="
-              ./img/salsa.png?width=480 480w,
-              ./img/salsa.png?width=800 800w,
-              ./img/salsa.png?width=1200 1200w"
-            sizes="(max-width: 767px) 100vw, 50vw"
-            alt="Salsa cremosa de huevo y queso pecorino"
-            width="800"
-            height="600"
-            loading="lazy"> 
-          </picture>
-          <h3>Resultado final</h3>
-              <p>Mezcla cremosa de huevo y pecorino romano.</p>
-        </article>
-        <!-- data-aos="fade-up" hace aparecer el elemento con un efecto de desvanecimiento ("fade") 
-        mientras se mueven desde abajo hacia arriba (up) al hacer scroll.
-        data-aos-delay="300" retrasa la animación 300 milisegundos para que los elementos aparezcan de forma escalonada. -->
-        <article class="feature-item" data-aos="fade-up" data-aos-delay="300">
-        <picture class="detalle-img feature-media">
-          <source
-            type="image/avif"
-            srcset="
-              ./img/carbonara.jpg?as=avif&width=480 480w,
-              ./img/carbonara.jpg?as=avif&width=800 800w,
-              ./img/carbonara.jpg?as=avif&width=1200 1200w"
-            sizes="(max-width: 767px) 100vw, 50vw">
-          <source
-            type="image/webp"
-            srcset="
-              ./img/carbonara.jpg?as=webp&width=480 480w,
-              ./img/carbonara.jpg?as=webp&width=800 800w,
-              ./img/carbonara.jpg?as=webp&width=1200 1200w"
-            sizes="(max-width: 767px) 100vw, 50vw">
-          <img
-            src="./img/carbonara.jpg?width=800"
-            srcset="
-              ./img/carbonara.jpg?width=480 480w,
-              ./img/carbonara.jpg?width=800 800w,
-              ./img/carbonara.jpg?width=1200 1200w"
-            sizes="(max-width: 767px) 100vw, 50vw"
-            alt="Pasta carbonara servida"
-            width="800"
-            height="600"
-            loading="lazy">
-          </picture>
-          <h3>Resultado final</h3>
-              <p>Servida inmediatamente para mantener su textura cremosa.</p>
-        </article>
+                ./img/carbonara-principal-desktop.jpg?as=webp&width=768 768w,
+                ./img/carbonara-principal-desktop.jpg?as=webp&width=1024 1024w"
+              sizes="(max-width: 1199px) 100vw, 1024px">
 
+            <img
+              src="./img/carbonara-principal-desktop.jpg?width=1024"
+              srcset="
+                ./img/carbonara-principal-desktop.jpg?width=768 768w,
+                ./img/carbonara-principal-desktop.jpg?width=1024 1024w"
+              sizes="(max-width: 1199px) 100vw, 1024px"
+              alt="Plato de pasta carbonara tradicional italiana"
+              width="1024"
+              height="576"
+              fetchpriority="high"
+              decoding="async">
+          </picture>
+        </a>
+
+        <ul class="info-list">
+          <li><strong>Tiempo:</strong> 30 minutos</li>
+          <li><strong>Dificultad:</strong> Fácil</li>
+          <li><strong>Raciones:</strong> 4 personas</li>
+        </ul>
+
+        <section class="detalle-seccion" data-aos="fade-right">
+          <h3>
+            Ingredientes
+            <button class="toggle-btn" type="button">Mostrar</button>
+          </h3>
+          <ul class="oculto">
+            <li>400 g de pasta (spaghetti)</li>
+            <li>150 g de guanciale</li>
+            <li>3 yemas de huevo</li>
+            <li>1 huevo entero</li>
+            <li>80 g de queso pecorino romano</li>
+            <li>Pimienta negra recién molida</li>
+            <li>Sal</li>
+          </ul>
+        </section>
+
+        <section class="detalle-seccion" data-aos="fade-right">
+          <h3>
+            Preparación
+            <button class="toggle-btn" type="button">Mostrar</button>
+          </h3>
+          <ol class="oculto">
+            <li>Cocer la pasta en abundante agua con sal.</li>
+            <li>Dorar el guanciale en una sartén sin añadir aceite.</li>
+            <li>Mezclar las yemas, el huevo y el queso pecorino.</li>
+            <li>Escurrir la pasta y mezclar con el guanciale.</li>
+            <li>Retirar del fuego y añadir la mezcla de huevo.</li>
+            <li>Servir con abundante pimienta negra.</li>
+          </ol>
+        </section>
+
+        <section class="detalle-seccion" data-aos="fade-right">
+          <h3>
+            Historia y tradición
+            <button class="toggle-btn" type="button">Mostrar</button>
+          </h3>
+          <div class="presentacion-contenido oculto">
+            <p>
+              La pasta carbonara es uno de los platos más emblemáticos de la cocina romana y se ha convertido en un referente internacional de la gastronomía italiana.
+            </p>
+            <p>
+              La receta tradicional se caracteriza por la combinación de pasta, huevo, queso pecorino romano, pimienta negra y guanciale, sin incorporar nata.
+            </p>
+            <p>
+              Su prestigio se debe tanto a la sencillez de sus ingredientes como a la precisión técnica necesaria para conseguir una salsa cremosa y equilibrada.
+            </p>
+          </div>
+        </section>
+
+        <section class="detalle-galeria">
+          <h3 class="visually-hidden">Galería del proceso</h3>
+
+          <div class="features">
+            <article class="feature-item" data-aos="fade-up" data-aos-delay="100">
+              <picture class="detalle-img feature-media">
+                <source
+                  type="image/avif"
+                  srcset="
+                    ./img/guanciale.png?as=avif&width=320 320w,
+                    ./img/guanciale.png?as=avif&width=480 480w,
+                    ./img/guanciale.png?as=avif&width=640 640w"
+                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw">
+                <source
+                  type="image/webp"
+                  srcset="
+                    ./img/guanciale.png?as=webp&width=320 320w,
+                    ./img/guanciale.png?as=webp&width=480 480w,
+                    ./img/guanciale.png?as=webp&width=640 640w"
+                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw">
+                <img
+                  src="./img/guanciale.png?width=480"
+                  srcset="
+                    ./img/guanciale.png?width=320 320w,
+                    ./img/guanciale.png?width=480 480w,
+                    ./img/guanciale.png?width=640 640w"
+                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                  alt="Guanciale cortado en tiras"
+                  width="480"
+                  height="480"
+                  loading="lazy"
+                  decoding="async">
+              </picture>
+              <h3>El guanciale</h3>
+              <p>Dorado lentamente para extraer todo su sabor.</p>
+            </article>
+
+            <article class="feature-item" data-aos="fade-up" data-aos-delay="200">
+              <picture class="detalle-img feature-media">
+                <source
+                  type="image/avif"
+                  srcset="
+                    ./img/salsa.png?as=avif&width=320 320w,
+                    ./img/salsa.png?as=avif&width=480 480w,
+                    ./img/salsa.png?as=avif&width=640 640w"
+                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw">
+                <source
+                  type="image/webp"
+                  srcset="
+                    ./img/salsa.png?as=webp&width=320 320w,
+                    ./img/salsa.png?as=webp&width=480 480w,
+                    ./img/salsa.png?as=webp&width=640 640w"
+                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw">
+                <img
+                  src="./img/salsa.png?width=480"
+                  srcset="
+                    ./img/salsa.png?width=320 320w,
+                    ./img/salsa.png?width=480 480w,
+                    ./img/salsa.png?width=640 640w"
+                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                  alt="Salsa cremosa de huevo y queso pecorino"
+                  width="480"
+                  height="480"
+                  loading="lazy"
+                  decoding="async">
+              </picture>
+              <h3>La salsa</h3>
+              <p>Mezcla cremosa de huevo y pecorino romano.</p>
+            </article>
+
+            <article class="feature-item" data-aos="fade-up" data-aos-delay="300">
+              <picture class="detalle-img feature-media">
+                <source
+                  type="image/avif"
+                  srcset="
+                    ./img/carbonara.jpg?as=avif&width=320 320w,
+                    ./img/carbonara.jpg?as=avif&width=480 480w,
+                    ./img/carbonara.jpg?as=avif&width=640 640w"
+                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw">
+                <source
+                  type="image/webp"
+                  srcset="
+                    ./img/carbonara.jpg?as=webp&width=320 320w,
+                    ./img/carbonara.jpg?as=webp&width=480 480w,
+                    ./img/carbonara.jpg?as=webp&width=640 640w"
+                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw">
+                <img
+                  src="./img/carbonara.jpg?width=480"
+                  srcset="
+                    ./img/carbonara.jpg?width=320 320w,
+                    ./img/carbonara.jpg?width=480 480w,
+                    ./img/carbonara.jpg?width=640 640w"
+                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                  alt="Pasta carbonara servida"
+                  width="480"
+                  height="480"
+                  loading="lazy"
+                  decoding="async">
+              </picture>
+              <h3>Resultado final</h3>
+              <p>Servida inmediatamente para mantener su textura cremosa.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="detalle-video" data-aos="fade-up">
+          <h3>Vídeo explicativo</h3>
+
+          <div class="video-wrapper" tabindex="0">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/8jFBHUYW7f4?cc_load_policy=1"
+              title="Cómo hacer pasta carbonara"
+              loading="lazy"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <button
+            type="button"
+            class="toggle-btn toggle-btn--transcripcion"
+            aria-expanded="false"
+            aria-controls="transcripcion"
+            data-transcription-key="det2">
+            Mostrar transcripción
+          </button>
+
+          <section id="transcripcion" class="transcripcion oculto" aria-live="polite"></section>
+        </section>
+
+        <a href="categoria.html" class="btn">Volver a recetas</a>
       </div>
     </section>
+  </main>
 
-    <!-- VIDEO -->
-    <!-- data-aos="fade-up" hace aparecer el elemento con un efecto de desvanecimiento
-    mientras se mueve ligeramente hacia arriba al hacer scroll -->
-    <section class="detalle-video" data-aos="fade-up">
-      <h3>Vídeo explicativo</h3>
-        <div class="video-wrapper" tabindex="0">
-          <iframe src="https://www.youtube.com/embed/8jFBHUYW7f4?cc_load_policy=1" title="Cómo hacer pasta carbonara" allowfullscreen></iframe>
-        </div>
+  <include src="src/partials/footer.html"></include>
 
-  <!-- Botón accesible -->
-  <button type="button" class="toggle-btn" aria-expanded="false" aria-controls="transcripcion">Mostrar transcripción</button>
-
-  <!-- Transcripción oculta por defecto -->
-  <section id="transcripcion"class="transcripcion oculto">
-    <h4>Transcripción del vídeo</h4>
-
-    <p>
-      Hola, hoy preparamos espaguetis a la carbonara, pero la receta auténtica, la que no lleva nata. Empiezo rayando el queso pecorino, que es el queso que se utiliza para hacer esta receta. Para dos personas necesito cien gramos de queso. De todas maneras, te he dejado todas las cantidades de esta receta al final del vídeo y abajo en la descripción. Otro ingrediente que lleva la carbonara es el guanciale. En este caso he comprado papada, pero si encuentras el guanciale, mucho mejor. Si no lo encuentras,
-      siempre puedes utilizar panceta o beicon. Vamos a hacer unos daditos y así tendremos todos los ingredientes preparados porque esta receta es rapidísima. Ya tenemos la papada cortadita. Ahora vamos a freír la papada y como ves no le he echado nada de aceite a la sartén. Dejaremos que se tueste por fuera
-      y por dentro seguirá tierna. Hay que ir moviendo constantemente para que no se queme y ahora que ya está bien doradita lo que voy a hacer es reservarla. Para hervir la pasta se calienta abundante agua y se le echa un puñadito de sal. Cuando hierva el agua se echa la pasta. En este caso estos espaguetis tienen que cocer durante ocho minutos. Mientras cuece la pasta vamos a poner las yemas en un bol y le añadimos pimienta.
-      Lo batimos y aquí le añadiremos el queso. Lo añado poco a poco para mezclarlo mejor. Como esta mezcla es muy espesa se le echa un poco de agua de cocción de los espaguetis. Como ves así va admitiendo más queso. Y ahora que ya lo tenemos todo integrado
-      lo reservamos. Ya han pasado los nueve minutos, voy a apagar este fuego y ahora vamos a pasar los espaguetis a la sartén donde tenemos el guanciale. Con el fuego bien bajito lo mantenemos caliente y lo movemos. Y ahora le vamos a añadir la crema de las yemas. Y vamos a mover
-      y nos tiene que quedar unos espaguetis supercremosos. Eso sí, que no se nos cuaje el huevo. Le añadimos un cacito de la cocción y ahora hay que remover enérgicamente hasta que nos queden bien cremositos. Mira, mira qué cremosidad. Pues momento de servir.
-      Un poquito más y terminamos con una pizquita de pimienta negra y un poquito más de queso. Pues momento de probar. Mmm Pues así es como se hacen los espaguetis a la carbonara. Te aseguro que han quedado riquísimos, así que te animo a que los prepares. Si te ha gustado el vídeo
-      no olvides darle al like. Nos vemos en el siguiente vídeo. GraciasHola, hoy preparamos espaguetis a la carbonara, pero la receta auténtica, la que no lleva nata. Empiezo rayando el queso pecorino, que es el queso que se utiliza para hacer esta receta. Para dos personas necesito cien gramos de queso. De todas maneras, te he dejado todas las cantidades de esta receta al final del vídeo y abajo en la descripción. Otro ingrediente que lleva la carbonara es el guanciale. En este caso he comprado papada, pero si encuentras el guanciale, mucho mejor. Si no lo encuentras,
-      siempre puedes utilizar panceta o beicon. Vamos a hacer unos daditos y así tendremos todos los ingredientes preparados porque esta receta es rapidísima. Ya tenemos la papada cortadita. Ahora vamos a freír la papada y como ves no le he echado nada de aceite a la sartén. Dejaremos que se tueste por fuera
-      y por dentro seguirá tierna. Hay que ir moviendo constantemente para que no se queme y ahora que ya está bien doradita lo que voy a hacer es reservarla. Para hervir la pasta se calienta abundante agua y se le echa un puñadito de sal. Cuando hierva el agua se echa la pasta. En este caso estos espaguetis tienen que cocer durante ocho minutos. Mientras cuece la pasta vamos a poner las yemas en un bol y le añadimos pimienta.
-      Lo batimos y aquí le añadiremos el queso. Lo añado poco a poco para mezclarlo mejor. Como esta mezcla es muy espesa se le echa un poco de agua de cocción de los espaguetis. Como ves así va admitiendo más queso. Y ahora que ya lo tenemos todo integrado
-      lo reservamos. Ya han pasado los nueve minutos, voy a apagar este fuego y ahora vamos a pasar los espaguetis a la sartén donde tenemos el guanciale. Con el fuego bien bajito lo mantenemos caliente y lo movemos. Y ahora le vamos a añadir la crema de las yemas. Y vamos a mover
-      y nos tiene que quedar unos espaguetis supercremosos. Eso sí, que no se nos cuaje el huevo. Le añadimos un cacito de la cocción y ahora hay que remover enérgicamente hasta que nos queden bien cremositos. Mira, mira qué cremosidad. Pues momento de servir.
-      Un poquito más y terminamos con una pizquita de pimienta negra y un poquito más de queso. Pues momento de probar. Mmm Pues así es como se hacen los espaguetis a la carbonara. Te aseguro que han quedado riquísimos, así que te animo a que los prepares. Si te ha gustado el vídeo
-      no olvides darle al like. Nos vemos en el siguiente vídeo. Gracias
-    </p>
-  </section>
-</section>
-
-    <!-- BOTÓN VOLVER -->
-    <a href="categoria.html" class="btn">Volver a recetas</a>
-
-  </div>
-</section>
-
-</main>
-<!-- Es una directiva procesada por POSTHTML-INCLUDE, queermite dividir el HTML en partes reutilizables (header, footer, etc.),
-facilitando la modularización y evitando duplicación de código.-->
-<include src="src/partials/footer.html"></include>
-
-<!-- Se carga el archivo JavaScript principal como módulo. type="module" permite usar import/export y organizar el código de forma modular. -->
-<script type="module" src="./js/main.ts"></script>
-
+  <script type="module" src="./js/main.ts"></script>
 </body>
 </html>
