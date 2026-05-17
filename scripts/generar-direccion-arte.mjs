@@ -26,79 +26,54 @@ const destino = "./src/img";
 
 await fs.mkdir(destino, { recursive: true });
 
+const variantes = [
+  {
+    sufijo: "desktop",
+    width: 1024,
+    height: 576
+  },
+  {
+    sufijo: "mobile",
+    width: 640,
+    height: 800
+  }
+];
+
 for (const imagen of imagenesPrincipales) {
   const rutaEntrada = path.join(origen, imagen.input);
 
-  const desktopJpg = path.join(destino, `${imagen.outputBase}-desktop.jpg`);
-  const mobileJpg = path.join(destino, `${imagen.outputBase}-mobile.jpg`);
+  for (const variante of variantes) {
+    const rutaBase = path.join(destino, `${imagen.outputBase}-${variante.sufijo}`);
 
-  const desktopWebp = path.join(destino, `${imagen.outputBase}-desktop.webp`);
-  const mobileWebp = path.join(destino, `${imagen.outputBase}-mobile.webp`);
-
-  const desktopAvif = path.join(destino, `${imagen.outputBase}-desktop.avif`);
-  const mobileAvif = path.join(destino, `${imagen.outputBase}-mobile.avif`);
-
-  await sharp(rutaEntrada)
-    .resize(1024, 576, {
+    const pipeline = sharp(rutaEntrada).resize(variante.width, variante.height, {
       fit: "cover",
-      position: "centre"
-    })
-    .jpeg({
-      quality: 76,
-      mozjpeg: true
-    })
-    .toFile(desktopJpg);
+      position: "centre",
+      withoutEnlargement: true
+    });
 
-  await sharp(rutaEntrada)
-    .resize(640, 800, {
-      fit: "cover",
-      position: "centre"
-    })
-    .jpeg({
-      quality: 76,
-      mozjpeg: true
-    })
-    .toFile(mobileJpg);
+    await pipeline
+      .clone()
+      .jpeg({
+        quality: 76,
+        mozjpeg: true,
+        progressive: true
+      })
+      .toFile(`${rutaBase}.jpg`);
 
-  await sharp(rutaEntrada)
-    .resize(1024, 576, {
-      fit: "cover",
-      position: "centre"
-    })
-    .webp({
-      quality: 66
-    })
-    .toFile(desktopWebp);
+    await pipeline
+      .clone()
+      .webp({
+        quality: 66
+      })
+      .toFile(`${rutaBase}.webp`);
 
-  await sharp(rutaEntrada)
-    .resize(1024, 576, {
-      fit: "cover",
-      position: "centre"
-    })
-    .avif({
-      quality: 52
-    })
-    .toFile(desktopAvif);
-
-  await sharp(rutaEntrada)
-    .resize(640, 800, {
-      fit: "cover",
-      position: "centre"
-    })
-    .webp({
-      quality: 66
-    })
-    .toFile(mobileWebp);
-
-  await sharp(rutaEntrada)
-    .resize(640, 800, {
-      fit: "cover",
-      position: "centre"
-    })
-    .avif({
-      quality: 52
-    })
-    .toFile(mobileAvif);
+    await pipeline
+      .clone()
+      .avif({
+        quality: 52
+      })
+      .toFile(`${rutaBase}.avif`);
+  }
 
   console.log(`Procesada correctamente: ${imagen.input}`);
 }

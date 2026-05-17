@@ -23,38 +23,48 @@ const destino = "./src/img";
 await fs.mkdir(destino, { recursive: true });
 
 for (const nombre of imagenes) {
-  const ext = path.extname(nombre);
+  const ext = path.extname(nombre).toLowerCase();
   const base = path.basename(nombre, ext);
   const rutaEntrada = path.join(origen, nombre);
+  const esPng = ext === ".png";
 
-  await sharp(rutaEntrada)
-    .resize(640, 640, {
-      fit: "cover",
-      position: "centre"
-    })
-    .jpeg({
-      quality: 72,
-      mozjpeg: true
-    })
-    .toFile(path.join(destino, nombre));
+  const pipeline = sharp(rutaEntrada).resize(640, 640, {
+    fit: "cover",
+    position: "centre",
+    withoutEnlargement: true
+  });
 
-  await sharp(rutaEntrada)
-    .resize(640, 640, {
-      fit: "cover",
-      position: "centre"
-    })
+  if (esPng) {
+    await pipeline
+      .clone()
+      .png({
+        compressionLevel: 9,
+        palette: true
+      })
+      .toFile(path.join(destino, nombre));
+  } else {
+    await pipeline
+      .clone()
+      .jpeg({
+        quality: 72,
+        mozjpeg: true,
+        progressive: true
+      })
+      .toFile(path.join(destino, nombre));
+  }
+
+  await pipeline
+    .clone()
     .webp({
-      quality: 62
+      quality: esPng ? 60 : 62,
+      alphaQuality: 70
     })
     .toFile(path.join(destino, `${base}.webp`));
 
-  await sharp(rutaEntrada)
-    .resize(640, 640, {
-      fit: "cover",
-      position: "centre"
-    })
+  await pipeline
+    .clone()
     .avif({
-      quality: 48
+      quality: esPng ? 42 : 48
     })
     .toFile(path.join(destino, `${base}.avif`));
 

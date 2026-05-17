@@ -7,47 +7,69 @@ import "swiper/swiper-bundle.css";
 import GLightbox from "glightbox";
 import "glightbox/dist/css/glightbox.css";
 
+type TranscriptionKey = "det1" | "det2" | "det3" | "det4";
+
+const transcriptionLoaders: Record<TranscriptionKey, () => Promise<string>> = {
+  det1: async () => (await import("./transcripciones/det1")).default,
+  det2: async () => (await import("./transcripciones/det2")).default,
+  det3: async () => (await import("./transcripciones/det3")).default,
+  det4: async () => (await import("./transcripciones/det4")).default
+};
+
 document.addEventListener("DOMContentLoaded", () => {
-  if (document.querySelector("[data-aos]")) {
-    AOS.init({
-      duration: 800,
-      once: false
-    });
-  }
+  inicializarAOS();
+  inicializarLightbox();
+  inicializarSwiper();
+  inicializarBotonesSeccion();
+  inicializarBotonesTranscripcion();
+  inicializarFormulario();
+});
 
-  if (document.querySelector(".glightbox")) {
-    GLightbox({
-      selector: ".glightbox"
-    });
-  }
+function inicializarAOS(): void {
+  if (!document.querySelector("[data-aos]")) return;
 
-  const swiperContainer = document.querySelector(".swiper");
+  AOS.init({
+    duration: 800,
+    once: false
+  });
+}
 
-  if (swiperContainer) {
-    new Swiper(".swiper", {
-      modules: [Navigation, Pagination],
-      slidesPerView: 1,
-      spaceBetween: 20,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true
-      },
-      breakpoints: {
-        768: { slidesPerView: 2 },
-        1024: { slidesPerView: 4 }
-      }
-    });
-  }
+function inicializarLightbox(): void {
+  if (!document.querySelector(".glightbox")) return;
 
-  const botonesSeccion = document.querySelectorAll<HTMLButtonElement>(
+  GLightbox({
+    selector: ".glightbox"
+  });
+}
+
+function inicializarSwiper(): void {
+  if (!document.querySelector(".swiper")) return;
+
+  new Swiper(".swiper", {
+    modules: [Navigation, Pagination],
+    slidesPerView: 1,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
+    },
+    breakpoints: {
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 4 }
+    }
+  });
+}
+
+function inicializarBotonesSeccion(): void {
+  const botones = document.querySelectorAll<HTMLButtonElement>(
     ".detalle-seccion .toggle-btn"
   );
 
-  botonesSeccion.forEach((boton) => {
+  botones.forEach((boton) => {
     const seccion = boton.closest<HTMLElement>(".detalle-seccion");
     const contenido = seccion?.querySelector<HTMLElement>(
       "ul, ol, .presentacion-contenido"
@@ -55,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!contenido) return;
 
-    const actualizarTexto = () => {
+    const actualizarTexto = (): void => {
       boton.textContent = contenido.classList.contains("oculto")
         ? "Mostrar"
         : "Ocultar";
@@ -68,23 +90,25 @@ document.addEventListener("DOMContentLoaded", () => {
       actualizarTexto();
     });
   });
+}
 
-  const botonesTranscripcion = document.querySelectorAll<HTMLButtonElement>(
+function inicializarBotonesTranscripcion(): void {
+  const botones = document.querySelectorAll<HTMLButtonElement>(
     '.detalle-video .toggle-btn[aria-controls][data-transcription-key]'
   );
 
-  botonesTranscripcion.forEach((boton) => {
+  botones.forEach((boton) => {
     const id = boton.getAttribute("aria-controls");
-    const key = boton.dataset.transcriptionKey;
+    const key = boton.dataset.transcriptionKey as TranscriptionKey | undefined;
 
-    if (!id || !key) return;
+    if (!id || !key || !(key in transcriptionLoaders)) return;
 
     const contenedor = document.getElementById(id);
     if (!contenedor) return;
 
     let cargada = false;
 
-    const actualizarEstado = () => {
+    const actualizarEstado = (): void => {
       const expandido = !contenedor.classList.contains("oculto");
       boton.setAttribute("aria-expanded", String(expandido));
       boton.textContent = expandido
@@ -98,51 +122,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const estaOculto = contenedor.classList.contains("oculto");
 
       if (estaOculto && !cargada) {
-        contenedor.classList.remove("oculto");
-        contenedor.classList.add("transcripcion--cargando");
-        contenedor.classList.remove("transcripcion--error");
-        contenedor.innerHTML = "<p>Cargando transcripción...</p>";
-
-        try {
-          let texto = "";
-
-          if (key === "det1") {
-            const modulo = await import("./transcripciones/det1");
-            texto = modulo.default;
-          } else if (key === "det2") {
-            const modulo = await import("./transcripciones/det2");
-            texto = modulo.default;
-          } else if (key === "det3") {
-            const modulo = await import("./transcripciones/det3");
-            texto = modulo.default;
-          } else if (key === "det4") {
-            const modulo = await import("./transcripciones/det4");
-            texto = modulo.default;
-          } else {
-            throw new Error("Clave de transcripción no válida.");
-          }
-
-          const bloques = texto
-            .split("\n\n")
-            .map((bloque) => bloque.trim())
-            .filter((bloque) => bloque !== "");
-
-          contenedor.innerHTML = `
-            <h4>Transcripción del vídeo</h4>
-            ${bloques.map((bloque) => `<p>${bloque}</p>`).join("")}
-          `;
-
-          cargada = true;
-        } catch (error) {
-          contenedor.innerHTML =
-            "<p>No se ha podido cargar la transcripción en este momento.</p>";
-          contenedor.classList.add("transcripcion--error");
-          console.error("Error al cargar la transcripción:", error);
-        } finally {
-          contenedor.classList.remove("transcripcion--cargando");
-          actualizarEstado();
-        }
-
+        await cargarTranscripcion(key, contenedor);
+        cargada = !contenedor.classList.contains("transcripcion--error");
+        actualizarEstado();
         return;
       }
 
@@ -150,9 +132,40 @@ document.addEventListener("DOMContentLoaded", () => {
       actualizarEstado();
     });
   });
+}
 
+async function cargarTranscripcion(
+  key: TranscriptionKey,
+  contenedor: HTMLElement
+): Promise<void> {
+  contenedor.classList.remove("oculto");
+  contenedor.classList.add("transcripcion--cargando");
+  contenedor.classList.remove("transcripcion--error");
+  contenedor.innerHTML = "<p>Cargando transcripción...</p>";
+
+  try {
+    const texto = await transcriptionLoaders[key]();
+    const bloques = texto
+      .split("\n\n")
+      .map((bloque) => bloque.trim())
+      .filter((bloque) => bloque !== "");
+
+    contenedor.innerHTML = `
+      <h4>Transcripción del vídeo</h4>
+      ${bloques.map((bloque) => `<p>${bloque}</p>`).join("")}
+    `;
+  } catch (error) {
+    contenedor.innerHTML =
+      "<p>No se ha podido cargar la transcripción en este momento.</p>";
+    contenedor.classList.add("transcripcion--error");
+    console.error("Error al cargar la transcripción:", error);
+  } finally {
+    contenedor.classList.remove("transcripcion--cargando");
+  }
+}
+
+function inicializarFormulario(): void {
   const formSolicitud = document.querySelector<HTMLFormElement>("#form-solicitud");
-
   if (!formSolicitud) return;
 
   const nombre = document.querySelector<HTMLInputElement>("#nombre");
@@ -178,23 +191,23 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const campos: HTMLInputElement[] = [nombre, apellidos, email, plato];
-  const soloLetras: RegExp = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
-  const emailValido: RegExp = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  const soloLetras = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
+  const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
   comentarios.addEventListener("input", () => {
     contador.textContent = `${comentarios.value.length} / 300 caracteres`;
   });
 
-  function mostrarError(campo: HTMLInputElement, mensaje: string): void {
+  const mostrarError = (campo: HTMLInputElement, mensaje: string): void => {
     campo.classList.add("invalido");
     const errorElemento = document.getElementById(`error-${campo.id}`);
 
     if (errorElemento instanceof HTMLElement) {
       errorElemento.textContent = mensaje;
     }
-  }
+  };
 
-  function limpiarErrores(): void {
+  const limpiarErrores = (): void => {
     document.querySelectorAll<HTMLElement>(".error-mensaje").forEach((el) => {
       el.textContent = "";
     });
@@ -202,9 +215,9 @@ document.addEventListener("DOMContentLoaded", () => {
     campos.forEach((campo) => {
       campo.classList.remove("valido", "invalido");
     });
-  }
+  };
 
-  function validarFormulario(): void {
+  const validarFormulario = (): void => {
     let valido = true;
     limpiarErrores();
 
@@ -236,7 +249,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     boton.disabled = !valido;
-  }
+  };
 
   campos.forEach((campo) => {
     campo.addEventListener("input", validarFormulario);
@@ -254,4 +267,4 @@ document.addEventListener("DOMContentLoaded", () => {
     limpiarErrores();
     contador.textContent = "0 / 300 caracteres";
   });
-});
+}
