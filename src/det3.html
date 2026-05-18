@@ -10,6 +10,7 @@
 
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
   <include src="src/partials/header.html"></include>
 
   <main id="contenido">
@@ -22,24 +23,39 @@
           <p>El postre italiano más emblemático elaborado con café y mascarpone.</p>
         </header>
 
-        <a href="./img/tiramisu-principal-desktop.jpg" class="glightbox" data-gallery="det3">
-          <picture class="detalle-principal-media" data-aos="fade-up">
-            <source media="(max-width: 767px)" type="image/avif" srcset="./img/tiramisu-principal-mobile.avif 640w" sizes="100vw">
-            <source media="(max-width: 767px)" type="image/webp" srcset="./img/tiramisu-principal-mobile.webp 640w" sizes="100vw">
-            <source media="(max-width: 767px)" srcset="./img/tiramisu-principal-mobile.jpg 640w" sizes="100vw">
+        <picture class="detalle-principal-media">
+          <source
+            media="(max-width: 767px)"
+            type="image/avif"
+            srcset="./img/tiramisu-principal-mobile.avif 640w"
+            sizes="100vw">
+          <source
+            media="(max-width: 767px)"
+            type="image/webp"
+            srcset="./img/tiramisu-principal-mobile.webp 640w"
+            sizes="100vw">
+          <source
+            media="(max-width: 767px)"
+            srcset="./img/tiramisu-principal-mobile.jpg 640w"
+            sizes="100vw">
 
-            <source type="image/avif" srcset="./img/tiramisu-principal-desktop.avif 1024w" sizes="(max-width: 1200px) 100vw, 1024px">
-            <source type="image/webp" srcset="./img/tiramisu-principal-desktop.webp 1024w" sizes="(max-width: 1200px) 100vw, 1024px">
+          <source
+            type="image/avif"
+            srcset="./img/tiramisu-principal-desktop.avif 1024w"
+            sizes="(max-width: 1200px) 100vw, 1024px">
+          <source
+            type="image/webp"
+            srcset="./img/tiramisu-principal-desktop.webp 1024w"
+            sizes="(max-width: 1200px) 100vw, 1024px">
 
-            <img
-              src="./img/tiramisu-principal-desktop.jpg"
-              alt="Tiramisú tradicional italiano espolvoreado con cacao"
-              width="1024"
-              height="576"
-              fetchpriority="high"
-              decoding="async">
-          </picture>
-        </a>
+          <img
+            src="./img/tiramisu-principal-desktop.jpg"
+            alt="Tiramisú tradicional italiano espolvoreado con cacao"
+            width="1024"
+            height="576"
+            fetchpriority="high"
+            decoding="async">
+        </picture>
 
         <ul class="info-list">
           <li><strong>Tiempo:</strong> 40 minutos + reposo</li>
@@ -47,8 +63,11 @@
           <li><strong>Raciones:</strong> 6 personas</li>
         </ul>
 
-        <section class="detalle-seccion" data-aos="fade-right">
-          <h3>Ingredientes <button class="toggle-btn" type="button">Mostrar</button></h3>
+        <section class="detalle-seccion">
+          <h3>
+            Ingredientes
+            <button class="toggle-btn" type="button">Mostrar</button>
+          </h3>
           <ul class="oculto">
             <li>250 g de queso mascarpone</li>
             <li>3 huevos</li>
@@ -59,8 +78,11 @@
           </ul>
         </section>
 
-        <section class="detalle-seccion" data-aos="fade-right">
-          <h3>Preparación <button class="toggle-btn" type="button">Mostrar</button></h3>
+        <section class="detalle-seccion">
+          <h3>
+            Preparación
+            <button class="toggle-btn" type="button">Mostrar</button>
+          </h3>
           <ol class="oculto">
             <li>Separar las claras de las yemas.</li>
             <li>Batir las yemas con el azúcar hasta obtener una mezcla cremosa.</li>
@@ -74,8 +96,11 @@
           </ol>
         </section>
 
-        <section class="detalle-seccion" data-aos="fade-right">
-          <h3>Historia y tradición <button class="toggle-btn" type="button">Mostrar</button></h3>
+        <section class="detalle-seccion">
+          <h3>
+            Historia y tradición
+            <button class="toggle-btn" type="button">Mostrar</button>
+          </h3>
           <div class="presentacion-contenido oculto">
             <p>El tiramisú es un postre tradicional italiano cuyo origen se sitúa en la región del Véneto durante el siglo XX.</p>
             <p>Su nombre significa literalmente “levántame el ánimo”, en referencia a la energía que aporta el café y el azúcar.</p>
@@ -85,8 +110,9 @@
 
         <section class="detalle-galeria">
           <h3 class="visually-hidden">Galería del proceso</h3>
+
           <div class="features">
-            <article class="feature-item" data-aos="fade-up" data-aos-delay="100">
+            <article class="feature-item">
               <picture class="detalle-img feature-media">
                 <source type="image/avif" srcset="./img/cafe.avif 640w" sizes="(max-width: 767px) 100vw, 33vw">
                 <source type="image/webp" srcset="./img/cafe.webp 640w" sizes="(max-width: 767px) 100vw, 33vw">
@@ -102,7 +128,7 @@
               <p>Café espresso intenso que aporta profundidad y aroma.</p>
             </article>
 
-            <article class="feature-item" data-aos="fade-up" data-aos-delay="200">
+            <article class="feature-item">
               <picture class="detalle-img feature-media">
                 <source type="image/avif" srcset="./img/mascarpone.avif 640w" sizes="(max-width: 767px) 100vw, 33vw">
                 <source type="image/webp" srcset="./img/mascarpone.webp 640w" sizes="(max-width: 767px) 100vw, 33vw">
@@ -118,7 +144,7 @@
               <p>Mezcla suave y aireada de mascarpone y huevo.</p>
             </article>
 
-            <article class="feature-item" data-aos="fade-up" data-aos-delay="300">
+            <article class="feature-item">
               <picture class="detalle-img feature-media">
                 <source type="image/avif" srcset="./img/tiramisu.avif 640w" sizes="(max-width: 767px) 100vw, 33vw">
                 <source type="image/webp" srcset="./img/tiramisu.webp 640w" sizes="(max-width: 767px) 100vw, 33vw">
@@ -136,15 +162,24 @@
           </div>
         </section>
 
-        <section class="detalle-video" data-aos="fade-up">
+        <section class="detalle-video">
           <h3>Vídeo explicativo</h3>
 
-          <div class="video-wrapper" tabindex="0">
-            <iframe
-              src="https://www.youtube-nocookie.com/embed/nECvrh_3bWQ?cc_load_policy=1"
-              title="Cómo hacer tiramisú"
+          <div
+            class="video-placeholder"
+            data-video-id="nECvrh_3bWQ"
+            data-video-title="Cómo hacer tiramisú"
+            role="button"
+            tabindex="0"
+            aria-label="Reproducir vídeo: Cómo hacer tiramisú">
+            <img
+              src="./img/tiramisu.jpg"
+              alt=""
+              width="640"
+              height="640"
               loading="lazy"
-              allowfullscreen></iframe>
+              decoding="async">
+            <span class="video-play" aria-hidden="true">▶</span>
           </div>
 
           <button

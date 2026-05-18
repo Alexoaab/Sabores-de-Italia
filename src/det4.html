@@ -10,6 +10,7 @@
 
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
   <include src="src/partials/header.html"></include>
 
   <main id="contenido">
@@ -22,24 +23,39 @@
           <p>El arroz cremoso tradicional del norte de Italia.</p>
         </header>
 
-        <a href="./img/risotto-principal-desktop.jpg" class="glightbox" data-gallery="det4">
-          <picture class="detalle-principal-media" data-aos="fade-up">
-            <source media="(max-width: 767px)" type="image/avif" srcset="./img/risotto-principal-mobile.avif 640w" sizes="100vw">
-            <source media="(max-width: 767px)" type="image/webp" srcset="./img/risotto-principal-mobile.webp 640w" sizes="100vw">
-            <source media="(max-width: 767px)" srcset="./img/risotto-principal-mobile.jpg 640w" sizes="100vw">
+        <picture class="detalle-principal-media">
+          <source
+            media="(max-width: 767px)"
+            type="image/avif"
+            srcset="./img/risotto-principal-mobile.avif 640w"
+            sizes="100vw">
+          <source
+            media="(max-width: 767px)"
+            type="image/webp"
+            srcset="./img/risotto-principal-mobile.webp 640w"
+            sizes="100vw">
+          <source
+            media="(max-width: 767px)"
+            srcset="./img/risotto-principal-mobile.jpg 640w"
+            sizes="100vw">
 
-            <source type="image/avif" srcset="./img/risotto-principal-desktop.avif 1024w" sizes="(max-width: 1200px) 100vw, 1024px">
-            <source type="image/webp" srcset="./img/risotto-principal-desktop.webp 1024w" sizes="(max-width: 1200px) 100vw, 1024px">
+          <source
+            type="image/avif"
+            srcset="./img/risotto-principal-desktop.avif 1024w"
+            sizes="(max-width: 1200px) 100vw, 1024px">
+          <source
+            type="image/webp"
+            srcset="./img/risotto-principal-desktop.webp 1024w"
+            sizes="(max-width: 1200px) 100vw, 1024px">
 
-            <img
-              src="./img/risotto-principal-desktop.jpg"
-              alt="Plato de risotto cremoso con queso parmesano"
-              width="1024"
-              height="576"
-              fetchpriority="high"
-              decoding="async">
-          </picture>
-        </a>
+          <img
+            src="./img/risotto-principal-desktop.jpg"
+            alt="Plato de risotto cremoso con queso parmesano"
+            width="1024"
+            height="576"
+            fetchpriority="high"
+            decoding="async">
+        </picture>
 
         <ul class="info-list">
           <li><strong>Tiempo:</strong> 35 minutos</li>
@@ -47,8 +63,11 @@
           <li><strong>Raciones:</strong> 4 personas</li>
         </ul>
 
-        <section class="detalle-seccion" data-aos="fade-right">
-          <h3>Ingredientes <button class="toggle-btn" type="button">Mostrar</button></h3>
+        <section class="detalle-seccion">
+          <h3>
+            Ingredientes
+            <button class="toggle-btn" type="button">Mostrar</button>
+          </h3>
           <ul class="oculto">
             <li>300 g de arroz arborio</li>
             <li>1 litro de caldo de verduras</li>
@@ -60,8 +79,11 @@
           </ul>
         </section>
 
-        <section class="detalle-seccion" data-aos="fade-right">
-          <h3>Preparación <button class="toggle-btn" type="button">Mostrar</button></h3>
+        <section class="detalle-seccion">
+          <h3>
+            Preparación
+            <button class="toggle-btn" type="button">Mostrar</button>
+          </h3>
           <ol class="oculto">
             <li>Sofreír la cebolla picada en mantequilla hasta que esté transparente.</li>
             <li>Añadir el arroz y remover durante 2 minutos para nacararlo.</li>
@@ -73,8 +95,11 @@
           </ol>
         </section>
 
-        <section class="detalle-seccion" data-aos="fade-right">
-          <h3>Historia y tradición <button class="toggle-btn" type="button">Mostrar</button></h3>
+        <section class="detalle-seccion">
+          <h3>
+            Historia y tradición
+            <button class="toggle-btn" type="button">Mostrar</button>
+          </h3>
           <div class="presentacion-contenido oculto">
             <p>El risotto es una receta tradicional del norte de Italia, especialmente popular en las regiones de Lombardía y Piamonte.</p>
             <p>Su textura cremosa se consigue gracias al almidón natural del arroz arborio, que se libera al removerlo lentamente.</p>
@@ -84,8 +109,9 @@
 
         <section class="detalle-galeria">
           <h3 class="visually-hidden">Galería del proceso</h3>
+
           <div class="features">
-            <article class="feature-item" data-aos="fade-up" data-aos-delay="100">
+            <article class="feature-item">
               <picture class="detalle-img feature-media">
                 <source type="image/avif" srcset="./img/arroz.avif 640w" sizes="(max-width: 767px) 100vw, 33vw">
                 <source type="image/webp" srcset="./img/arroz.webp 640w" sizes="(max-width: 767px) 100vw, 33vw">
@@ -101,7 +127,7 @@
               <p>Arroz arborio rico en almidón para lograr su cremosidad característica.</p>
             </article>
 
-            <article class="feature-item" data-aos="fade-up" data-aos-delay="200">
+            <article class="feature-item">
               <picture class="detalle-img feature-media">
                 <source type="image/avif" srcset="./img/caldo.avif 640w" sizes="(max-width: 767px) 100vw, 33vw">
                 <source type="image/webp" srcset="./img/caldo.webp 640w" sizes="(max-width: 767px) 100vw, 33vw">
@@ -117,7 +143,7 @@
               <p>El caldo se añade gradualmente mientras se remueve constantemente.</p>
             </article>
 
-            <article class="feature-item" data-aos="fade-up" data-aos-delay="300">
+            <article class="feature-item">
               <picture class="detalle-img feature-media">
                 <source type="image/avif" srcset="./img/risotto.avif 640w" sizes="(max-width: 767px) 100vw, 33vw">
                 <source type="image/webp" srcset="./img/risotto.webp 640w" sizes="(max-width: 767px) 100vw, 33vw">
@@ -135,15 +161,24 @@
           </div>
         </section>
 
-        <section class="detalle-video" data-aos="fade-up">
+        <section class="detalle-video">
           <h3>Vídeo explicativo</h3>
 
-          <div class="video-wrapper" tabindex="0">
-            <iframe
-              src="https://www.youtube-nocookie.com/embed/lNpqHQvrv5s?cc_load_policy=1"
-              title="Cómo hacer risotto"
+          <div
+            class="video-placeholder"
+            data-video-id="lNpqHQvrv5s"
+            data-video-title="Cómo hacer risotto"
+            role="button"
+            tabindex="0"
+            aria-label="Reproducir vídeo: Cómo hacer risotto">
+            <img
+              src="./img/risotto.jpg"
+              alt=""
+              width="640"
+              height="640"
               loading="lazy"
-              allowfullscreen></iframe>
+              decoding="async">
+            <span class="video-play" aria-hidden="true">▶</span>
           </div>
 
           <button

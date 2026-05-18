@@ -10,6 +10,7 @@
 
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
   <include src="src/partials/header.html"></include>
 
   <main id="contenido">
@@ -22,24 +23,39 @@
           <p>La receta clásica originaria de Roma.</p>
         </header>
 
-        <a href="./img/carbonara-principal-desktop.jpg" class="glightbox" data-gallery="det2">
-          <picture class="detalle-principal-media" data-aos="fade-up">
-            <source media="(max-width: 767px)" type="image/avif" srcset="./img/carbonara-principal-mobile.avif 640w" sizes="100vw">
-            <source media="(max-width: 767px)" type="image/webp" srcset="./img/carbonara-principal-mobile.webp 640w" sizes="100vw">
-            <source media="(max-width: 767px)" srcset="./img/carbonara-principal-mobile.jpg 640w" sizes="100vw">
+        <picture class="detalle-principal-media">
+          <source
+            media="(max-width: 767px)"
+            type="image/avif"
+            srcset="./img/carbonara-principal-mobile.avif 640w"
+            sizes="100vw">
+          <source
+            media="(max-width: 767px)"
+            type="image/webp"
+            srcset="./img/carbonara-principal-mobile.webp 640w"
+            sizes="100vw">
+          <source
+            media="(max-width: 767px)"
+            srcset="./img/carbonara-principal-mobile.jpg 640w"
+            sizes="100vw">
 
-            <source type="image/avif" srcset="./img/carbonara-principal-desktop.avif 1024w" sizes="(max-width: 1200px) 100vw, 1024px">
-            <source type="image/webp" srcset="./img/carbonara-principal-desktop.webp 1024w" sizes="(max-width: 1200px) 100vw, 1024px">
+          <source
+            type="image/avif"
+            srcset="./img/carbonara-principal-desktop.avif 1024w"
+            sizes="(max-width: 1200px) 100vw, 1024px">
+          <source
+            type="image/webp"
+            srcset="./img/carbonara-principal-desktop.webp 1024w"
+            sizes="(max-width: 1200px) 100vw, 1024px">
 
-            <img
-              src="./img/carbonara-principal-desktop.jpg"
-              alt="Plato de pasta carbonara tradicional italiana"
-              width="1024"
-              height="576"
-              fetchpriority="high"
-              decoding="async">
-          </picture>
-        </a>
+          <img
+            src="./img/carbonara-principal-desktop.jpg"
+            alt="Plato de pasta carbonara tradicional italiana"
+            width="1024"
+            height="576"
+            fetchpriority="high"
+            decoding="async">
+        </picture>
 
         <ul class="info-list">
           <li><strong>Tiempo:</strong> 30 minutos</li>
@@ -47,8 +63,11 @@
           <li><strong>Raciones:</strong> 4 personas</li>
         </ul>
 
-        <section class="detalle-seccion" data-aos="fade-right">
-          <h3>Ingredientes <button class="toggle-btn" type="button">Mostrar</button></h3>
+        <section class="detalle-seccion">
+          <h3>
+            Ingredientes
+            <button class="toggle-btn" type="button">Mostrar</button>
+          </h3>
           <ul class="oculto">
             <li>400 g de pasta (spaghetti)</li>
             <li>150 g de guanciale</li>
@@ -60,8 +79,11 @@
           </ul>
         </section>
 
-        <section class="detalle-seccion" data-aos="fade-right">
-          <h3>Preparación <button class="toggle-btn" type="button">Mostrar</button></h3>
+        <section class="detalle-seccion">
+          <h3>
+            Preparación
+            <button class="toggle-btn" type="button">Mostrar</button>
+          </h3>
           <ol class="oculto">
             <li>Cocer la pasta en abundante agua con sal.</li>
             <li>Dorar el guanciale en una sartén sin añadir aceite.</li>
@@ -72,8 +94,11 @@
           </ol>
         </section>
 
-        <section class="detalle-seccion" data-aos="fade-right">
-          <h3>Historia y tradición <button class="toggle-btn" type="button">Mostrar</button></h3>
+        <section class="detalle-seccion">
+          <h3>
+            Historia y tradición
+            <button class="toggle-btn" type="button">Mostrar</button>
+          </h3>
           <div class="presentacion-contenido oculto">
             <p>La pasta carbonara es uno de los platos más emblemáticos de la cocina romana. Su origen se remonta a mediados del siglo XX.</p>
             <p>La receta tradicional se elabora únicamente con guanciale, huevo, queso pecorino romano y pimienta negra, sin añadir nata.</p>
@@ -83,8 +108,9 @@
 
         <section class="detalle-galeria">
           <h3 class="visually-hidden">Galería del proceso</h3>
+
           <div class="features">
-            <article class="feature-item" data-aos="fade-up" data-aos-delay="100">
+            <article class="feature-item">
               <picture class="detalle-img feature-media">
                 <source type="image/avif" srcset="./img/guanciale.avif 640w" sizes="(max-width: 767px) 100vw, 33vw">
                 <source type="image/webp" srcset="./img/guanciale.webp 640w" sizes="(max-width: 767px) 100vw, 33vw">
@@ -100,7 +126,7 @@
               <p>Dorado lentamente para extraer todo su sabor.</p>
             </article>
 
-            <article class="feature-item" data-aos="fade-up" data-aos-delay="200">
+            <article class="feature-item">
               <picture class="detalle-img feature-media">
                 <source type="image/avif" srcset="./img/salsa.avif 640w" sizes="(max-width: 767px) 100vw, 33vw">
                 <source type="image/webp" srcset="./img/salsa.webp 640w" sizes="(max-width: 767px) 100vw, 33vw">
@@ -116,7 +142,7 @@
               <p>Mezcla cremosa de huevo y pecorino romano.</p>
             </article>
 
-            <article class="feature-item" data-aos="fade-up" data-aos-delay="300">
+            <article class="feature-item">
               <picture class="detalle-img feature-media">
                 <source type="image/avif" srcset="./img/carbonara.avif 640w" sizes="(max-width: 767px) 100vw, 33vw">
                 <source type="image/webp" srcset="./img/carbonara.webp 640w" sizes="(max-width: 767px) 100vw, 33vw">
@@ -134,15 +160,24 @@
           </div>
         </section>
 
-        <section class="detalle-video" data-aos="fade-up">
+        <section class="detalle-video">
           <h3>Vídeo explicativo</h3>
 
-          <div class="video-wrapper" tabindex="0">
-            <iframe
-              src="https://www.youtube-nocookie.com/embed/8jFBHUYW7f4?cc_load_policy=1"
-              title="Cómo hacer pasta carbonara"
+          <div
+            class="video-placeholder"
+            data-video-id="8jFBHUYW7f4"
+            data-video-title="Cómo hacer pasta carbonara"
+            role="button"
+            tabindex="0"
+            aria-label="Reproducir vídeo: Cómo hacer pasta carbonara">
+            <img
+              src="./img/carbonara.jpg"
+              alt=""
+              width="640"
+              height="640"
               loading="lazy"
-              allowfullscreen></iframe>
+              decoding="async">
+            <span class="video-play" aria-hidden="true">▶</span>
           </div>
 
           <button
