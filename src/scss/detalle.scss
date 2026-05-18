@@ -1,9 +1,4 @@
-$color-primario: #1e3a5f;
-$color-secundario: #c0392b;
-$color-blanco: #ffffff;
-$color-gris-suave: #e9ecef;
-$border-radius: 10px;
-$shadow-suave: 0 6px 20px rgba(0, 0, 0, 0.06);
+@use "variables" as *;
 
 .detalle-header {
   text-align: center;
@@ -23,16 +18,6 @@ $shadow-suave: 0 6px 20px rgba(0, 0, 0, 0.06);
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.glightbox {
-  display: block;
-}
-
-.glightbox:focus-visible {
-  outline: 3px solid $color-secundario;
-  outline-offset: 4px;
-  border-radius: $border-radius;
 }
 
 .info-list {
@@ -93,7 +78,7 @@ $shadow-suave: 0 6px 20px rgba(0, 0, 0, 0.06);
 
 .feature-item:hover {
   transform: translateY(-12px);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+  box-shadow: $shadow-hover;
 }
 
 .feature-item h3 {
@@ -145,26 +130,41 @@ $shadow-suave: 0 6px 20px rgba(0, 0, 0, 0.06);
   width: 100%;
 }
 
-.video-wrapper {
+.video-placeholder {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%;
-  height: 0;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   border-radius: $border-radius;
+  cursor: pointer;
+  background: $color-negro;
 }
 
-.video-wrapper iframe {
-  position: absolute;
-  inset: 0;
+.video-placeholder img,
+.video-placeholder iframe {
   width: 100%;
   height: 100%;
+  object-fit: cover;
   border: 0;
 }
 
-.video-wrapper:focus {
-  box-shadow: 0 0 0 3px $color-secundario;
-  border-radius: $border-radius;
+.video-play {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: $overlay-oscuro;
+  color: $color-blanco;
+  font-size: 2rem;
+}
+
+.video-placeholder:focus {
+  box-shadow: $shadow-focus;
 }
 
 .transcripcion {
