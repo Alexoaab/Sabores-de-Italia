@@ -8,9 +8,8 @@
   <link rel="icon" type="image/png" href="./img/favicon.png">
 </head>
 
-<body data-page="detalle">
+<body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
-
   <include src="src/partials/header.html"></include>
 
   <main id="contenido">
@@ -91,7 +90,13 @@
               <picture class="detalle-img feature-media">
                 <source type="image/avif" srcset="./img/cafe.avif 640w" sizes="(max-width: 767px) 100vw, 33vw">
                 <source type="image/webp" srcset="./img/cafe.webp 640w" sizes="(max-width: 767px) 100vw, 33vw">
-                <img src="./img/cafe.png" alt="Café espresso recién preparado" width="640" height="640" loading="lazy" decoding="async">
+                <img
+                  src="./img/cafe.png"
+                  alt="Café espresso recién preparado"
+                  width="640"
+                  height="640"
+                  loading="lazy"
+                  decoding="async">
               </picture>
               <h3>El café</h3>
               <p>Café espresso intenso que aporta profundidad y aroma.</p>
@@ -101,7 +106,13 @@
               <picture class="detalle-img feature-media">
                 <source type="image/avif" srcset="./img/mascarpone.avif 640w" sizes="(max-width: 767px) 100vw, 33vw">
                 <source type="image/webp" srcset="./img/mascarpone.webp 640w" sizes="(max-width: 767px) 100vw, 33vw">
-                <img src="./img/mascarpone.png" alt="Crema de mascarpone lista para mezclar" width="640" height="640" loading="lazy" decoding="async">
+                <img
+                  src="./img/mascarpone.png"
+                  alt="Crema de mascarpone lista para mezclar"
+                  width="640"
+                  height="640"
+                  loading="lazy"
+                  decoding="async">
               </picture>
               <h3>La crema</h3>
               <p>Mezcla suave y aireada de mascarpone y huevo.</p>
@@ -111,7 +122,13 @@
               <picture class="detalle-img feature-media">
                 <source type="image/avif" srcset="./img/tiramisu.avif 640w" sizes="(max-width: 767px) 100vw, 33vw">
                 <source type="image/webp" srcset="./img/tiramisu.webp 640w" sizes="(max-width: 767px) 100vw, 33vw">
-                <img src="./img/tiramisu.jpg" alt="Tiramisú terminado y listo para servir" width="640" height="640" loading="lazy" decoding="async">
+                <img
+                  src="./img/tiramisu.jpg"
+                  alt="Tiramisú terminado y listo para servir"
+                  width="640"
+                  height="640"
+                  loading="lazy"
+                  decoding="async">
               </picture>
               <h3>Resultado final</h3>
               <p>Capas equilibradas con cacao espolvoreado en la superficie.</p>
@@ -124,7 +141,7 @@
 
           <div class="video-wrapper" tabindex="0">
             <iframe
-              src="https://www.youtube.com/embed/nECvrh_3bWQ?cc_load_policy=1"
+              src="https://www.youtube-nocookie.com/embed/nECvrh_3bWQ?cc_load_policy=1"
               title="Cómo hacer tiramisú"
               loading="lazy"
               allowfullscreen></iframe>
@@ -148,6 +165,6 @@
   </main>
 
   <include src="src/partials/footer.html"></include>
-  <script type="module" src="./js/main.ts"></script>
+  <script type="module" src="./js/detalle.ts"></script>
 </body>
 </html>

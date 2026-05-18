@@ -8,9 +8,8 @@
   <link rel="icon" type="image/png" href="./img/favicon.png">
 </head>
 
-<body data-page="detalle">
+<body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
-
   <include src="src/partials/header.html"></include>
 
   <main id="contenido">
@@ -89,7 +88,13 @@
               <picture class="detalle-img feature-media">
                 <source type="image/avif" srcset="./img/guanciale.avif 640w" sizes="(max-width: 767px) 100vw, 33vw">
                 <source type="image/webp" srcset="./img/guanciale.webp 640w" sizes="(max-width: 767px) 100vw, 33vw">
-                <img src="./img/guanciale.png" alt="Guanciale cortado en tiras" width="640" height="640" loading="lazy" decoding="async">
+                <img
+                  src="./img/guanciale.png"
+                  alt="Guanciale cortado en tiras"
+                  width="640"
+                  height="640"
+                  loading="lazy"
+                  decoding="async">
               </picture>
               <h3>El guanciale</h3>
               <p>Dorado lentamente para extraer todo su sabor.</p>
@@ -99,7 +104,13 @@
               <picture class="detalle-img feature-media">
                 <source type="image/avif" srcset="./img/salsa.avif 640w" sizes="(max-width: 767px) 100vw, 33vw">
                 <source type="image/webp" srcset="./img/salsa.webp 640w" sizes="(max-width: 767px) 100vw, 33vw">
-                <img src="./img/salsa.png" alt="Salsa cremosa de huevo y queso pecorino" width="640" height="640" loading="lazy" decoding="async">
+                <img
+                  src="./img/salsa.png"
+                  alt="Salsa cremosa de huevo y queso pecorino"
+                  width="640"
+                  height="640"
+                  loading="lazy"
+                  decoding="async">
               </picture>
               <h3>La salsa</h3>
               <p>Mezcla cremosa de huevo y pecorino romano.</p>
@@ -109,7 +120,13 @@
               <picture class="detalle-img feature-media">
                 <source type="image/avif" srcset="./img/carbonara.avif 640w" sizes="(max-width: 767px) 100vw, 33vw">
                 <source type="image/webp" srcset="./img/carbonara.webp 640w" sizes="(max-width: 767px) 100vw, 33vw">
-                <img src="./img/carbonara.jpg" alt="Pasta carbonara servida" width="640" height="640" loading="lazy" decoding="async">
+                <img
+                  src="./img/carbonara.jpg"
+                  alt="Pasta carbonara servida"
+                  width="640"
+                  height="640"
+                  loading="lazy"
+                  decoding="async">
               </picture>
               <h3>Resultado final</h3>
               <p>Servida inmediatamente para mantener su textura cremosa.</p>
@@ -122,7 +139,7 @@
 
           <div class="video-wrapper" tabindex="0">
             <iframe
-              src="https://www.youtube.com/embed/8jFBHUYW7f4?cc_load_policy=1"
+              src="https://www.youtube-nocookie.com/embed/8jFBHUYW7f4?cc_load_policy=1"
               title="Cómo hacer pasta carbonara"
               loading="lazy"
               allowfullscreen></iframe>
@@ -146,6 +163,6 @@
   </main>
 
   <include src="src/partials/footer.html"></include>
-  <script type="module" src="./js/main.ts"></script>
+  <script type="module" src="./js/detalle.ts"></script>
 </body>
 </html>

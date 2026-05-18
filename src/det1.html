@@ -8,9 +8,8 @@
   <link rel="icon" type="image/png" href="./img/favicon.png">
 </head>
 
-<body data-page="detalle">
+<body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
-
   <include src="src/partials/header.html"></include>
 
   <main id="contenido">
@@ -25,29 +24,12 @@
 
         <a href="./img/napolitana-principal-desktop.jpg" class="glightbox" data-gallery="det1">
           <picture class="detalle-principal-media" data-aos="fade-up">
-            <source
-              media="(max-width: 767px)"
-              type="image/avif"
-              srcset="./img/napolitana-principal-mobile.avif 640w"
-              sizes="100vw">
-            <source
-              media="(max-width: 767px)"
-              type="image/webp"
-              srcset="./img/napolitana-principal-mobile.webp 640w"
-              sizes="100vw">
-            <source
-              media="(max-width: 767px)"
-              srcset="./img/napolitana-principal-mobile.jpg 640w"
-              sizes="100vw">
+            <source media="(max-width: 767px)" type="image/avif" srcset="./img/napolitana-principal-mobile.avif 640w" sizes="100vw">
+            <source media="(max-width: 767px)" type="image/webp" srcset="./img/napolitana-principal-mobile.webp 640w" sizes="100vw">
+            <source media="(max-width: 767px)" srcset="./img/napolitana-principal-mobile.jpg 640w" sizes="100vw">
 
-            <source
-              type="image/avif"
-              srcset="./img/napolitana-principal-desktop.avif 1024w"
-              sizes="(max-width: 1200px) 100vw, 1024px">
-            <source
-              type="image/webp"
-              srcset="./img/napolitana-principal-desktop.webp 1024w"
-              sizes="(max-width: 1200px) 100vw, 1024px">
+            <source type="image/avif" srcset="./img/napolitana-principal-desktop.avif 1024w" sizes="(max-width: 1200px) 100vw, 1024px">
+            <source type="image/webp" srcset="./img/napolitana-principal-desktop.webp 1024w" sizes="(max-width: 1200px) 100vw, 1024px">
 
             <img
               src="./img/napolitana-principal-desktop.jpg"
@@ -66,10 +48,7 @@
         </ul>
 
         <section class="detalle-seccion" data-aos="fade-right">
-          <h3>
-            Ingredientes
-            <button class="toggle-btn" type="button">Mostrar</button>
-          </h3>
+          <h3>Ingredientes <button class="toggle-btn" type="button">Mostrar</button></h3>
           <ul class="oculto">
             <li>500 g de harina</li>
             <li>325 ml de agua</li>
@@ -82,10 +61,7 @@
         </section>
 
         <section class="detalle-seccion" data-aos="fade-right">
-          <h3>
-            Preparación
-            <button class="toggle-btn" type="button">Mostrar</button>
-          </h3>
+          <h3>Preparación <button class="toggle-btn" type="button">Mostrar</button></h3>
           <ol class="oculto">
             <li>Mezclar harina, agua y levadura hasta obtener una masa homogénea.</li>
             <li>Añadir la sal y amasar durante 10 minutos.</li>
@@ -97,10 +73,7 @@
         </section>
 
         <section class="detalle-seccion" data-aos="fade-right">
-          <h3>
-            Historia y tradición
-            <button class="toggle-btn" type="button">Mostrar</button>
-          </h3>
+          <h3>Historia y tradición <button class="toggle-btn" type="button">Mostrar</button></h3>
           <div class="presentacion-contenido oculto">
             <p>La pizza napolitana es uno de los símbolos más reconocidos de la gastronomía italiana. Su origen se remonta al siglo XVIII en la ciudad de Nápoles.</p>
             <p>La técnica de elaboración ha sido transmitida durante generaciones, respetando ingredientes y métodos tradicionales.</p>
@@ -116,7 +89,13 @@
               <picture class="detalle-img feature-media">
                 <source type="image/avif" srcset="./img/masa.avif 640w" sizes="(max-width: 767px) 100vw, 33vw">
                 <source type="image/webp" srcset="./img/masa.webp 640w" sizes="(max-width: 767px) 100vw, 33vw">
-                <img src="./img/masa.png" alt="Preparación artesanal de la masa" width="640" height="640" loading="lazy" decoding="async">
+                <img
+                  src="./img/masa.png"
+                  alt="Preparación artesanal de la masa"
+                  width="640"
+                  height="640"
+                  loading="lazy"
+                  decoding="async">
               </picture>
               <h3>La masa</h3>
               <p>Preparación tradicional con fermentación lenta.</p>
@@ -126,7 +105,13 @@
               <picture class="detalle-img feature-media">
                 <source type="image/avif" srcset="./img/cocion.avif 640w" sizes="(max-width: 767px) 100vw, 33vw">
                 <source type="image/webp" srcset="./img/cocion.webp 640w" sizes="(max-width: 767px) 100vw, 33vw">
-                <img src="./img/cocion.png" alt="Horno de leña tradicional" width="640" height="640" loading="lazy" decoding="async">
+                <img
+                  src="./img/cocion.png"
+                  alt="Horno de leña tradicional"
+                  width="640"
+                  height="640"
+                  loading="lazy"
+                  decoding="async">
               </picture>
               <h3>Cocción</h3>
               <p>Cocción rápida en horno de leña a alta temperatura.</p>
@@ -136,7 +121,13 @@
               <picture class="detalle-img feature-media">
                 <source type="image/avif" srcset="./img/napolitana.avif 640w" sizes="(max-width: 767px) 100vw, 33vw">
                 <source type="image/webp" srcset="./img/napolitana.webp 640w" sizes="(max-width: 767px) 100vw, 33vw">
-                <img src="./img/napolitana.jpg" alt="Pizza napolitana servida" width="640" height="640" loading="lazy" decoding="async">
+                <img
+                  src="./img/napolitana.jpg"
+                  alt="Pizza napolitana servida"
+                  width="640"
+                  height="640"
+                  loading="lazy"
+                  decoding="async">
               </picture>
               <h3>Resultado final</h3>
               <p>Presentación final con albahaca fresca.</p>
@@ -149,7 +140,7 @@
 
           <div class="video-wrapper" tabindex="0">
             <iframe
-              src="https://www.youtube.com/embed/GksJud8Idc4?cc_load_policy=1"
+              src="https://www.youtube-nocookie.com/embed/GksJud8Idc4?cc_load_policy=1"
               title="Cómo hacer pizza napolitana"
               loading="lazy"
               allowfullscreen></iframe>
@@ -173,6 +164,6 @@
   </main>
 
   <include src="src/partials/footer.html"></include>
-  <script type="module" src="./js/main.ts"></script>
+  <script type="module" src="./js/detalle.ts"></script>
 </body>
 </html>

@@ -8,9 +8,8 @@
   <link rel="icon" type="image/png" href="./img/favicon.png">
 </head>
 
-<body data-page="detalle">
+<body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
-
   <include src="src/partials/header.html"></include>
 
   <main id="contenido">
@@ -90,7 +89,13 @@
               <picture class="detalle-img feature-media">
                 <source type="image/avif" srcset="./img/arroz.avif 640w" sizes="(max-width: 767px) 100vw, 33vw">
                 <source type="image/webp" srcset="./img/arroz.webp 640w" sizes="(max-width: 767px) 100vw, 33vw">
-                <img src="./img/arroz.png" alt="Arroz arborio en crudo" width="640" height="640" loading="lazy" decoding="async">
+                <img
+                  src="./img/arroz.png"
+                  alt="Arroz arborio en crudo"
+                  width="640"
+                  height="640"
+                  loading="lazy"
+                  decoding="async">
               </picture>
               <h3>El arroz</h3>
               <p>Arroz arborio rico en almidón para lograr su cremosidad característica.</p>
@@ -100,7 +105,13 @@
               <picture class="detalle-img feature-media">
                 <source type="image/avif" srcset="./img/caldo.avif 640w" sizes="(max-width: 767px) 100vw, 33vw">
                 <source type="image/webp" srcset="./img/caldo.webp 640w" sizes="(max-width: 767px) 100vw, 33vw">
-                <img src="./img/caldo.png" alt="Caldo caliente listo para incorporar" width="640" height="640" loading="lazy" decoding="async">
+                <img
+                  src="./img/caldo.png"
+                  alt="Caldo caliente listo para incorporar"
+                  width="640"
+                  height="640"
+                  loading="lazy"
+                  decoding="async">
               </picture>
               <h3>La cocción</h3>
               <p>El caldo se añade gradualmente mientras se remueve constantemente.</p>
@@ -110,7 +121,13 @@
               <picture class="detalle-img feature-media">
                 <source type="image/avif" srcset="./img/risotto.avif 640w" sizes="(max-width: 767px) 100vw, 33vw">
                 <source type="image/webp" srcset="./img/risotto.webp 640w" sizes="(max-width: 767px) 100vw, 33vw">
-                <img src="./img/risotto.jpg" alt="Risotto recién servido" width="640" height="640" loading="lazy" decoding="async">
+                <img
+                  src="./img/risotto.jpg"
+                  alt="Risotto recién servido"
+                  width="640"
+                  height="640"
+                  loading="lazy"
+                  decoding="async">
               </picture>
               <h3>Resultado final</h3>
               <p>Textura cremosa y acabado con parmesano recién rallado.</p>
@@ -123,7 +140,7 @@
 
           <div class="video-wrapper" tabindex="0">
             <iframe
-              src="https://www.youtube.com/embed/lNpqHQvrv5s?cc_load_policy=1"
+              src="https://www.youtube-nocookie.com/embed/lNpqHQvrv5s?cc_load_policy=1"
               title="Cómo hacer risotto"
               loading="lazy"
               allowfullscreen></iframe>
@@ -147,6 +164,6 @@
   </main>
 
   <include src="src/partials/footer.html"></include>
-  <script type="module" src="./js/main.ts"></script>
+  <script type="module" src="./js/detalle.ts"></script>
 </body>
 </html>

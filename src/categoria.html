@@ -8,9 +8,8 @@
   <link rel="icon" type="image/png" href="./img/favicon.png">
 </head>
 
-<body data-page="categoria">
+<body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
-
   <include src="src/partials/header.html"></include>
 
   <main id="contenido">
@@ -20,10 +19,7 @@
       <div class="container">
         <header class="categoria-header" data-aos="fade-up">
           <h2>Recetas tradicionales</h2>
-          <p>
-            Explora algunos de los platos más representativos
-            de la cocina italiana.
-          </p>
+          <p>Explora algunos de los platos más representativos de la cocina italiana.</p>
         </header>
 
         <div class="card-grid">
@@ -31,7 +27,13 @@
             <picture class="card-media">
               <source type="image/avif" srcset="./img/napolitana.avif 640w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 25vw">
               <source type="image/webp" srcset="./img/napolitana.webp 640w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 25vw">
-              <img src="./img/napolitana.jpg" alt="Pizza napolitana tradicional horneada en horno de leña" width="640" height="640" loading="lazy" decoding="async">
+              <img
+                src="./img/napolitana.jpg"
+                alt="Pizza napolitana tradicional horneada en horno de leña"
+                width="640"
+                height="640"
+                loading="lazy"
+                decoding="async">
             </picture>
             <h3>Pizza Napolitana</h3>
             <p>Masa artesanal horneada en horno de leña con tomate y mozzarella fresca.</p>
@@ -42,7 +44,13 @@
             <picture class="card-media">
               <source type="image/avif" srcset="./img/carbonara.avif 640w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 25vw">
               <source type="image/webp" srcset="./img/carbonara.webp 640w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 25vw">
-              <img src="./img/carbonara.jpg" alt="Plato de pasta carbonara tradicional con huevo, queso pecorino y guanciale" width="640" height="640" loading="lazy" decoding="async">
+              <img
+                src="./img/carbonara.jpg"
+                alt="Plato de pasta carbonara tradicional con huevo, queso pecorino y guanciale"
+                width="640"
+                height="640"
+                loading="lazy"
+                decoding="async">
             </picture>
             <h3>Pasta Carbonara</h3>
             <p>Receta romana elaborada con huevo, queso pecorino y guanciale.</p>
@@ -53,7 +61,13 @@
             <picture class="card-media">
               <source type="image/avif" srcset="./img/tiramisu.avif 640w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 25vw">
               <source type="image/webp" srcset="./img/tiramisu.webp 640w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 25vw">
-              <img src="./img/tiramisu.jpg" alt="Tiramisú tradicional italiano espolvoreado con cacao en polvo" width="640" height="640" loading="lazy" decoding="async">
+              <img
+                src="./img/tiramisu.jpg"
+                alt="Tiramisú tradicional italiano espolvoreado con cacao en polvo"
+                width="640"
+                height="640"
+                loading="lazy"
+                decoding="async">
             </picture>
             <h3>Tiramisú</h3>
             <p>Postre clásico italiano elaborado con café, mascarpone y cacao.</p>
@@ -64,7 +78,13 @@
             <picture class="card-media">
               <source type="image/avif" srcset="./img/risotto.avif 640w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 25vw">
               <source type="image/webp" srcset="./img/risotto.webp 640w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 25vw">
-              <img src="./img/risotto.jpg" alt="Plato de risotto cremoso con queso parmesano recién rallado" width="640" height="640" loading="lazy" decoding="async">
+              <img
+                src="./img/risotto.jpg"
+                alt="Plato de risotto cremoso con queso parmesano recién rallado"
+                width="640"
+                height="640"
+                loading="lazy"
+                decoding="async">
             </picture>
             <h3>Risotto</h3>
             <p>Arroz cremoso típico del norte de Italia con queso parmesano.</p>
@@ -76,6 +96,6 @@
   </main>
 
   <include src="src/partials/footer.html"></include>
-  <script type="module" src="./js/main.ts"></script>
+  <script type="module" src="./js/categoria.ts"></script>
 </body>
 </html>

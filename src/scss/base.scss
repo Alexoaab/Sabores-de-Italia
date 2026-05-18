@@ -5,10 +5,8 @@ $color-secundario: #c0392b;
 $color-fondo: #f4f6f8;
 $color-texto: #2c2c2c;
 $color-blanco: #ffffff;
-$color-gris-suave: #e9ecef;
-$border-radius: 10px;
-$shadow-suave: 0 6px 20px rgba(0, 0, 0, 0.06);
 $max-width: 1200px;
+$border-radius: 10px;
 
 *,
 *::before,
@@ -132,6 +130,41 @@ iframe {
   fill: #ce2b37;
 }
 
+.flag-wave {
+  transform-origin: left center;
+  animation: flagFabric 2.4s ease-in-out infinite;
+}
+
+.flag-wave--2 {
+  animation-delay: 0.15s;
+}
+
+.flag-wave--3 {
+  animation-delay: 0.3s;
+}
+
+@keyframes flagFabric {
+  0% {
+    transform: translateX(0) skewY(0deg) scaleX(1);
+  }
+
+  25% {
+    transform: translateX(1px) skewY(-3deg) scaleX(1.03);
+  }
+
+  50% {
+    transform: translateX(-1px) skewY(2deg) scaleX(0.98);
+  }
+
+  75% {
+    transform: translateX(1px) skewY(-2deg) scaleX(1.02);
+  }
+
+  100% {
+    transform: translateX(0) skewY(0deg) scaleX(1);
+  }
+}
+
 .nav-list {
   list-style: none;
   display: flex;
@@ -226,5 +259,15 @@ textarea:focus {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flag-wave,
+  .btn,
+  .btn-secundario,
+  .toggle-btn {
+    animation: none;
+    transition: none;
   }
 }
