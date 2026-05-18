@@ -28,9 +28,19 @@ await fs.mkdir(destino, { recursive: true });
 
 const variantes = [
   {
+    sufijo: "desktop-768",
+    width: 768,
+    height: 432
+  },
+  {
     sufijo: "desktop",
     width: 1024,
     height: 576
+  },
+  {
+    sufijo: "mobile-480",
+    width: 480,
+    height: 600
   },
   {
     sufijo: "mobile",
@@ -54,7 +64,7 @@ for (const imagen of imagenesPrincipales) {
     await pipeline
       .clone()
       .jpeg({
-        quality: 76,
+        quality: variante.width <= 480 ? 72 : 76,
         mozjpeg: true,
         progressive: true
       })
@@ -63,14 +73,14 @@ for (const imagen of imagenesPrincipales) {
     await pipeline
       .clone()
       .webp({
-        quality: 66
+        quality: variante.width <= 480 ? 62 : 66
       })
       .toFile(`${rutaBase}.webp`);
 
     await pipeline
       .clone()
       .avif({
-        quality: 52
+        quality: variante.width <= 480 ? 46 : 52
       })
       .toFile(`${rutaBase}.avif`);
   }

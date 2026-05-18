@@ -20,6 +20,8 @@ const imagenes = [
 const origen = "./src/img-copia";
 const destino = "./src/img";
 
+const tamaños = [320, 480, 640];
+
 await fs.mkdir(destino, { recursive: true });
 
 for (const nombre of imagenes) {
@@ -28,45 +30,49 @@ for (const nombre of imagenes) {
   const rutaEntrada = path.join(origen, nombre);
   const esPng = ext === ".png";
 
-  const pipeline = sharp(rutaEntrada).resize(640, 640, {
-    fit: "cover",
-    position: "centre",
-    withoutEnlargement: true
-  });
+  for (const tamaño of tamaños) {
+    const sufijo = tamaño === 640 ? "" : `-${tamaño}`;
 
-  if (esPng) {
+    const pipeline = sharp(rutaEntrada).resize(tamaño, tamaño, {
+      fit: "cover",
+      position: "centre",
+      withoutEnlargement: true
+    });
+
+    if (esPng) {
+      await pipeline
+        .clone()
+        .png({
+          compressionLevel: 9,
+          palette: true
+        })
+        .toFile(path.join(destino, `${base}${sufijo}.png`));
+    } else {
+      await pipeline
+        .clone()
+        .jpeg({
+          quality: tamaño === 320 ? 68 : 72,
+          mozjpeg: true,
+          progressive: true
+        })
+        .toFile(path.join(destino, `${base}${sufijo}.jpg`));
+    }
+
     await pipeline
       .clone()
-      .png({
-        compressionLevel: 9,
-        palette: true
+      .webp({
+        quality: esPng ? 58 : tamaño === 320 ? 60 : 62,
+        alphaQuality: 70
       })
-      .toFile(path.join(destino, nombre));
-  } else {
+      .toFile(path.join(destino, `${base}${sufijo}.webp`));
+
     await pipeline
       .clone()
-      .jpeg({
-        quality: 72,
-        mozjpeg: true,
-        progressive: true
+      .avif({
+        quality: esPng ? 40 : tamaño === 320 ? 44 : 48
       })
-      .toFile(path.join(destino, nombre));
+      .toFile(path.join(destino, `${base}${sufijo}.avif`));
   }
-
-  await pipeline
-    .clone()
-    .webp({
-      quality: esPng ? 60 : 62,
-      alphaQuality: 70
-    })
-    .toFile(path.join(destino, `${base}.webp`));
-
-  await pipeline
-    .clone()
-    .avif({
-      quality: esPng ? 42 : 48
-    })
-    .toFile(path.join(destino, `${base}.avif`));
 
   console.log(`Procesada correctamente: ${nombre}`);
 }
